@@ -28,7 +28,7 @@ Partial Class StoreDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(701, 427)
+        Me.ClientSize = New System.Drawing.Size(523, 499)
         Me.Name = "StoreDetail"
         Me.Text = "Store Detail"
         Me.ResumeLayout(False)

@@ -46,8 +46,8 @@ Public Class Database
     Public Sub insertAddress(username As String, detail As String, sub_district As String, district As String, province As String, postal_code As Integer, country_id As Integer)
         Try
             con.Open()
-            query = "insert into custaddress(detail,sub_district,district,province,postal_code,country_id,store,username) values "
-            query += "('" + detail + "','" + sub_district + "','" + district + "','" + province + "'," + CStr(postal_code) + ", " + CStr(country_id) + ", 0 ,'" + username + "')"
+            query = "insert into custaddress(detail,sub_district,district,province,postal_code,country_id,username) values "
+            query += "('" + detail + "','" + sub_district + "','" + district + "','" + province + "'," + CStr(postal_code) + ", " + CStr(country_id) + ",'" + username + "')"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
@@ -61,6 +61,19 @@ Public Class Database
         Try
             con.Open()
             query = "Insert Into custDetail Values('" + username + "','" + password + "','" + fname + "','" + lname + "','" + email + "','" + phone + "','" + birthday + "')"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub insertnewStore(storeName As String, username As String, address_id As Integer)
+        Try
+            con.Open()
+            query = "Insert Into store Values('" + storeName + "','" + username + "'," + CStr(address_id) + ")"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
@@ -136,10 +149,26 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getAddressId(username As String, address As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT id FROM custaddress WHERE username = '" + username + "' AND detail = '" + address + "'"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Function
+
     Public Function getAddressDetail(username As String, addressdetail As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT custaddress.id, custaddress.detail, custaddress.sub_district, custaddress.district, custaddress.province,custaddress.postal_code, country.country_name, custaddress.store "
+            query = "SELECT custaddress.id, custaddress.detail, custaddress.sub_district, custaddress.district, custaddress.province,custaddress.postal_code, country.country_name "
             query += "FROM custaddress, country WHERE custaddress.country_id = country.country_id  AND custaddress.detail = '" + addressdetail + "' AND custaddress.username = '" + username + "'"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
@@ -155,11 +184,25 @@ Public Class Database
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()
-            query = "SELECT * FROM custAddress WHERE username = '" + Username + "' AND store = 1"
+            query = "SELECT * FROM store WHERE username = '" + Username + "'"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             Dim cond As Boolean = reader.HasRows
+            Return cond
+        Catch ex As Exception
             con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Function
+
+    Public Function checkStoreAddress(Username As String, Address_id As Integer) As Boolean
+        Try
+            con.Open()
+            query = "SELECT * FROM store WHERE username = '" + Username + "' AND address_id = " + CStr(Address_id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            Dim cond As Boolean = reader.HasRows
+            Return cond
         Catch ex As Exception
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)

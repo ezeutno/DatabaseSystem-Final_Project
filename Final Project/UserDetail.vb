@@ -50,6 +50,8 @@ Public Class UserDetail
                             Convert.ToDouble(phone.Text)
                             Dim dateRes As String = CStr(birthday.Value.Year) + "-" + CStr(birthday.Value.Month) + "-" + CStr(birthday.Value.Day)
                             Db.updateDetail(Username.Text, fName.Text, lName.Text, email.Text, phone.Text, dateRes)
+                            Main.Enabled = True
+                            Me.Dispose()
                         Catch ex As Exception
                             exceptText += "Phone Number Wrong Format!"
                         End Try
@@ -68,8 +70,6 @@ Public Class UserDetail
         If exceptText IsNot "Error : " Then
             MessageBox.Show(exceptText)
         End If
-        Main.Enabled = True
-        Me.Dispose()
     End Sub
 
     Private Sub change_Click(sender As Object, e As EventArgs) Handles change.Click

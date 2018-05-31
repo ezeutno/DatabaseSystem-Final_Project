@@ -15,13 +15,16 @@ Public Class AddressDetail
             province.Text = reader.Item(4)
             postal_code.Text = reader.Item(5)
             country.Text = reader.Item(6)
-            If reader.Item(7) Then
+            Db.closeCon()
+            If Db.checkStoreAddress(Username:=Main.getUsername(), Address_id:=Val(id.Text)) Then
+                delete.Enabled = False
                 storeYes.Checked = True
             Else
                 storeNo.Checked = True
             End If
+            Db.closeCon()
+
         End If
-        Db.closeCon()
         reader = Db.getAllCountry()
         Do While reader.Read()
             country.Items.Add(reader.Item(0))

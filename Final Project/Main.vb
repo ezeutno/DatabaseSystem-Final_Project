@@ -72,11 +72,17 @@
     End Sub
 
     Private Sub Store_Click(sender As Object, e As EventArgs) Handles Store.Click
-        If Not Db.checkStoreAddress(getUsername()) Then
+        If Db.checkStoreAddress(getUsername()) Then
+            Db.closeCon()
             StoreDetail.Show()
         Else
-            MessageBox.Show("CHOSE STORE ADDRESS")
+            Db.closeCon()
+            CreateStore.Show()
         End If
+    End Sub
+
+    Public Sub Run()
+
     End Sub
 
     Private Sub Display_Project(gp As GroupBox, gpCond As Boolean, image As PictureBox, id As Label, name As Label, price As Label, data() As String)
@@ -98,7 +104,7 @@
     'Distribute System'
     Private Sub Item1_Click(sender As Object, e As EventArgs) Handles Item1.Click
         Clicked_Project(idItem1)
-        Display_Project(Item1, True, ImageItem1, idItem1, NameItem1, PriceItem1, {"C:\Users\Ezech\iCloudDrive\Programming\Visual Stuido\Final Project\Final Project 0.02\Photos\TG0wQQ40_400x400_mart_ai_on_twitter.jpg", "12", "MART_TEST", "0000"})
+        Display_Project(Item1, True, ImageItem1, idItem1, NameItem1, PriceItem1, {"https://www.91-img.com/pictures/121008-v1-apple-iphone-x-mobile-phone-large-1.jpg", "12", "MART_TEST", "0000"})
     End Sub
     Private Sub Item2_Click(sender As Object, e As EventArgs) Handles Item2.Click
         Clicked_Project(idItem2)

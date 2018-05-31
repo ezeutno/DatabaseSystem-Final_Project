@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2018 at 12:13 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: May 31, 2018 at 03:32 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -247,8 +247,7 @@ CREATE TABLE `custaddress` (
   `district` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
   `postal_code` int(11) NOT NULL,
-  `country_id` int(11) NOT NULL,
-  `store` tinyint(1) NOT NULL,
+  `country_id` int(11) DEFAULT NULL,
   `username` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -256,10 +255,10 @@ CREATE TABLE `custaddress` (
 -- Dumping data for table `custaddress`
 --
 
-INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province`, `postal_code`, `country_id`, `store`, `username`) VALUES
-(4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 0, 'david'),
-(5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 0, 'ezeutno'),
-(6, 'St Moritz Room 219 Floor 45', 'Puri Kembangan', 'Jakarta Barat', 'DKI Jakarta', 16457, 76, 0, 'ezeutno');
+INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province`, `postal_code`, `country_id`, `username`) VALUES
+(1, 'FX SUDIRMAN LT 10', 'Sudirman', 'Jakarta Pusat', 'DKI Jakarta', 12839, 76, 'ezeutno'),
+(4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 'david'),
+(5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno');
 
 -- --------------------------------------------------------
 
@@ -282,10 +281,33 @@ CREATE TABLE `custdetail` (
 --
 
 INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `phone`, `birthday`) VALUES
-('david', 'david123', 'david', 'honasan', 'david.honasan@binus.ac.id', '6281763267842', '1999-09-26'),
-('ezeutno', '11111111', 'Ivan Ezechial', 'Suratno', 'ivan.suratno@binus.ac.id', '6283276378885', '1900-01-01'),
-('holo', '123456', 'Homo', 'Sapiens', 'holo@holo.com', '628789343', '2009-07-08'),
-('sm', '12345678', 'Susan', 'Martha', 'sm@sm.com', '62387189237', '1976-02-10');
+('david', 'david123', 'David', 'Honasan', 'david.honasan@binus.ac.id', '6281763267842', '1999-09-26'),
+('dgjfhgfdgfg', '12345678', 'lol', 'lol', 'lol@ghf.uyfghj', '08656564565', '2009-02-03'),
+('ezeutno', '24091999', 'Ivan Ezechial', 'Suratno', 'ivan.suratno@gmail.com', '6281807825885', '1999-09-24'),
+('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
+('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
+('sher', '12345678', 'qwertyasdfgh', 'asdfghfds', 'lol@gmail.com', '893719827332', '1995-06-14'),
+('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `store`
+--
+
+CREATE TABLE `store` (
+  `name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `address_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
+('Kampung Melayu', 'david', 4),
+('Rumah Merdeka', 'ezeutno', 5);
 
 --
 -- Indexes for dumped tables
@@ -302,14 +324,21 @@ ALTER TABLE `country`
 --
 ALTER TABLE `custaddress`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `country_id` (`country_id`),
-  ADD KEY `username` (`username`);
+  ADD KEY `country_id` (`country_id`);
 
 --
 -- Indexes for table `custdetail`
 --
 ALTER TABLE `custdetail`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `store`
+--
+ALTER TABLE `store`
+  ADD PRIMARY KEY (`name`),
+  ADD KEY `username` (`username`),
+  ADD KEY `address_id` (`address_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -325,7 +354,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -335,8 +364,14 @@ ALTER TABLE `custaddress`
 -- Constraints for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`),
-  ADD CONSTRAINT `custaddress_ibfk_2` FOREIGN KEY (`username`) REFERENCES `custdetail` (`username`);
+  ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+
+--
+-- Constraints for table `store`
+--
+ALTER TABLE `store`
+  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`username`) REFERENCES `custdetail` (`username`),
+  ADD CONSTRAINT `store_ibfk_2` FOREIGN KEY (`address_id`) REFERENCES `custaddress` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
