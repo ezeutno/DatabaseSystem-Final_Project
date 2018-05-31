@@ -1,4 +1,4 @@
-# DatabaseSystem-Final_Project
+# Database System Final Project
 
 Title                                       : Mobile Phone Store
 
