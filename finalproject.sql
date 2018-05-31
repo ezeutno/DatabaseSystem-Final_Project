@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2018 at 03:32 AM
+-- Generation Time: May 31, 2018 at 07:14 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -258,7 +258,8 @@ CREATE TABLE `custaddress` (
 INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province`, `postal_code`, `country_id`, `username`) VALUES
 (1, 'FX SUDIRMAN LT 10', 'Sudirman', 'Jakarta Pusat', 'DKI Jakarta', 12839, 76, 'ezeutno'),
 (4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 'david'),
-(5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno');
+(5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno'),
+(7, 'a', 'a', 'a', 'a', 1, 2, '');
 
 -- --------------------------------------------------------
 
@@ -281,6 +282,7 @@ CREATE TABLE `custdetail` (
 --
 
 INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `phone`, `birthday`) VALUES
+('', '', '', '', '', '', '2000-01-01'),
 ('david', 'david123', 'David', 'Honasan', 'david.honasan@binus.ac.id', '6281763267842', '1999-09-26'),
 ('dgjfhgfdgfg', '12345678', 'lol', 'lol', 'lol@ghf.uyfghj', '08656564565', '2009-02-03'),
 ('ezeutno', '24091999', 'Ivan Ezechial', 'Suratno', 'ivan.suratno@gmail.com', '6281807825885', '1999-09-24'),
@@ -306,6 +308,7 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
+('a', '', 7),
 ('Kampung Melayu', 'david', 4),
 ('Rumah Merdeka', 'ezeutno', 5);
 
@@ -354,7 +357,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
