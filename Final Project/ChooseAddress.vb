@@ -24,7 +24,9 @@ Public Class ChooseAddress
         Db.closeCon()
         Db.updateTransactionAddress(Main.getTransId(), loc)
         Main.newTransaction()
+        Main.refreshAllData()
         CartDetail.refreshDetail()
         Me.Dispose()
+        MessageBox.Show("Please wait, while your purchased is being process by the store!" + vbNewLine + "Please contact store for more info!")
     End Sub
 End Class

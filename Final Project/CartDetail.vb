@@ -74,10 +74,20 @@ Public Class CartDetail
             End If
             total += 1
         Next
-        If errorValue IsNot "An Error Occured : " Then MessageBox.Show(errorValue)
-        If total > 0 Then
-            ChooseAddress.Show()
+
+        If Db.checkAddress(Main.getUsername()) Then
+            Db.closeCon()
+            If total > 0 Then
+                ChooseAddress.Show()
+            Else
+                errorValue += vbNewLine + "You haven't bought anything!"
+            End If
+        Else
+            errorValue += vbNewLine + "Please create your address first for shipping!"
+            Db.closeCon()
         End If
+        If errorValue IsNot "An Error Occured : " Then MessageBox.Show(errorValue)
+
     End Sub
 
     Private Sub Purchase_Click(sender As Object, e As EventArgs) Handles Purchase.Click

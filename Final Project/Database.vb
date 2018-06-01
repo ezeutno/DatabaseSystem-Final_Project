@@ -679,6 +679,20 @@ Public Class Database
     End Function
 #Enable Warning BC42353 ' Function doesn't return a value on all code paths
 
+    Public Function checkAddress(username As String) As Boolean
+        Try
+            con.Open()
+            query = "SELECT * FROM custaddress WHERE username = '" + username + "'"
+            comm = New MySqlCommand(query, con)
+            Return comm.ExecuteReader.HasRows
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
+
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()

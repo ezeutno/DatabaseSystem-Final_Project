@@ -90,12 +90,6 @@ Public Class Main
             SetLoginBtn("Log-In/Register", LoginBtn.Width * 2)
             setUsername()
             Cart.Enabled = False
-            If Db.checkTransactionExists(currTrans) Then
-                Db.closeCon()
-            Else
-                Db.closeCon()
-                Db.deleteTransaction(currTrans)
-            End If
             Username.Enabled = False
             Store.Visible = Not Store.Visible
             changeLoginTerm()
