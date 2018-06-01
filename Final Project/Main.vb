@@ -141,6 +141,7 @@ Public Class Main
 
     Private Sub Clicked_Project(id As Label)
         MessageBox.Show(id.Text)
+        BuyItem.Show()
     End Sub
 
     'Distribute System'
@@ -178,4 +179,5 @@ Public Class Main
         currentPoint -= 8
         refreshRun()
     End Sub
+
 End Class
