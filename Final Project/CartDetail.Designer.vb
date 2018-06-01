@@ -22,91 +22,156 @@ Partial Class CartDetail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.transactionCart = New System.Windows.Forms.DataGridView()
+        Me.Purchase = New System.Windows.Forms.Button()
+        Me.Buy = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Total = New System.Windows.Forms.TextBox()
+        Me.DetailTransactionId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.transId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Store = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ItemId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.itemName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.transactionCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'transactionCart
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(11, 11)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(443, 225)
-        Me.DataGridView1.TabIndex = 1
+        Me.transactionCart.AllowUserToAddRows = False
+        Me.transactionCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.transactionCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailTransactionId, Me.transId, Me.Store, Me.ItemId, Me.itemName, Me.price, Me.qty, Me.subtotal})
+        Me.transactionCart.Location = New System.Drawing.Point(11, 11)
+        Me.transactionCart.Margin = New System.Windows.Forms.Padding(2)
+        Me.transactionCart.Name = "transactionCart"
+        Me.transactionCart.ReadOnly = True
+        Me.transactionCart.RowTemplate.Height = 24
+        Me.transactionCart.Size = New System.Drawing.Size(443, 225)
+        Me.transactionCart.TabIndex = 1
         '
-        'Button1
+        'Purchase
         '
-        Me.Button1.Location = New System.Drawing.Point(11, 240)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 35)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Purchases History"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Purchase.Location = New System.Drawing.Point(11, 244)
+        Me.Purchase.Margin = New System.Windows.Forms.Padding(2)
+        Me.Purchase.Name = "Purchase"
+        Me.Purchase.Size = New System.Drawing.Size(106, 35)
+        Me.Purchase.TabIndex = 2
+        Me.Purchase.Text = "Purchases History"
+        Me.Purchase.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Buy
         '
-        Me.Button2.Location = New System.Drawing.Point(348, 240)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 35)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Buy Now"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Buy.Location = New System.Drawing.Point(124, 244)
+        Me.Buy.Margin = New System.Windows.Forms.Padding(2)
+        Me.Buy.Name = "Buy"
+        Me.Buy.Size = New System.Drawing.Size(106, 35)
+        Me.Buy.TabIndex = 3
+        Me.Buy.Text = "Buy Now"
+        Me.Buy.UseVisualStyleBackColor = True
         '
-        'Column2
+        'Label1
         '
-        Me.Column2.HeaderText = "Item Name"
-        Me.Column2.Name = "Column2"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(235, 255)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Total"
         '
-        'Column3
+        'Total
         '
-        Me.Column3.HeaderText = "Price"
-        Me.Column3.Name = "Column3"
+        Me.Total.BackColor = System.Drawing.SystemColors.Control
+        Me.Total.Location = New System.Drawing.Point(272, 252)
+        Me.Total.Name = "Total"
+        Me.Total.Size = New System.Drawing.Size(182, 20)
+        Me.Total.TabIndex = 5
         '
-        'Column4
+        'DetailTransactionId
         '
-        Me.Column4.HeaderText = "Quantity"
-        Me.Column4.Name = "Column4"
+        Me.DetailTransactionId.HeaderText = "Id"
+        Me.DetailTransactionId.Name = "DetailTransactionId"
+        Me.DetailTransactionId.ReadOnly = True
+        Me.DetailTransactionId.Visible = False
         '
-        'Column5
+        'transId
         '
-        Me.Column5.HeaderText = "Subtotal"
-        Me.Column5.Name = "Column5"
+        Me.transId.HeaderText = "Transaction Id"
+        Me.transId.Name = "transId"
+        Me.transId.ReadOnly = True
+        Me.transId.Visible = False
+        '
+        'Store
+        '
+        Me.Store.HeaderText = "Store"
+        Me.Store.Name = "Store"
+        Me.Store.ReadOnly = True
+        '
+        'ItemId
+        '
+        Me.ItemId.HeaderText = "Item Id"
+        Me.ItemId.Name = "ItemId"
+        Me.ItemId.ReadOnly = True
+        Me.ItemId.Visible = False
+        '
+        'itemName
+        '
+        Me.itemName.HeaderText = "Item Name"
+        Me.itemName.Name = "itemName"
+        Me.itemName.ReadOnly = True
+        Me.itemName.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'price
+        '
+        Me.price.HeaderText = "Price"
+        Me.price.Name = "price"
+        Me.price.ReadOnly = True
+        '
+        'qty
+        '
+        Me.qty.HeaderText = "Quantity"
+        Me.qty.Name = "qty"
+        Me.qty.ReadOnly = True
+        '
+        'subtotal
+        '
+        Me.subtotal.HeaderText = "Subtotal"
+        Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
         '
         'CartDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(468, 282)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(461, 286)
+        Me.Controls.Add(Me.Total)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Buy)
+        Me.Controls.Add(Me.Purchase)
+        Me.Controls.Add(Me.transactionCart)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CartDetail"
         Me.Text = "Shopping Cart"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.transactionCart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents transactionCart As DataGridView
+    Friend WithEvents Purchase As Button
+    Friend WithEvents Buy As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Total As TextBox
+    Friend WithEvents DetailTransactionId As DataGridViewTextBoxColumn
+    Friend WithEvents transId As DataGridViewTextBoxColumn
+    Friend WithEvents Store As DataGridViewTextBoxColumn
+    Friend WithEvents ItemId As DataGridViewTextBoxColumn
+    Friend WithEvents itemName As DataGridViewTextBoxColumn
+    Friend WithEvents price As DataGridViewTextBoxColumn
+    Friend WithEvents qty As DataGridViewTextBoxColumn
+    Friend WithEvents subtotal As DataGridViewTextBoxColumn
 End Class

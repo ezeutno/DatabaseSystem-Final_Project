@@ -657,6 +657,7 @@ Partial Class Main
         'Cart
         '
         Me.Cart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Cart.Enabled = False
         Me.Cart.Image = Global.Final_Project.My.Resources.Resources.shopping_02_256
         Me.Cart.Location = New System.Drawing.Point(674, 12)
         Me.Cart.Name = "Cart"

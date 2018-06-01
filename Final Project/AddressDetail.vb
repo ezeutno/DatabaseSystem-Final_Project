@@ -31,7 +31,7 @@ Public Class AddressDetail
         Db.closeCon()
     End Sub
 
-    Private Sub update_Click(sender As Object, e As EventArgs) Handles update.Click
+    Private Sub update_Click(sender As Object, e As EventArgs) Handles updateBtn.Click
         Dim exceptText As String = "Error : "
         If Address.Text.Length > 0 Then
             If sub_district.Text.Length > 0 And district.Text.Length > 0 And province.Text.Length > 0 Then

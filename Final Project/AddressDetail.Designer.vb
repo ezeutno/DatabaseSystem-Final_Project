@@ -36,7 +36,7 @@ Partial Class AddressDetail
         Me.Address = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.TextBox()
-        Me.update = New System.Windows.Forms.Button()
+        Me.updateBtn = New System.Windows.Forms.Button()
         Me.storeYes = New System.Windows.Forms.CheckBox()
         Me.storeNo = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -172,14 +172,14 @@ Partial Class AddressDetail
         Me.id.Size = New System.Drawing.Size(181, 23)
         Me.id.TabIndex = 76
         '
-        'update
+        'updateBtn
         '
-        Me.update.Location = New System.Drawing.Point(171, 271)
-        Me.update.Name = "update"
-        Me.update.Size = New System.Drawing.Size(75, 23)
-        Me.update.TabIndex = 78
-        Me.update.Text = "Update"
-        Me.update.UseVisualStyleBackColor = True
+        Me.updateBtn.Location = New System.Drawing.Point(171, 271)
+        Me.updateBtn.Name = "updateBtn"
+        Me.updateBtn.Size = New System.Drawing.Size(75, 23)
+        Me.updateBtn.TabIndex = 78
+        Me.updateBtn.Text = "Update"
+        Me.updateBtn.UseVisualStyleBackColor = True
         '
         'storeYes
         '
@@ -224,7 +224,7 @@ Partial Class AddressDetail
         '
         'AddressDetail
         '
-        Me.AcceptButton = Me.update
+        Me.AcceptButton = Me.updateBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(339, 303)
@@ -232,7 +232,7 @@ Partial Class AddressDetail
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.storeNo)
         Me.Controls.Add(Me.storeYes)
-        Me.Controls.Add(Me.update)
+        Me.Controls.Add(Me.updateBtn)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.id)
         Me.Controls.Add(Me.delete)
@@ -270,7 +270,7 @@ Partial Class AddressDetail
     Friend WithEvents Address As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents id As TextBox
-    Friend WithEvents update As Button
+    Friend WithEvents updateBtn As Button
     Friend WithEvents storeYes As CheckBox
     Friend WithEvents storeNo As CheckBox
     Friend WithEvents Label8 As Label

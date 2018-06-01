@@ -6,6 +6,7 @@ Public Class Main
     Dim Db As Database = New Database
     Dim reader As MySqlDataReader
     Dim userLogin As String = "Stranger!"
+    Dim currTrans As Integer
 
     Private Function getLoginTerm() As Boolean
         Return data
@@ -19,9 +20,26 @@ Public Class Main
         Return Not data
     End Function
 
+    Public Function getTransId() As Integer
+        Return currTrans
+    End Function
+
+    Public Sub newTransaction()
+        If Not Db.checkTransactionExists(userLogin) Then
+            Db.closeCon()
+            Db.insertNewTransaction(userLogin)
+        Else
+            Db.closeCon()
+        End If
+        currTrans = Db.getTransactionId(userLogin).Item(0)
+        Db.closeCon()
+    End Sub
+
     Public Sub loginEx()
+        newTransaction()
         SetLoginBtn("Log-Out", LoginBtn.Width / 2)
         Store.Visible = Not Store.Visible
+        Cart.Enabled = True
         changeLoginTerm()
     End Sub
 
@@ -71,6 +89,13 @@ Public Class Main
         Else
             SetLoginBtn("Log-In/Register", LoginBtn.Width * 2)
             setUsername()
+            Cart.Enabled = False
+            If Db.checkTransactionExists(currTrans) Then
+                Db.closeCon()
+            Else
+                Db.closeCon()
+                Db.deleteTransaction(currTrans)
+            End If
             Username.Enabled = False
             Store.Visible = Not Store.Visible
             changeLoginTerm()

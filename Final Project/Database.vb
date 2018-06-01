@@ -124,6 +124,91 @@ Public Class Database
         End Try
     End Sub
 
+    Public Sub insertNewTransaction(username As String)
+        Try
+            con.Open()
+            query = "INSERT INTO transaction(purchased,username) VALUES(0,'" + username + "')"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub insertDetailTrans(item_id As Integer, qty As Integer, trans_id As Integer)
+        Try
+            con.Open()
+            query = "INSERT INTO detailtrans(item_id,quantity,transaction_id) "
+            query += "VALUES(" + CStr(item_id) + "," + CStr(qty) + "," + CStr(trans_id) + ")"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Function getDetailTransaction(username As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price "
+            query += "FROM detailtrans,item,transaction "
+            query += "WHERE detailtrans.item_id = item.id "
+            query += "AND transaction.id = detailtrans.transaction_id "
+            query += "AND transaction.username = '" + username + "' "
+            query += "AND transaction.purchased = 1"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            Return reader
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getDetailTransaction(currTrans As Integer) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price "
+            query += "FROM detailtrans,item,transaction "
+            query += "WHERE detailtrans.item_id = item.id "
+            query += "AND transaction.id = detailtrans.transaction_id "
+            query += "AND transaction.id = " + CStr(currTrans)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            Return reader
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getTransactionId(username As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT id FROM transaction WHERE purchased = 0 AND username = '" + username + "'"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows Then
+                reader.Read()
+                Return reader
+            End If
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
     Public Function getUserDetail(username As String) As MySqlDataReader
         Try
             con.Open()
@@ -537,6 +622,63 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getTotalTrans(username As String)
+        Try
+            con.Open()
+            query = "SELECT sum(item.price * detailtrans.quantity) "
+            query += "FROM detailtrans,item,transaction "
+            query += "WHERE detailtrans.item_id = item.id "
+            query += "AND transaction.id = detailtrans.transaction_id "
+            query += "AND transaction.username = '" + username + "' "
+            query += "AND transaction.purchased = 1"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getTotalTrans(currTrans As Integer)
+        Try
+            con.Open()
+            query = "SELECT sum(item.price * detailtrans.quantity) FROM item,detailtrans "
+            query += "WHERE detailtrans.item_id = item.id "
+            query += "AND  detailtrans.transaction_id = " + CStr(currTrans)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function checkAvQuantity(item_id As Integer, qty As Integer) As Boolean
+        Try
+            con.Open()
+            query = "SELECT quantity FROM item WHERE id = " + CStr(item_id) + " AND quantity >= " + CStr(qty)
+            comm = New MySqlCommand(query, con)
+            Return comm.ExecuteReader.HasRows
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
+
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()
@@ -547,9 +689,9 @@ Public Class Database
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
         End Try
-#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
     End Function
-#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
 
 
     Public Function checkStoreAddress(Username As String, Address_id As Integer) As Boolean
@@ -562,9 +704,9 @@ Public Class Database
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
         End Try
-#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
     End Function
-#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
 
     Public Function checkItemOwnerShip(id As Integer, username As String) As Boolean
         Try
@@ -579,7 +721,54 @@ Public Class Database
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
         End Try
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
     End Function
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
+
+    Public Function checkTransactionExists(username As String) As Boolean
+        Try
+            con.Open()
+            query = "SELECT * FROM transaction "
+            query += "WHERE purchased = 0 "
+            query += "AND username = '" + username + "'"
+            comm = New MySqlCommand(query, con)
+            Return comm.ExecuteReader.HasRows
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
+
+    Public Function checkTransactionExists(id As Integer) As Boolean
+        Try
+            con.Open()
+            query = "SELECT * FROM transaction,detailtrans "
+            query += "WHERE detailtrans.transaction_id = transaction.id "
+            query += "AND transaction.id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            Return comm.ExecuteReader.HasRows
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42353 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42353 ' Function doesn't return a value on all code paths
+
+    Public Sub updateTransactionAddress(trans_id As Integer, address_id As Integer)
+        Try
+            con.Open()
+            query = "UPDATE transaction SET purchased = 1, address_id = " + CStr(address_id) + " WHERE id = " + CStr(trans_id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
 
     Public Sub updateDetail(username As String, fname As String, lname As String, email As String, phone As String, birthday As String)
         Try
@@ -648,6 +837,20 @@ Public Class Database
         End Try
     End Sub
 
+    Public Sub updateItem(id As Integer, quantity As Integer)
+        Try
+            con.Open()
+            query = "UPDATE item SET  quantity = quantity - " + CStr(quantity) + " "
+            query += "WHERE id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
     Public Sub deleteAddress(id As Integer)
         Try
             con.Open()
@@ -665,6 +868,32 @@ Public Class Database
         Try
             con.Open()
             query = "DELETE FROM item WHERE id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub deleteTransaction(id As Integer)
+        Try
+            con.Open()
+            query = "DELETE FROM transaction WHERE id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub deleteDetailTrans(id As Integer)
+        Try
+            con.Open()
+            query = "DELETE FROM detailtrans WHERE id = " + CStr(id)
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()

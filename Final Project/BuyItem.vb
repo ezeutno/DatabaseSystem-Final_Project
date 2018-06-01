@@ -61,6 +61,13 @@ Public Class BuyItem
     End Sub
 
     Private Sub addCart_Click(sender As Object, e As EventArgs) Handles addCart.Click
-
+        If qty.Value > 0 Then
+            Db.insertDetailTrans(item_id, qty.Value, Main.getTransId())
+            Main.Enabled = True
+            Main.Focus()
+            Me.Dispose()
+        Else
+            MessageBox.Show("Quantity must be more than 0!")
+        End If
     End Sub
 End Class

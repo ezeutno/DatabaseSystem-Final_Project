@@ -146,10 +146,10 @@ Public Class StoreDetail
         CreateStore.Show()
     End Sub
 
-    Private Sub add_Click(sender As Object, e As EventArgs) Handles add.Click
+    Private Sub addButton_Click(sender As Object, e As EventArgs) Handles add.Click
         If condAdd Then
             Clear()
-            update.Enabled = False
+            updateBtn.Enabled = False
             delete.Enabled = False
             Search.Enabled = False
             changeEnable()
@@ -177,7 +177,7 @@ Public Class StoreDetail
     Private Sub Items_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Items.SelectedIndexChanged
         If Items.SelectedIndex <> -1 Then
             delete.Enabled = True
-            update.Enabled = True
+            updateBtn.Enabled = True
             reader = Db.getItemDetails(Items.SelectedItem.ToString, StoreTitle.Text)
             id.Text = reader.Item(0)
             nameData.Text = reader.Item(1)
@@ -197,11 +197,11 @@ Public Class StoreDetail
             Db.closeCon()
         Else
             delete.Enabled = False
-            update.Enabled = False
+            updateBtn.Enabled = False
         End If
     End Sub
 
-    Private Sub update_Click(sender As Object, e As EventArgs) Handles update.Click
+    Private Sub update_Click(sender As Object, e As EventArgs) Handles updateBtn.Click
         If condUpdate Then
             add.Enabled = False
             Search.Enabled = False
@@ -215,13 +215,14 @@ Public Class StoreDetail
                 Dim os_id As Integer = Db.getOsId(os.Text).Item(0)
                 Db.closeCon()
                 Db.updateStoreItem(Val(id.Text), nameData.Text, Val(qty.Text), price.Text, brand_id, os_id, storage.Text, ram.Text, description.Text, ItemImage.ImageLocation)
-                update.Enabled = False
+                updateBtn.Enabled = False
                 delete.Enabled = False
                 add.Enabled = True
                 Search.Enabled = True
                 changeEnable()
                 refreshDetail()
                 condUpdate = Not condUpdate
+                Main.refreshAllData()
             End If
         End If
     End Sub
@@ -230,6 +231,7 @@ Public Class StoreDetail
         If Items.SelectedIndex <> -1 Then
             Db.deleteItem(Val(id.Text))
             refreshDetail()
+            Main.refreshAllData()
         End If
     End Sub
 
@@ -246,13 +248,13 @@ Public Class StoreDetail
             condUpdate = True
             add.Enabled = True
             Search.Enabled = True
-            update.Enabled = False
+            updateBtn.Enabled = False
         End If
     End Sub
 
     Private Sub Search_TextChanged(sender As Object, e As EventArgs) Handles Search.TextChanged
         delete.Enabled = False
-        update.Enabled = False
+        updateBtn.Enabled = False
         refreshDetail()
     End Sub
 End Class
