@@ -94,6 +94,12 @@
     <Compile Include="AddressDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuyItem.Designer.vb">
+      <DependentUpon>BuyItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuyItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Create Store.Designer.vb">
       <DependentUpon>Create Store.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddressDetail.resx">
       <DependentUpon>AddressDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuyItem.resx">
+      <DependentUpon>BuyItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create Store.resx">
       <DependentUpon>Create Store.vb</DependentUpon>
