@@ -448,8 +448,8 @@ Public Class Database
             End If
             query += "LIMIT " + CStr(start_id) + ",8 "
             comm = New MySqlCommand(query, con)
-                reader = comm.ExecuteReader
-                Return reader
+            reader = comm.ExecuteReader
+            Return reader
         Catch ex As Exception
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
@@ -479,6 +479,45 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getStoreAddress(storeName As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT custaddress.detail FROM custaddress, store "
+            query += "WHERE custaddress.id = store.address_id "
+            query += "AND store.name = '" + storeName + "'"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getTotalPrice(item_id As Integer, amtOfpur As Integer) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT price *" + CStr(amtOfpur) + " AS Totalprice FROM item "
+            query += "WHERE id = " + CStr(item_id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()
@@ -493,6 +532,7 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+
     Public Function checkStoreAddress(Username As String, Address_id As Integer) As Boolean
         Try
             con.Open()
@@ -506,6 +546,21 @@ Public Class Database
 #Disable Warning BC42105 ' Function doesn't return a value on all code paths
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function checkItemOwnerShip(id As Integer, username As String) As Boolean
+        Try
+            con.Open()
+            query = "SELECT item.id FROM item,store "
+            query += "WHERE item.store_name = store.name "
+            query += "AND store.username = '" + username + "' "
+            query += "AND item.id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            Return comm.ExecuteReader.HasRows
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Function
 
     Public Sub updateDetail(username As String, fname As String, lname As String, email As String, phone As String, birthday As String)
         Try

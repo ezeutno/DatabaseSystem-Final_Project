@@ -5,6 +5,7 @@ Public Class Main
     Dim currentPoint As Integer = 0
     Dim Db As Database = New Database
     Dim reader As MySqlDataReader
+    Dim userLogin As String = "Stranger!"
 
     Private Function getLoginTerm() As Boolean
         Return data
@@ -12,6 +13,10 @@ Public Class Main
 
     Public Function getDB() As Database
         Return Db
+    End Function
+
+    Public Function getLoginCond() As Boolean
+        Return Not userLogin.Contains("!")
     End Function
 
     Public Sub loginEx()
@@ -25,12 +30,13 @@ Public Class Main
     End Sub
 
     Public Sub setUsername(User As String)
-        Username.Text = User
+        Username.Text = "Hello, " + User
+        userLogin = User
         Username.Refresh()
     End Sub
 
     Public Function getUsername() As String
-        Return Username.Text
+        Return userLogin
     End Function
 
     Public Function getUsernameTextBox() As TextBox
@@ -57,7 +63,7 @@ Public Class Main
             Me.Enabled = False
         Else
             SetLoginBtn("Log-In", LoginBtn.Width * 2)
-            setUsername("Username")
+            setUsername("Stranger!")
             Username.Enabled = False
             Store.Visible = Not Store.Visible
             changeLoginTerm()
@@ -88,13 +94,16 @@ Public Class Main
     End Sub
 
     Private Sub subRun(gp As GroupBox, image As PictureBox, id As Label, name As Label, price As Label)
-        If reader.HasRows Then
-            If reader.Read() Then
-                Display_Project(gp, image, id, name, price, {reader.Item(1), reader.Item(9), reader.Item(0), reader.Item(3)})
-            Else
-                Display_Project(gp)
+        Try
+            If reader.HasRows Then
+                If reader.Read() Then
+                    Display_Project(gp, image, id, name, price, {reader.Item(1), reader.Item(9), reader.Item(0), reader.Item(3)})
+                Else
+                    Display_Project(gp)
+                End If
             End If
-        End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     Public Sub refreshAllData()
@@ -146,7 +155,7 @@ Public Class Main
     End Sub
 
     Private Sub Clicked_Project(id As Label)
-        MessageBox.Show(id.Text)
+        BuyItem.setItemId(Val(id.Text))
         BuyItem.Show()
     End Sub
 

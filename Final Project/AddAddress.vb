@@ -23,7 +23,7 @@ Public Class AddAddress
                         Db.closeCon()
                         If country_id > 0 Then
                             Db.insertAddress(Main.getUsername(), Address.Text, sub_district.Text, district.Text, province.Text, postal, country_id)
-                            UserDetail.refresh()
+                            UserDetail.refreshDetail()
                             UserDetail.Enabled = True
                             Me.Dispose()
                         Else

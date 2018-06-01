@@ -42,7 +42,7 @@ Public Class AddressDetail
                         Db.closeCon()
                         If country_id > 0 Then
                             Db.updateAddress(Convert.ToInt32(id.Text), Address.Text, sub_district.Text, district.Text, province.Text, postal, country_id)
-                            UserDetail.refresh()
+                            UserDetail.refreshDetail()
                             Me.Dispose()
                         Else
                             exceptText += "The right country hasn't been chosen!"
@@ -67,7 +67,7 @@ Public Class AddressDetail
 
     Private Sub delete_Click(sender As Object, e As EventArgs) Handles delete.Click
         Db.deleteAddress(Convert.ToInt32(id.Text))
-        UserDetail.refresh()
+        UserDetail.refreshDetail()
         Me.Dispose()
     End Sub
 End Class
