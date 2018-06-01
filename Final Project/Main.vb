@@ -136,7 +136,13 @@ Public Class Main
         image.ImageLocation = data(1)
         id.Text = data(2)
         name.Text = data(0)
-        price.Text = "Rp " + data(3)
+        Dim revalue As Double = Val(data(3))
+        Dim slprice() As String = data(3).Split(New Char() {","c})
+        Try
+            price.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
+        Catch ex As Exception
+            price.Text = "Rp " + revalue.ToString("###,###") + ",--"
+        End Try
     End Sub
 
     Private Sub Clicked_Project(id As Label)

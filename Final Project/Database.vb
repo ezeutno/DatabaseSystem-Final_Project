@@ -442,9 +442,9 @@ Public Class Database
     Public Function getAllItem(start_id As Integer, search As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT * FROM item "
+            query = "SELECT * FROM item WHERE quantity > 0 "
             If search.Length > 0 Then
-                query += "WHERE name LIKE '%" + search + "%' "
+                query += "AND name LIKE '%" + search + "%' "
             End If
             query += "LIMIT " + CStr(start_id) + ",8 "
             comm = New MySqlCommand(query, con)
@@ -461,9 +461,9 @@ Public Class Database
     Public Function getCountItems(Search As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT COUNT(*) FROM item "
+            query = "SELECT COUNT(*) FROM item WHERE quantity > 0 "
             If Search.Length > 0 Then
-                query += "WHERE name LIKE '%" + Search + "%' "
+                query += "AND name LIKE '%" + Search + "%' "
             End If
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
