@@ -3,7 +3,6 @@
         Main.Enabled = False
     End Sub
     Private Sub Cart_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.Closing
-        Me.Dispose()
         Main.Enabled = True
         Main.Focus()
     End Sub

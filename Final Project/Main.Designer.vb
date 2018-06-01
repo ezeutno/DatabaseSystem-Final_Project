@@ -105,7 +105,7 @@ Partial Class Main
         Me.LoginBtn.Name = "LoginBtn"
         Me.LoginBtn.Size = New System.Drawing.Size(68, 24)
         Me.LoginBtn.TabIndex = 0
-        Me.LoginBtn.Text = "Log-in"
+        Me.LoginBtn.Text = "Log-in/Register"
         Me.LoginBtn.UseVisualStyleBackColor = True
         '
         'Search
@@ -621,12 +621,13 @@ Partial Class Main
         '
         'Username
         '
+        Me.Username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Username.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Username.HideSelection = False
         Me.Username.Location = New System.Drawing.Point(6, 15)
         Me.Username.Name = "Username"
         Me.Username.ReadOnly = True
-        Me.Username.Size = New System.Drawing.Size(137, 20)
+        Me.Username.Size = New System.Drawing.Size(137, 13)
         Me.Username.TabIndex = 7
         Me.Username.Text = "Hello, Stranger!"
         Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

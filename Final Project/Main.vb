@@ -16,7 +16,7 @@ Public Class Main
     End Function
 
     Public Function getLoginCond() As Boolean
-        Return Not userLogin.Contains("!")
+        Return Not data
     End Function
 
     Public Sub loginEx()
@@ -29,8 +29,15 @@ Public Class Main
         Me.data = Not data
     End Sub
 
+    Public Sub setUsername()
+        Username.Text = "Hello, Stranger!"
+        userLogin = "Stranger!"
+        Username.Refresh()
+    End Sub
+
     Public Sub setUsername(User As String)
-        Username.Text = "Hello, " + User
+        Username.Text = "Welcome, " + Db.getFname(User).Item(0) + "!"
+        Db.closeCon()
         userLogin = User
         Username.Refresh()
     End Sub
@@ -62,8 +69,8 @@ Public Class Main
             Username.Enabled = True
             Me.Enabled = False
         Else
-            SetLoginBtn("Log-In", LoginBtn.Width * 2)
-            setUsername("Stranger!")
+            SetLoginBtn("Log-In/Register", LoginBtn.Width * 2)
+            setUsername()
             Username.Enabled = False
             Store.Visible = Not Store.Visible
             changeLoginTerm()
@@ -80,7 +87,7 @@ Public Class Main
     End Sub
 
     Private Sub Cart_Click(sender As Object, e As EventArgs) Handles Cart.Click
-        CartDetail.Show()
+        TransCart.Show()
     End Sub
 
     Private Sub Store_Click(sender As Object, e As EventArgs) Handles Store.Click
