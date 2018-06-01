@@ -518,6 +518,25 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getFname(username As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT fname FROM custdetail "
+            query += "WHERE username = '" + username + "'"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()

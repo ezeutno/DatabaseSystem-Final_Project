@@ -87,7 +87,7 @@ Public Class Main
     End Sub
 
     Private Sub Cart_Click(sender As Object, e As EventArgs) Handles Cart.Click
-        TransCart.Show()
+        CartDetail.Show()
     End Sub
 
     Private Sub Store_Click(sender As Object, e As EventArgs) Handles Store.Click
