@@ -4,9 +4,11 @@ D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.pd
 D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.xml
 D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.dll
 D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.xml
+D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbprojAssemblyReference.cache
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.AddAddress.resources
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.AddressDetail.resources
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.BuyItem.resources
+D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Cart.resources
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.CreateStore.resources
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.ChangePass.resources
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Picture.resources
@@ -22,28 +24,3 @@ D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vb
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.exe
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.xml
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.pdb
-D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbprojAssemblyReference.cache
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.exe.config
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.exe
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.pdb
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.xml
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.xml
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbprojResolveAssemblyReference.cache
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.AddAddress.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.AddressDetail.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.BuyItem.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.CreateStore.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.ChangePass.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Picture.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Register.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Main.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Login.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Resources.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.StoreDetail.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.UserDetail.resources
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbproj.GenerateResource.cache
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbproj.CoreCompileInputs.cache
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbproj.CopyComplete
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.exe
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.xml
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.pdb
