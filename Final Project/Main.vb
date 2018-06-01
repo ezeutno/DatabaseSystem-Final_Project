@@ -1,6 +1,10 @@
-﻿Public Class Main
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Main
     Dim data As Boolean = True
     Dim Db As Database = New Database
+    Dim reader As MySqlDataReader
+
     Private Function getLoginTerm() As Boolean
         Return data
     End Function

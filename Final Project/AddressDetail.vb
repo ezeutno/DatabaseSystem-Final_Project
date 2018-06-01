@@ -23,7 +23,6 @@ Public Class AddressDetail
                 storeNo.Checked = True
             End If
             Db.closeCon()
-
         End If
         reader = Db.getAllCountry()
         Do While reader.Read()

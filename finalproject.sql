@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2018 at 07:14 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Jun 01, 2018 at 03:52 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `finalproject`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brand`
+--
+
+CREATE TABLE `brand` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`id`, `name`) VALUES
+(1, 'Samsung'),
+(2, 'Apple'),
+(3, 'LG'),
+(4, 'Nokia');
 
 -- --------------------------------------------------------
 
@@ -259,7 +280,8 @@ INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province
 (1, 'FX SUDIRMAN LT 10', 'Sudirman', 'Jakarta Pusat', 'DKI Jakarta', 12839, 76, 'ezeutno'),
 (4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 'david'),
 (5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno'),
-(7, 'a', 'a', 'a', 'a', 1, 2, '');
+(7, 'a', 'a', 'a', 'a', 1, 2, ''),
+(8, 'b', 'b', 'b', 'b', 1, 4, '');
 
 -- --------------------------------------------------------
 
@@ -284,12 +306,62 @@ CREATE TABLE `custdetail` (
 INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `phone`, `birthday`) VALUES
 ('', '', '', '', '', '', '2000-01-01'),
 ('david', 'david123', 'David', 'Honasan', 'david.honasan@binus.ac.id', '6281763267842', '1999-09-26'),
-('dgjfhgfdgfg', '12345678', 'lol', 'lol', 'lol@ghf.uyfghj', '08656564565', '2009-02-03'),
 ('ezeutno', '24091999', 'Ivan Ezechial', 'Suratno', 'ivan.suratno@gmail.com', '6281807825885', '1999-09-24'),
 ('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
 ('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
 ('sher', '12345678', 'qwertyasdfgh', 'asdfghfds', 'lol@gmail.com', '893719827332', '1995-06-14'),
 ('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item`
+--
+
+CREATE TABLE `item` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price` double NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `os_id` int(11) NOT NULL,
+  `storage` double NOT NULL,
+  `ram` double NOT NULL,
+  `description` text NOT NULL,
+  `imageloc` text NOT NULL,
+  `store_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `storage`, `ram`, `description`, `imageloc`, `store_name`) VALUES
+(1, 'Galaxy S9', 1000, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
+(2, 'iPhone 7 Plus', 10000, 11000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'RunBook'),
+(3, 'Galaxy S8 Plus', 50000, 8500000, 1, 1, 64, 4, '', 'https://transcomdigital.com/content/images/thumbs/0003946_samsung-galaxy-s8-midnight-black_3000.png', 'RunBook'),
+(6, 'G7+ Thin Q', 100, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'RunBook'),
+(7, 'Nokia 6.1 2018', 50, 6000000, 4, 1, 64, 4, '', 'https://www.androidpolice.com/wp-content/uploads/2018/05/New-Nokia-6-Black-Copper-2.png', 'RunBook'),
+(8, 'iPhone X 2018', 100, 16000000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `os`
+--
+
+CREATE TABLE `os` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `os`
+--
+
+INSERT INTO `os` (`id`, `name`) VALUES
+(1, 'Android'),
+(2, 'iOS');
 
 -- --------------------------------------------------------
 
@@ -308,13 +380,19 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
-('a', '', 7),
 ('Kampung Melayu', 'david', 4),
-('Rumah Merdeka', 'ezeutno', 5);
+('Rumah Merdeka', 'ezeutno', 5),
+('RunBook', '', 8);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `brand`
+--
+ALTER TABLE `brand`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `country`
@@ -336,6 +414,21 @@ ALTER TABLE `custdetail`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `brand_id` (`brand_id`),
+  ADD KEY `os_id` (`os_id`),
+  ADD KEY `store_name` (`store_name`);
+
+--
+-- Indexes for table `os`
+--
+ALTER TABLE `os`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `store`
 --
 ALTER TABLE `store`
@@ -348,6 +441,12 @@ ALTER TABLE `store`
 --
 
 --
+-- AUTO_INCREMENT for table `brand`
+--
+ALTER TABLE `brand`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
@@ -357,7 +456,19 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `item`
+--
+ALTER TABLE `item`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `os`
+--
+ALTER TABLE `os`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -368,6 +479,14 @@ ALTER TABLE `custaddress`
 --
 ALTER TABLE `custaddress`
   ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+
+--
+-- Constraints for table `item`
+--
+ALTER TABLE `item`
+  ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`id`),
+  ADD CONSTRAINT `item_ibfk_2` FOREIGN KEY (`os_id`) REFERENCES `os` (`id`),
+  ADD CONSTRAINT `item_ibfk_3` FOREIGN KEY (`store_name`) REFERENCES `store` (`name`);
 
 --
 -- Constraints for table `store`

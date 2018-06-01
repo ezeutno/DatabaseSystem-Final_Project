@@ -3,7 +3,15 @@
 Public Class CreateStore
     Dim Db As Database = Main.getDB()
     Dim reader As MySqlDataReader
+    Public Updatecond As Boolean
+    Public setstoreName As String
     Private Sub CreateStore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Updatecond Then
+            StoreDetail.Enabled = False
+            storeName.Text = setstoreName
+            Me.Text = "Update Store"
+            Create.Text = "Update"
+        End If
         Create.Enabled = False
         reader = Db.getUserAddress(Main.getUsername())
         If reader.HasRows Then
@@ -20,8 +28,15 @@ Public Class CreateStore
         If chosenAddress.Length > 0 And name.Length > 0 Then
             Dim address_id As Integer = Db.getAddressId(Main.getUsername(), chosenAddress).Item(0)
             Db.closeCon()
-            Db.insertnewStore(name, Main.getUsername(), address_id)
-            StoreDetail.Show()
+            If Updatecond Then
+                Db.updateStore(name, Main.getUsername(), address_id)
+                StoreDetail.refreshDetail()
+                StoreDetail.Enabled = True
+                StoreDetail.Focus()
+            Else
+                Db.insertnewStore(name, Main.getUsername(), address_id)
+                StoreDetail.Show()
+            End If
             Me.Dispose()
         Else
             MessageBox.Show("Store Name should be written!")
@@ -29,10 +44,17 @@ Public Class CreateStore
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
+        If Updatecond Then
+            StoreDetail.Enabled = True
+            StoreDetail.Focus()
+        End If
         Me.Dispose()
     End Sub
 
     Private Sub Address_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Address.SelectedIndexChanged
-        Create.Enabled = True
+        If Address.SelectedIndex <> -1 Then
+            Create.Enabled = True
+        End If
     End Sub
+
 End Class

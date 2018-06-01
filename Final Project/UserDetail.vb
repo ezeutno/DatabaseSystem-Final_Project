@@ -8,7 +8,7 @@ Public Class UserDetail
         Return Address.SelectedItem.ToString
     End Function
 
-    Public Sub refresh()
+    Public Sub refreshDetail()
         reader = Db.getUserDetail(Main.getUsername())
         Username.Text = reader.Item(0)
         Password.Text = reader.Item(1)
@@ -32,7 +32,7 @@ Public Class UserDetail
         Me.Text = Main.getUsername() + "'s Detail"
         birthday.MaxDate = Today
         birthday.Value = Today
-        refresh()
+        refreshDetail()
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
@@ -77,7 +77,7 @@ Public Class UserDetail
         Me.Enabled = False
     End Sub
 
-    Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
+    Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles Add.Click
         AddAddress.Show()
         Me.Enabled = False
     End Sub

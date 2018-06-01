@@ -104,7 +104,6 @@ C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Projec
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.exe
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.pdb
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\Final Project.xml
-C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.dll
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.xml
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbprojResolveAssemblyReference.cache
 C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.AddAddress.resources
@@ -146,3 +145,4 @@ D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.dll
 D:\Project\DatabaseSystem-Final_Project\Final Project\bin\Debug\MySql.Data.xml
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.vbproj.CopyComplete
 D:\Project\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final Project.xml
+C:\Users\Ezech\iCloudDrive\Programming\Visual Studio\DatabaseSystem-Final_Project\Final Project\obj\Debug\Final_Project.Picture.resources

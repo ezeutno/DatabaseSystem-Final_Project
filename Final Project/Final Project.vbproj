@@ -107,6 +107,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database.vb" />
+    <Compile Include="Picture.Designer.vb">
+      <DependentUpon>Picture.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Picture.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Picture.resx">
+      <DependentUpon>Picture.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
