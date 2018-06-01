@@ -30,71 +30,71 @@ Partial Class Main
         Me.idItem8 = New System.Windows.Forms.Label()
         Me.PriceItem8 = New System.Windows.Forms.Label()
         Me.NameItem8 = New System.Windows.Forms.Label()
-        Me.ImageItem8 = New System.Windows.Forms.PictureBox()
         Me.Item4 = New System.Windows.Forms.GroupBox()
         Me.idItem4 = New System.Windows.Forms.Label()
         Me.PriceItem4 = New System.Windows.Forms.Label()
         Me.NameItem4 = New System.Windows.Forms.Label()
-        Me.ImageItem4 = New System.Windows.Forms.PictureBox()
         Me.item7 = New System.Windows.Forms.GroupBox()
         Me.idItem7 = New System.Windows.Forms.Label()
         Me.PriceItem7 = New System.Windows.Forms.Label()
         Me.NameItem7 = New System.Windows.Forms.Label()
-        Me.ImageItem7 = New System.Windows.Forms.PictureBox()
         Me.Item6 = New System.Windows.Forms.GroupBox()
         Me.idItem6 = New System.Windows.Forms.Label()
         Me.PriceItem6 = New System.Windows.Forms.Label()
         Me.NameItem6 = New System.Windows.Forms.Label()
-        Me.ImageItem6 = New System.Windows.Forms.PictureBox()
         Me.Item3 = New System.Windows.Forms.GroupBox()
         Me.idItem3 = New System.Windows.Forms.Label()
         Me.PriceItem3 = New System.Windows.Forms.Label()
         Me.NameItem3 = New System.Windows.Forms.Label()
-        Me.ImageItem3 = New System.Windows.Forms.PictureBox()
         Me.Item5 = New System.Windows.Forms.GroupBox()
         Me.idItem5 = New System.Windows.Forms.Label()
         Me.PriceItem5 = New System.Windows.Forms.Label()
         Me.NameItem5 = New System.Windows.Forms.Label()
-        Me.ImageItem5 = New System.Windows.Forms.PictureBox()
         Me.Item2 = New System.Windows.Forms.GroupBox()
         Me.idItem2 = New System.Windows.Forms.Label()
         Me.PriceItem2 = New System.Windows.Forms.Label()
         Me.NameItem2 = New System.Windows.Forms.Label()
-        Me.ImageItem2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Item1 = New System.Windows.Forms.GroupBox()
         Me.idItem1 = New System.Windows.Forms.Label()
         Me.PriceItem1 = New System.Windows.Forms.Label()
         Me.NameItem1 = New System.Windows.Forms.Label()
-        Me.ImageItem1 = New System.Windows.Forms.PictureBox()
         Me.NextBtn = New System.Windows.Forms.Button()
         Me.PrevBtn = New System.Windows.Forms.Button()
         Me.Username = New System.Windows.Forms.TextBox()
         Me.Store = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Cart = New System.Windows.Forms.PictureBox()
+        Me.ImageItem8 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem4 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem7 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem6 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem3 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem5 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ImageItem1 = New System.Windows.Forms.PictureBox()
         Me.StoreLogo = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.Items.SuspendLayout()
         Me.Item8.SuspendLayout()
-        CType(Me.ImageItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item4.SuspendLayout()
-        CType(Me.ImageItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.item7.SuspendLayout()
-        CType(Me.ImageItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item6.SuspendLayout()
-        CType(Me.ImageItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item3.SuspendLayout()
-        CType(Me.ImageItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item5.SuspendLayout()
-        CType(Me.ImageItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item2.SuspendLayout()
-        CType(Me.ImageItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Item1.SuspendLayout()
-        CType(Me.ImageItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Cart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StoreLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -106,7 +106,7 @@ Partial Class Main
         Me.LoginBtn.Name = "LoginBtn"
         Me.LoginBtn.Size = New System.Drawing.Size(91, 30)
         Me.LoginBtn.TabIndex = 0
-        Me.LoginBtn.Text = "Log-in"
+        Me.LoginBtn.Text = "Log-in / Register"
         Me.LoginBtn.UseVisualStyleBackColor = True
         '
         'Search
@@ -199,18 +199,6 @@ Partial Class Main
         Me.NameItem8.TabIndex = 1
         Me.NameItem8.Text = "Name"
         '
-        'ImageItem8
-        '
-        Me.ImageItem8.Enabled = False
-        Me.ImageItem8.ImageLocation = ""
-        Me.ImageItem8.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem8.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem8.Name = "ImageItem8"
-        Me.ImageItem8.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem8.TabIndex = 0
-        Me.ImageItem8.TabStop = False
-        '
         'Item4
         '
         Me.Item4.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -260,18 +248,6 @@ Partial Class Main
         Me.NameItem4.Size = New System.Drawing.Size(45, 17)
         Me.NameItem4.TabIndex = 1
         Me.NameItem4.Text = "Name"
-        '
-        'ImageItem4
-        '
-        Me.ImageItem4.Enabled = False
-        Me.ImageItem4.ImageLocation = ""
-        Me.ImageItem4.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem4.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem4.Name = "ImageItem4"
-        Me.ImageItem4.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem4.TabIndex = 0
-        Me.ImageItem4.TabStop = False
         '
         'item7
         '
@@ -323,18 +299,6 @@ Partial Class Main
         Me.NameItem7.TabIndex = 1
         Me.NameItem7.Text = "Name"
         '
-        'ImageItem7
-        '
-        Me.ImageItem7.Enabled = False
-        Me.ImageItem7.ImageLocation = ""
-        Me.ImageItem7.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem7.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem7.Name = "ImageItem7"
-        Me.ImageItem7.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem7.TabIndex = 0
-        Me.ImageItem7.TabStop = False
-        '
         'Item6
         '
         Me.Item6.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -384,18 +348,6 @@ Partial Class Main
         Me.NameItem6.Size = New System.Drawing.Size(45, 17)
         Me.NameItem6.TabIndex = 1
         Me.NameItem6.Text = "Name"
-        '
-        'ImageItem6
-        '
-        Me.ImageItem6.Enabled = False
-        Me.ImageItem6.ImageLocation = ""
-        Me.ImageItem6.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem6.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem6.Name = "ImageItem6"
-        Me.ImageItem6.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem6.TabIndex = 0
-        Me.ImageItem6.TabStop = False
         '
         'Item3
         '
@@ -447,18 +399,6 @@ Partial Class Main
         Me.NameItem3.TabIndex = 1
         Me.NameItem3.Text = "Name"
         '
-        'ImageItem3
-        '
-        Me.ImageItem3.Enabled = False
-        Me.ImageItem3.ImageLocation = ""
-        Me.ImageItem3.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem3.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem3.Name = "ImageItem3"
-        Me.ImageItem3.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem3.TabIndex = 0
-        Me.ImageItem3.TabStop = False
-        '
         'Item5
         '
         Me.Item5.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -508,18 +448,6 @@ Partial Class Main
         Me.NameItem5.Size = New System.Drawing.Size(45, 17)
         Me.NameItem5.TabIndex = 1
         Me.NameItem5.Text = "Name"
-        '
-        'ImageItem5
-        '
-        Me.ImageItem5.Enabled = False
-        Me.ImageItem5.ImageLocation = ""
-        Me.ImageItem5.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem5.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem5.Name = "ImageItem5"
-        Me.ImageItem5.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem5.TabIndex = 0
-        Me.ImageItem5.TabStop = False
         '
         'Item2
         '
@@ -571,27 +499,6 @@ Partial Class Main
         Me.NameItem2.TabIndex = 1
         Me.NameItem2.Text = "Name"
         '
-        'ImageItem2
-        '
-        Me.ImageItem2.Enabled = False
-        Me.ImageItem2.ImageLocation = ""
-        Me.ImageItem2.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem2.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem2.Name = "ImageItem2"
-        Me.ImageItem2.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem2.TabIndex = 0
-        Me.ImageItem2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(739, -65)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(73, 64)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
-        '
         'Item1
         '
         Me.Item1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -641,18 +548,6 @@ Partial Class Main
         Me.NameItem1.Size = New System.Drawing.Size(45, 17)
         Me.NameItem1.TabIndex = 1
         Me.NameItem1.Text = "Name"
-        '
-        'ImageItem1
-        '
-        Me.ImageItem1.Enabled = False
-        Me.ImageItem1.ImageLocation = ""
-        Me.ImageItem1.Location = New System.Drawing.Point(29, 25)
-        Me.ImageItem1.Margin = New System.Windows.Forms.Padding(4)
-        Me.ImageItem1.Name = "ImageItem1"
-        Me.ImageItem1.Size = New System.Drawing.Size(152, 126)
-        Me.ImageItem1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.ImageItem1.TabIndex = 0
-        Me.ImageItem1.TabStop = False
         '
         'NextBtn
         '
@@ -726,6 +621,111 @@ Partial Class Main
         Me.Cart.TabIndex = 10
         Me.Cart.TabStop = False
         '
+        'ImageItem8
+        '
+        Me.ImageItem8.Enabled = False
+        Me.ImageItem8.ImageLocation = ""
+        Me.ImageItem8.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem8.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem8.Name = "ImageItem8"
+        Me.ImageItem8.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem8.TabIndex = 0
+        Me.ImageItem8.TabStop = False
+        '
+        'ImageItem4
+        '
+        Me.ImageItem4.Enabled = False
+        Me.ImageItem4.ImageLocation = ""
+        Me.ImageItem4.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem4.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem4.Name = "ImageItem4"
+        Me.ImageItem4.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem4.TabIndex = 0
+        Me.ImageItem4.TabStop = False
+        '
+        'ImageItem7
+        '
+        Me.ImageItem7.Enabled = False
+        Me.ImageItem7.ImageLocation = ""
+        Me.ImageItem7.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem7.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem7.Name = "ImageItem7"
+        Me.ImageItem7.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem7.TabIndex = 0
+        Me.ImageItem7.TabStop = False
+        '
+        'ImageItem6
+        '
+        Me.ImageItem6.Enabled = False
+        Me.ImageItem6.ImageLocation = ""
+        Me.ImageItem6.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem6.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem6.Name = "ImageItem6"
+        Me.ImageItem6.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem6.TabIndex = 0
+        Me.ImageItem6.TabStop = False
+        '
+        'ImageItem3
+        '
+        Me.ImageItem3.Enabled = False
+        Me.ImageItem3.ImageLocation = ""
+        Me.ImageItem3.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem3.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem3.Name = "ImageItem3"
+        Me.ImageItem3.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem3.TabIndex = 0
+        Me.ImageItem3.TabStop = False
+        '
+        'ImageItem5
+        '
+        Me.ImageItem5.Enabled = False
+        Me.ImageItem5.ImageLocation = ""
+        Me.ImageItem5.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem5.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem5.Name = "ImageItem5"
+        Me.ImageItem5.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem5.TabIndex = 0
+        Me.ImageItem5.TabStop = False
+        '
+        'ImageItem2
+        '
+        Me.ImageItem2.Enabled = False
+        Me.ImageItem2.ImageLocation = ""
+        Me.ImageItem2.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem2.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem2.Name = "ImageItem2"
+        Me.ImageItem2.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem2.TabIndex = 0
+        Me.ImageItem2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(739, -65)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(73, 64)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
+        '
+        'ImageItem1
+        '
+        Me.ImageItem1.Enabled = False
+        Me.ImageItem1.ImageLocation = ""
+        Me.ImageItem1.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ImageItem1.Name = "ImageItem1"
+        Me.ImageItem1.Size = New System.Drawing.Size(152, 126)
+        Me.ImageItem1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.ImageItem1.TabIndex = 0
+        Me.ImageItem1.TabStop = False
+        '
         'StoreLogo
         '
         Me.StoreLogo.Enabled = False
@@ -753,38 +753,38 @@ Partial Class Main
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Main"
-        Me.Text = "mart."
+        Me.Text = "mart. - Your one-stop for mobile devices."
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Items.ResumeLayout(False)
         Me.Item8.ResumeLayout(False)
         Me.Item8.PerformLayout()
-        CType(Me.ImageItem8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item4.ResumeLayout(False)
         Me.Item4.PerformLayout()
-        CType(Me.ImageItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.item7.ResumeLayout(False)
         Me.item7.PerformLayout()
-        CType(Me.ImageItem7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item6.ResumeLayout(False)
         Me.Item6.PerformLayout()
-        CType(Me.ImageItem6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item3.ResumeLayout(False)
         Me.Item3.PerformLayout()
-        CType(Me.ImageItem3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item5.ResumeLayout(False)
         Me.Item5.PerformLayout()
-        CType(Me.ImageItem5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item2.ResumeLayout(False)
         Me.Item2.PerformLayout()
-        CType(Me.ImageItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Item1.ResumeLayout(False)
         Me.Item1.PerformLayout()
-        CType(Me.ImageItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.Cart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StoreLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

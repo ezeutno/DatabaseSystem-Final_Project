@@ -374,9 +374,9 @@ Partial Class StoreDetail
         '
         Me.GroupBox2.Controls.Add(Me.Search)
         Me.GroupBox2.Location = New System.Drawing.Point(320, 84)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(211, 65)
         Me.GroupBox2.TabIndex = 27
         Me.GroupBox2.TabStop = False
@@ -385,7 +385,7 @@ Partial Class StoreDetail
         'Search
         '
         Me.Search.Location = New System.Drawing.Point(9, 25)
-        Me.Search.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Search.Margin = New System.Windows.Forms.Padding(4)
         Me.Search.Name = "Search"
         Me.Search.Size = New System.Drawing.Size(192, 22)
         Me.Search.TabIndex = 0
@@ -403,11 +403,11 @@ Partial Class StoreDetail
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Items)
         Me.Controls.Add(Me.StoreTitle)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "StoreDetail"
-        Me.Text = "Store Detail"
+        Me.Text = "My Store"
         CType(Me.ItemImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
