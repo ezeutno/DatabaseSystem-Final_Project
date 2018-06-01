@@ -439,6 +439,46 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getAllItem(start_id As Integer, search As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT * FROM item "
+            If search.Length > 0 Then
+                query += "WHERE name LIKE '%" + search + "%' "
+            End If
+            query += "LIMIT " + CStr(start_id) + ",8 "
+            comm = New MySqlCommand(query, con)
+                reader = comm.ExecuteReader
+                Return reader
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getCountItems(Search As String) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT COUNT(*) FROM item "
+            If Search.Length > 0 Then
+                query += "WHERE name LIKE '%" + Search + "%' "
+            End If
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
     Public Function checkStoreAddress(Username As String) As Boolean
         Try
             con.Open()

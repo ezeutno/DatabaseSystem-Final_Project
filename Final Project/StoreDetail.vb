@@ -165,6 +165,7 @@ Public Class StoreDetail
                 changeEnable()
                 condAdd = Not condAdd
                 refreshDetail()
+                Main.refreshAllData()
             End If
         End If
     End Sub
