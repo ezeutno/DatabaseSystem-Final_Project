@@ -29,8 +29,12 @@ Public Class CreateStore
             Dim address_id As Integer = Db.getAddressId(Main.getUsername(), chosenAddress).Item(0)
             Db.closeCon()
             If Updatecond Then
-                Db.updateStore(name, Main.getUsername(), address_id)
-                StoreDetail.refreshDetail()
+                If setstoreName <> name Then
+                    Db.insertnewStore(name, Main.getUsername(), address_id)
+                    Db.updateStore(setstoreName, name)
+                    Db.deleteStore(setstoreName)
+                    StoreDetail.refreshDetail()
+                End If
                 StoreDetail.Enabled = True
                 StoreDetail.Focus()
             Else

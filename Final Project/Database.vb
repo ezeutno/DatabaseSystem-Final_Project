@@ -955,10 +955,10 @@ Public Class Database
         End Try
     End Sub
 
-    Public Sub updateStore(storeName As String, username As String, address_id As Integer)
+    Public Sub updateStore(prevstoreName As String, storeName As String)
         Try
             con.Open()
-            query = "UPDATE store SET name = '" + storeName + "', address_id = " + CStr(address_id) + " WHERE username = '" + username + "'"
+            query = "UPDATE item SET store_name = '" + storeName + "' WHERE store_name = '" + prevstoreName + "'"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
@@ -1006,6 +1006,19 @@ Public Class Database
             con.Open()
             query = "UPDATE detailtrans SET  status =  '" + status + "' "
             query += "WHERE id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub deleteStore(prevstore As String)
+        Try
+            con.Open()
+            query = "DELETE FROM store WHERE name = '" + prevstore + "'"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
