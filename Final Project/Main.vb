@@ -153,6 +153,8 @@ Public Class Main
                 Else
                     Display_Project(gp)
                 End If
+            Else
+                Display_Project(gp)
             End If
         Catch ex As Exception
         End Try
@@ -175,7 +177,7 @@ Public Class Main
         subRun(item7, ImageItem7, idItem7, NameItem7, PriceItem7)
         subRun(Item8, ImageItem8, idItem8, NameItem8, PriceItem8)
         Db.closeCon()
-        If currentPoint + 8 >= Db.getCountItems(Search.Text).Item(0) Then
+        If currentPoint + 8 >= Db.getCountItems(Search.Text, brand.Text, Os.Text).Item(0) Then
             NextBtn.Enabled = False
         Else
             NextBtn.Enabled = True

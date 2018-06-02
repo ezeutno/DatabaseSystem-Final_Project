@@ -532,7 +532,7 @@ Public Class Database
             query = "SELECT item.id,item.name,item.imageloc,item.price FROM item,brand,os WHERE item.quantity > 0 "
             query += "AND item.brand_id = brand.id AND item.os_id = os.id "
             If search.Length > 0 Then
-                query += "AND name LIKE '%" + search + "%' "
+                query += "AND item.name LIKE '%" + search + "%' "
             End If
             If brand.Length > 0 Then
                 query += "AND brand.name LIKE '%" + brand + "%' "
@@ -558,7 +558,7 @@ Public Class Database
             query = "SELECT item.id,item.name,item.imageloc,item.price FROM item,brand,os WHERE item.quantity > 0 "
             query += "AND item.brand_id = brand.id AND item.os_id = os.id "
             If search.Length > 0 Then
-                query += "AND name LIKE '%" + search + "%' "
+                query += "AND item.name LIKE '%" + search + "%' "
             End If
             If brand.Length > 0 Then
                 query += "AND brand.name LIKE '%" + brand + "%' "
@@ -583,12 +583,19 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getCountItems(Search As String) As MySqlDataReader
+    Public Function getCountItems(Search As String, brand As String, os As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT COUNT(*) FROM item WHERE quantity > 0 "
+            query = "SELECT count(*) FROM item,brand,os WHERE item.quantity > 0 "
+            query += "AND item.brand_id = brand.id AND item.os_id = os.id "
             If Search.Length > 0 Then
-                query += "AND name LIKE '%" + Search + "%' "
+                query += "AND item.name LIKE '%" + Search + "%' "
+            End If
+            If brand.Length > 0 Then
+                query += "AND brand.name LIKE '%" + brand + "%' "
+            End If
+            If os.Length > 0 Then
+                query += "AND os.name LIKE '%" + os + "%' "
             End If
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
