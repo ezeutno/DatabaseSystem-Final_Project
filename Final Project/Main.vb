@@ -137,6 +137,10 @@ Public Class Main
         refreshRun()
     End Sub
 
+    Private Sub CurrentTime_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CurrentTime.Tick
+        Time.Text = Now
+    End Sub
+
     Private Sub refreshRun()
         reader = Db.getAllItem(currentPoint, Search.Text)
         subRun(Item1, ImageItem1, idItem1, NameItem1, PriceItem1)

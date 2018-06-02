@@ -22,114 +22,194 @@ Partial Class SellerSales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.allsales = New System.Windows.Forms.DataGridView()
+        Me.sales = New System.Windows.Forms.Button()
+        Me.Fulfilment = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TotalRev = New System.Windows.Forms.TextBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.username = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.item = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.subDistrict = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.district = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.province = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.postal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.country = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.allsales, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'allsales
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column4, Me.Column3, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 426)
-        Me.DataGridView1.TabIndex = 0
+        Me.allsales.AllowUserToAddRows = False
+        Me.allsales.AllowUserToDeleteRows = False
+        Me.allsales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.allsales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.status, Me.username, Me.item, Me.Quantity, Me.Price, Me.SubTotal, Me.address, Me.subDistrict, Me.district, Me.province, Me.postal, Me.country})
+        Me.allsales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.allsales.Location = New System.Drawing.Point(9, 10)
+        Me.allsales.Margin = New System.Windows.Forms.Padding(2)
+        Me.allsales.Name = "allsales"
+        Me.allsales.RowTemplate.Height = 24
+        Me.allsales.Size = New System.Drawing.Size(731, 346)
+        Me.allsales.TabIndex = 0
+        '
+        'sales
+        '
+        Me.sales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.sales.Location = New System.Drawing.Point(12, 361)
+        Me.sales.Name = "sales"
+        Me.sales.Size = New System.Drawing.Size(165, 29)
+        Me.sales.TabIndex = 1
+        Me.sales.Text = "Past Sales"
+        Me.sales.UseVisualStyleBackColor = True
+        '
+        'Fulfilment
+        '
+        Me.Fulfilment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Fulfilment.Location = New System.Drawing.Point(183, 361)
+        Me.Fulfilment.Name = "Fulfilment"
+        Me.Fulfilment.Size = New System.Drawing.Size(165, 29)
+        Me.Fulfilment.TabIndex = 2
+        Me.Fulfilment.Text = "Fullfilment"
+        Me.Fulfilment.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(364, 369)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Total Revenue :"
+        '
+        'TotalRev
+        '
+        Me.TotalRev.BackColor = System.Drawing.SystemColors.Control
+        Me.TotalRev.Enabled = False
+        Me.TotalRev.Location = New System.Drawing.Point(455, 365)
+        Me.TotalRev.Name = "TotalRev"
+        Me.TotalRev.Size = New System.Drawing.Size(285, 20)
+        Me.TotalRev.TabIndex = 4
         '
         'Column1
         '
-        Me.Column1.HeaderText = "Transaction ID"
+        Me.Column1.HeaderText = "Detail Transaction ID"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
         '
-        'Column2
+        'status
         '
-        Me.Column2.HeaderText = "Status"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.status.HeaderText = "Status"
+        Me.status.Name = "status"
         '
-        'Column4
+        'username
         '
-        Me.Column4.HeaderText = "Item"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
+        Me.username.HeaderText = "Buyer's username"
+        Me.username.Name = "username"
+        Me.username.ReadOnly = True
         '
-        'Column3
+        'item
         '
-        Me.Column3.HeaderText = "Buyer's username"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
+        Me.item.HeaderText = "Item"
+        Me.item.Name = "item"
+        Me.item.ReadOnly = True
         '
-        'Column5
+        'Quantity
         '
-        Me.Column5.HeaderText = "Address"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
+        Me.Quantity.HeaderText = "Quantity"
+        Me.Quantity.Name = "Quantity"
+        Me.Quantity.ReadOnly = True
         '
-        'Column6
+        'Price
         '
-        Me.Column6.HeaderText = "Sub-district"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
+        Me.Price.HeaderText = "Price"
+        Me.Price.Name = "Price"
+        Me.Price.ReadOnly = True
         '
-        'Column7
+        'SubTotal
         '
-        Me.Column7.HeaderText = "District"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
+        Me.SubTotal.HeaderText = "Sub Total"
+        Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
         '
-        'Column8
+        'address
         '
-        Me.Column8.HeaderText = "Province"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
+        Me.address.HeaderText = "Address"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
         '
-        'Column9
+        'subDistrict
         '
-        Me.Column9.HeaderText = "Postal Code"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
+        Me.subDistrict.HeaderText = "Sub-district"
+        Me.subDistrict.Name = "subDistrict"
+        Me.subDistrict.ReadOnly = True
         '
-        'Column10
+        'district
         '
-        Me.Column10.HeaderText = "Country"
-        Me.Column10.Name = "Column10"
-        Me.Column10.ReadOnly = True
+        Me.district.HeaderText = "District"
+        Me.district.Name = "district"
+        Me.district.ReadOnly = True
+        '
+        'province
+        '
+        Me.province.HeaderText = "Province"
+        Me.province.Name = "province"
+        Me.province.ReadOnly = True
+        '
+        'postal
+        '
+        Me.postal.HeaderText = "Postal Code"
+        Me.postal.Name = "postal"
+        Me.postal.ReadOnly = True
+        '
+        'country
+        '
+        Me.country.HeaderText = "Country"
+        Me.country.Name = "country"
+        Me.country.ReadOnly = True
         '
         'SellerSales
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(751, 398)
+        Me.Controls.Add(Me.TotalRev)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Fulfilment)
+        Me.Controls.Add(Me.sales)
+        Me.Controls.Add(Me.allsales)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SellerSales"
         Me.Text = "Your Sales"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.allsales, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents allsales As DataGridView
+    Friend WithEvents sales As Button
+    Friend WithEvents Fulfilment As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TotalRev As TextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents status As DataGridViewTextBoxColumn
+    Friend WithEvents username As DataGridViewTextBoxColumn
+    Friend WithEvents item As DataGridViewTextBoxColumn
+    Friend WithEvents Quantity As DataGridViewTextBoxColumn
+    Friend WithEvents Price As DataGridViewTextBoxColumn
+    Friend WithEvents SubTotal As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents subDistrict As DataGridViewTextBoxColumn
+    Friend WithEvents district As DataGridViewTextBoxColumn
+    Friend WithEvents province As DataGridViewTextBoxColumn
+    Friend WithEvents postal As DataGridViewTextBoxColumn
+    Friend WithEvents country As DataGridViewTextBoxColumn
 End Class

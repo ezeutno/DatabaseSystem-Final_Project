@@ -10,3 +10,18 @@ GROUP BY detailtrans.item_id) as total
 WHERE item.item_id = total.item_id;
 
 "ERROR JOIN"
+
+SELECT detailtrans.id,detailtrans.status,transaction.username, item.name, detailtrans.quantity, 
+custaddress.detail,custaddress.sub_district, custaddress.district, custaddress.provice,custaddress.postal_code, country.name
+FROM detailtrans,transaction,custaddress,country item 
+WHERE detailtrans.transaction_id = transaction.id
+AND transaction.address_id = custaddress.id
+AND detailtrans.item_id = item.id
+AND transaction.purchased = 1
+AND address.country_id = country.id
+AND transaction.store_name = "MASUKIN STORE NAME"
+
+| id | item_id | quantity | transaction_id | status     |
+ id | purchased | username | address_id | id | detail                        |
+ sub_district  | district       | province    | postal_code |
+ country_id | username | id | name                |                                                                                                                                                                                           | store_name     |

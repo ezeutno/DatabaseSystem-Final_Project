@@ -23,10 +23,6 @@ Partial Class CartDetail
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.transactionCart = New System.Windows.Forms.DataGridView()
-        Me.Purchase = New System.Windows.Forms.Button()
-        Me.Buy = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Total = New System.Windows.Forms.TextBox()
         Me.DetailTransactionId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.transId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Store = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,6 +32,10 @@ Partial Class CartDetail
         Me.qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Purchase = New System.Windows.Forms.Button()
+        Me.Buy = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Total = New System.Windows.Forms.TextBox()
         CType(Me.transactionCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,6 +44,7 @@ Partial Class CartDetail
         Me.transactionCart.AllowUserToAddRows = False
         Me.transactionCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.transactionCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailTransactionId, Me.transId, Me.Store, Me.ItemId, Me.itemName, Me.price, Me.qty, Me.subtotal, Me.Status})
+        Me.transactionCart.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.transactionCart.Location = New System.Drawing.Point(11, 11)
         Me.transactionCart.Margin = New System.Windows.Forms.Padding(2)
         Me.transactionCart.Name = "transactionCart"
@@ -51,6 +52,56 @@ Partial Class CartDetail
         Me.transactionCart.RowTemplate.Height = 24
         Me.transactionCart.Size = New System.Drawing.Size(443, 225)
         Me.transactionCart.TabIndex = 1
+        '
+        'DetailTransactionId
+        '
+        Me.DetailTransactionId.HeaderText = "Id"
+        Me.DetailTransactionId.Name = "DetailTransactionId"
+        Me.DetailTransactionId.Visible = False
+        '
+        'transId
+        '
+        Me.transId.HeaderText = "Transaction Id"
+        Me.transId.Name = "transId"
+        Me.transId.Visible = False
+        '
+        'Store
+        '
+        Me.Store.HeaderText = "Store"
+        Me.Store.Name = "Store"
+        '
+        'ItemId
+        '
+        Me.ItemId.HeaderText = "Item Id"
+        Me.ItemId.Name = "ItemId"
+        Me.ItemId.Visible = False
+        '
+        'itemName
+        '
+        Me.itemName.HeaderText = "Item Name"
+        Me.itemName.Name = "itemName"
+        Me.itemName.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'price
+        '
+        Me.price.HeaderText = "Price"
+        Me.price.Name = "price"
+        '
+        'qty
+        '
+        Me.qty.HeaderText = "Quantity"
+        Me.qty.Name = "qty"
+        '
+        'subtotal
+        '
+        Me.subtotal.HeaderText = "Subtotal"
+        Me.subtotal.Name = "subtotal"
+        '
+        'Status
+        '
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.Visible = False
         '
         'Purchase
         '
@@ -88,65 +139,6 @@ Partial Class CartDetail
         Me.Total.Name = "Total"
         Me.Total.Size = New System.Drawing.Size(182, 20)
         Me.Total.TabIndex = 5
-        '
-        'DetailTransactionId
-        '
-        Me.DetailTransactionId.HeaderText = "Id"
-        Me.DetailTransactionId.Name = "DetailTransactionId"
-        Me.DetailTransactionId.ReadOnly = True
-        Me.DetailTransactionId.Visible = False
-        '
-        'transId
-        '
-        Me.transId.HeaderText = "Transaction Id"
-        Me.transId.Name = "transId"
-        Me.transId.ReadOnly = True
-        Me.transId.Visible = False
-        '
-        'Store
-        '
-        Me.Store.HeaderText = "Store"
-        Me.Store.Name = "Store"
-        Me.Store.ReadOnly = True
-        '
-        'ItemId
-        '
-        Me.ItemId.HeaderText = "Item Id"
-        Me.ItemId.Name = "ItemId"
-        Me.ItemId.ReadOnly = True
-        Me.ItemId.Visible = False
-        '
-        'itemName
-        '
-        Me.itemName.HeaderText = "Item Name"
-        Me.itemName.Name = "itemName"
-        Me.itemName.ReadOnly = True
-        Me.itemName.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'price
-        '
-        Me.price.HeaderText = "Price"
-        Me.price.Name = "price"
-        Me.price.ReadOnly = True
-        '
-        'qty
-        '
-        Me.qty.HeaderText = "Quantity"
-        Me.qty.Name = "qty"
-        Me.qty.ReadOnly = True
-        '
-        'subtotal
-        '
-        Me.subtotal.HeaderText = "Subtotal"
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.ReadOnly = True
-        '
-        'Status
-        '
-        Me.Status.HeaderText = "Status"
-        Me.Status.Name = "Status"
-        Me.Status.ReadOnly = True
-        Me.Status.Visible = False
         '
         'CartDetail
         '

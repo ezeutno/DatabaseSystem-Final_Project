@@ -543,6 +543,31 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
+    Public Function getAllItem(start_id As Integer, search As String, orderBy As String, cond As Boolean) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT * FROM item WHERE quantity > 0 "
+            If search.Length > 0 Then
+                query += "AND name LIKE '%" + search + "%' "
+            End If
+            If cond Then
+                query += "ORDER BY " + orderBy + " ASC"
+            Else
+                query += "ORDER BY " + orderBy + " DESC"
+            End If
+
+            query += "LIMIT " + CStr(start_id) + ",8 "
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            Return reader
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
     Public Function getCountItems(Search As String) As MySqlDataReader
         Try
             con.Open()
@@ -622,7 +647,7 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getTotalTrans(username As String)
+    Public Function getTotalTrans(username As String) As MySqlDataReader
         Try
             con.Open()
             query = "SELECT sum(item.price * detailtrans.quantity) "
@@ -645,7 +670,7 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getTotalTrans(currTrans As Integer)
+    Public Function getTotalTrans(currTrans As Integer) As MySqlDataReader
         Try
             con.Open()
             query = "SELECT sum(item.price * detailtrans.quantity) FROM item,detailtrans "
@@ -654,6 +679,62 @@ Public Class Database
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             If reader.HasRows() Then
+                reader.Read()
+                Return reader
+            End If
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+    Public Function getStoreFullfilmet(storeName As String, status As String, condition As Boolean) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT detailtrans.id,detailtrans.status,transaction.username, item.name, detailtrans.quantity, item.price, item.price*detailtrans.quantity, "
+            query += "custaddress.detail,custaddress.sub_district, custaddress.district, custaddress.province,custaddress.postal_code, country.country_name "
+            query += "FROM detailtrans,transaction,custaddress,country,item  "
+            query += "WHERE detailtrans.transaction_id = transaction.id "
+            query += "And transaction.address_id = custaddress.id "
+            query += "And detailtrans.item_id = item.id "
+            query += "And transaction.purchased = 1 "
+            query += "And custaddress.country_id = country.country_id "
+            query += "And item.store_name = '" + storeName + "' "
+            If condition Then
+                query += "AND detailtrans.status = '" + status + "'"
+            Else
+                query += "AND detailtrans.status <> '" + status + "'"
+            End If
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            Return reader
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
+    End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
+
+
+    Public Function getTotalCurrent(storeName As String, status As String, ByVal cond As Boolean) As MySqlDataReader
+        Try
+            con.Open()
+            query = "SELECT sum( item.price * detailtrans.quantity ) FROM item,detailtrans,transaction "
+            query += "WHERE detailtrans.item_id = item.id "
+            query += "And transaction.id = detailtrans.transaction_id "
+            query += "And transaction.purchased = 1 "
+            query += "AND item.store_name = '" + storeName + "' "
+            If cond Then
+                query += "AND detailtrans.status = '" + status + "'"
+            Else
+                query += "AND detailtrans.status <> '" + status + "'"
+            End If
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            If reader.HasRows Then
                 reader.Read()
                 Return reader
             End If
@@ -855,6 +936,20 @@ Public Class Database
         Try
             con.Open()
             query = "UPDATE item SET  quantity = quantity - " + CStr(quantity) + " "
+            query += "WHERE id = " + CStr(id)
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub updateDetailTrans(id As Integer, status As String)
+        Try
+            con.Open()
+            query = "UPDATE detailtrans SET  status =  '" + status + "' "
             query += "WHERE id = " + CStr(id)
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
