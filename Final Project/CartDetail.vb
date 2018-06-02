@@ -62,7 +62,7 @@ Public Class CartDetail
     Private Sub Buy_Click(sender As Object, e As EventArgs) Handles Buy.Click
         If Purchase.Text = "Current Cart" Then
             For Each SelectedRow As DataGridViewRow In transactionCart.SelectedRows
-                If Not SelectedRow.Cells(8).Value = "FULLFILLED" Then
+                If Not SelectedRow.Cells(8).Value = "REJECTED" Then
                     Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
                 End If
             Next
