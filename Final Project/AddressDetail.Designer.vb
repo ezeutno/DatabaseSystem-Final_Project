@@ -227,6 +227,7 @@ Partial Class AddressDetail
         Me.AcceptButton = Me.updateBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(339, 303)
         Me.Controls.Add(Me.country)
         Me.Controls.Add(Me.Label8)

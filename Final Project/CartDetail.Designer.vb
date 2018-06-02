@@ -57,50 +57,59 @@ Partial Class CartDetail
         '
         Me.DetailTransactionId.HeaderText = "Id"
         Me.DetailTransactionId.Name = "DetailTransactionId"
+        Me.DetailTransactionId.ReadOnly = True
         Me.DetailTransactionId.Visible = False
         '
         'transId
         '
         Me.transId.HeaderText = "Transaction Id"
         Me.transId.Name = "transId"
+        Me.transId.ReadOnly = True
         Me.transId.Visible = False
         '
         'Store
         '
         Me.Store.HeaderText = "Store"
         Me.Store.Name = "Store"
+        Me.Store.ReadOnly = True
         '
         'ItemId
         '
         Me.ItemId.HeaderText = "Item Id"
         Me.ItemId.Name = "ItemId"
+        Me.ItemId.ReadOnly = True
         Me.ItemId.Visible = False
         '
         'itemName
         '
         Me.itemName.HeaderText = "Item Name"
         Me.itemName.Name = "itemName"
+        Me.itemName.ReadOnly = True
         Me.itemName.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'price
         '
         Me.price.HeaderText = "Price"
         Me.price.Name = "price"
+        Me.price.ReadOnly = True
         '
         'qty
         '
         Me.qty.HeaderText = "Quantity"
         Me.qty.Name = "qty"
+        Me.qty.ReadOnly = True
         '
         'subtotal
         '
         Me.subtotal.HeaderText = "Subtotal"
         Me.subtotal.Name = "subtotal"
+        Me.subtotal.ReadOnly = True
         '
         'Status
         '
         Me.Status.HeaderText = "Status"
         Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
         Me.Status.Visible = False
         '
         'Purchase
@@ -144,6 +153,7 @@ Partial Class CartDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(461, 286)
         Me.Controls.Add(Me.Total)
         Me.Controls.Add(Me.Label1)

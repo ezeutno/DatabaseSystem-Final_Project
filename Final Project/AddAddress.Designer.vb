@@ -179,6 +179,7 @@ Partial Class AddAddress
         Me.AcceptButton = Me.Submit
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(336, 245)
         Me.ControlBox = False

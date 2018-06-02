@@ -36,6 +36,7 @@ Partial Class Picture
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(370, 47)
         Me.Controls.Add(Me.LocationDetail)
         Me.MaximizeBox = False

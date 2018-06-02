@@ -35,17 +35,17 @@ Partial Class BuyItem
         Me.ram = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.description = New System.Windows.Forms.TextBox()
         Me.price = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.ShopName = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ShopAddress = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.totalPrice = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.qty = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.description = New System.Windows.Forms.TextBox()
-        Me.ShopAddress = New System.Windows.Forms.TextBox()
         CType(Me.imagePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -197,6 +197,17 @@ Partial Class BuyItem
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Description"
         '
+        'description
+        '
+        Me.description.BackColor = System.Drawing.SystemColors.Control
+        Me.description.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.description.Enabled = False
+        Me.description.Location = New System.Drawing.Point(5, 16)
+        Me.description.Multiline = True
+        Me.description.Name = "description"
+        Me.description.Size = New System.Drawing.Size(371, 85)
+        Me.description.TabIndex = 14
+        '
         'price
         '
         Me.price.AutoSize = True
@@ -240,6 +251,17 @@ Partial Class BuyItem
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Shop Information"
+        '
+        'ShopAddress
+        '
+        Me.ShopAddress.BackColor = System.Drawing.SystemColors.Control
+        Me.ShopAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ShopAddress.Enabled = False
+        Me.ShopAddress.Location = New System.Drawing.Point(11, 45)
+        Me.ShopAddress.Multiline = True
+        Me.ShopAddress.Name = "ShopAddress"
+        Me.ShopAddress.Size = New System.Drawing.Size(148, 42)
+        Me.ShopAddress.TabIndex = 19
         '
         'Label15
         '
@@ -296,32 +318,11 @@ Partial Class BuyItem
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Buy"
         '
-        'description
-        '
-        Me.description.BackColor = System.Drawing.SystemColors.Control
-        Me.description.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.description.Enabled = False
-        Me.description.Location = New System.Drawing.Point(5, 16)
-        Me.description.Multiline = True
-        Me.description.Name = "description"
-        Me.description.Size = New System.Drawing.Size(371, 85)
-        Me.description.TabIndex = 14
-        '
-        'ShopAddress
-        '
-        Me.ShopAddress.BackColor = System.Drawing.SystemColors.Control
-        Me.ShopAddress.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ShopAddress.Enabled = False
-        Me.ShopAddress.Location = New System.Drawing.Point(11, 45)
-        Me.ShopAddress.Multiline = True
-        Me.ShopAddress.Name = "ShopAddress"
-        Me.ShopAddress.Size = New System.Drawing.Size(148, 42)
-        Me.ShopAddress.TabIndex = 19
-        '
         'BuyItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(588, 314)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)

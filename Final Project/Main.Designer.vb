@@ -77,18 +77,18 @@ Partial Class Main
         Me.StoreLogo = New System.Windows.Forms.PictureBox()
         Me.Time = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Clear = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Dsc = New System.Windows.Forms.RadioButton()
         Me.Asc = New System.Windows.Forms.RadioButton()
         Me.PriceOB = New System.Windows.Forms.RadioButton()
         Me.NameOB = New System.Windows.Forms.RadioButton()
+        Me.Clear = New System.Windows.Forms.Button()
         Me.CurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Os = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.brand = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Items.SuspendLayout()
@@ -719,15 +719,6 @@ Partial Class Main
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Order By"
         '
-        'Clear
-        '
-        Me.Clear.Location = New System.Drawing.Point(25, 438)
-        Me.Clear.Name = "Clear"
-        Me.Clear.Size = New System.Drawing.Size(75, 23)
-        Me.Clear.TabIndex = 3
-        Me.Clear.Text = "Clear"
-        Me.Clear.UseVisualStyleBackColor = True
-        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Dsc)
@@ -783,6 +774,15 @@ Partial Class Main
         Me.NameOB.Text = "Name"
         Me.NameOB.UseVisualStyleBackColor = True
         '
+        'Clear
+        '
+        Me.Clear.Location = New System.Drawing.Point(25, 438)
+        Me.Clear.Name = "Clear"
+        Me.Clear.Size = New System.Drawing.Size(75, 23)
+        Me.Clear.TabIndex = 3
+        Me.Clear.Text = "Clear"
+        Me.Clear.UseVisualStyleBackColor = True
+        '
         'CurrentTime
         '
         Me.CurrentTime.Enabled = True
@@ -809,15 +809,6 @@ Partial Class Main
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Search By"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 15)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Brand"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -836,6 +827,15 @@ Partial Class Main
         Me.Os.Size = New System.Drawing.Size(90, 21)
         Me.Os.TabIndex = 2
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Brand"
+        '
         'brand
         '
         Me.brand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -849,6 +849,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(896, 513)
         Me.Controls.Add(Me.Clear)
         Me.Controls.Add(Me.GroupBox5)

@@ -117,6 +117,7 @@ Partial Class Login
         Me.AcceptButton = Me.LoginBtn
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CancelButton = Me.CancleBtn
         Me.ClientSize = New System.Drawing.Size(294, 227)
         Me.ControlBox = False

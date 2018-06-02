@@ -92,6 +92,7 @@ Partial Class CreateStore
         Me.AcceptButton = Me.Create
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(212, 239)
         Me.ControlBox = False
