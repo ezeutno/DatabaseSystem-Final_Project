@@ -34,11 +34,11 @@ Public Class SellerSales
         If pasted Then
             setVisible(False)
             allsales.ReadOnly = Not allsales.ReadOnly
-            reader = Db.getStoreFullfilmet(storeName, {"FULLFILED", "REJECTED"}, True)
+            reader = Db.getStoreFullfilmet(storeName, {"FULLFILLED", "REJECTED"}, True)
         Else
             setVisible(True)
             allsales.ReadOnly = False
-            reader = Db.getStoreFullfilmet(storeName, {"FULLFILED", "REJECTED"}, False)
+            reader = Db.getStoreFullfilmet(storeName, {"FULLFILLED", "REJECTED"}, False)
         End If
         If reader.HasRows Then
             Do While reader.Read()
@@ -47,9 +47,9 @@ Public Class SellerSales
         End If
         Db.closeCon()
         If pasted Then
-            reader = Db.getTotalCurrent(storeName, {"FULLFILED", "REJECTED"}, True)
+            reader = Db.getTotalCurrent(storeName, {"FULLFILLED", "REJECTED"}, True)
         Else
-            reader = Db.getTotalCurrent(storeName, {"FULLFILED", "REJECTED"}, False)
+            reader = Db.getTotalCurrent(storeName, {"FULLFILLED", "REJECTED"}, False)
         End If
         Try
             TotalRev.Text = priceConverter(reader.Item(0))
@@ -79,20 +79,20 @@ Public Class SellerSales
         If pasted Then
             pasted = Not pasted
             sales.Text = "Past Sales"
-            Fulfilment.Enabled = True
+            Fulfillment.Enabled = True
             reject.Enabled = True
         Else
             pasted = Not pasted
             sales.Text = "Current Sales"
-            Fulfilment.Enabled = False
+            Fulfillment.Enabled = False
             reject.Enabled = False
         End If
         refreshDetail()
     End Sub
 
-    Private Sub Fulfilment_Click(sender As Object, e As EventArgs) Handles Fulfilment.Click
+    Private Sub Fulfilment_Click(sender As Object, e As EventArgs) Handles Fulfillment.Click
         For Each SelectedRow As DataGridViewRow In allsales.SelectedRows
-            Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILED")
+            Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
         Next
         refreshDetail()
     End Sub

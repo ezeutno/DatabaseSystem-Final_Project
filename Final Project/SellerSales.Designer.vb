@@ -38,7 +38,7 @@ Partial Class SellerSales
         Me.postal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.country = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sales = New System.Windows.Forms.Button()
-        Me.Fulfilment = New System.Windows.Forms.Button()
+        Me.Fulfillment = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TotalRev = New System.Windows.Forms.TextBox()
         Me.reject = New System.Windows.Forms.Button()
@@ -153,15 +153,15 @@ Partial Class SellerSales
         Me.sales.Text = "Past Sales"
         Me.sales.UseVisualStyleBackColor = True
         '
-        'Fulfilment
+        'Fulfillment
         '
-        Me.Fulfilment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Fulfilment.Location = New System.Drawing.Point(120, 361)
-        Me.Fulfilment.Name = "Fulfilment"
-        Me.Fulfilment.Size = New System.Drawing.Size(113, 29)
-        Me.Fulfilment.TabIndex = 2
-        Me.Fulfilment.Text = "Fullfilment"
-        Me.Fulfilment.UseVisualStyleBackColor = True
+        Me.Fulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Fulfillment.Location = New System.Drawing.Point(120, 361)
+        Me.Fulfillment.Name = "Fulfillment"
+        Me.Fulfillment.Size = New System.Drawing.Size(113, 29)
+        Me.Fulfillment.TabIndex = 2
+        Me.Fulfillment.Text = "Fullfillment"
+        Me.Fulfillment.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -200,7 +200,7 @@ Partial Class SellerSales
         Me.Controls.Add(Me.reject)
         Me.Controls.Add(Me.TotalRev)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Fulfilment)
+        Me.Controls.Add(Me.Fulfillment)
         Me.Controls.Add(Me.sales)
         Me.Controls.Add(Me.allsales)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -216,7 +216,7 @@ Partial Class SellerSales
 
     Friend WithEvents allsales As DataGridView
     Friend WithEvents sales As Button
-    Friend WithEvents Fulfilment As Button
+    Friend WithEvents Fulfillment As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TotalRev As TextBox
     Friend WithEvents reject As Button
