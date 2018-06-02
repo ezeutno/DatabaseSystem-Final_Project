@@ -102,6 +102,7 @@ Public Class SellerSales
             Db.updateDetailTrans(SelectedRow.Cells(0).Value, "REJECTED")
             Db.updateItem(SelectedRow.Cells(1).Value, SelectedRow.Cells(5).Value, True)
             StoreDetail.refreshDetail()
+            Main.refreshAllData()
         Next
         refreshDetail()
     End Sub
