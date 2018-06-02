@@ -259,6 +259,6 @@ Public Class StoreDetail
     End Sub
 
     Private Sub Sales_Click(sender As Object, e As EventArgs) Handles Sales.Click
-
+        SellerSales.Show()
     End Sub
 End Class
