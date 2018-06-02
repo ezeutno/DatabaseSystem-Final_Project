@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2018 at 06:34 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Jun 02, 2018 at 03:46 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,7 +42,8 @@ INSERT INTO `brand` (`id`, `name`) VALUES
 (2, 'Apple'),
 (3, 'LG'),
 (4, 'Nokia'),
-(5, 'Oneplus');
+(5, 'Oneplus'),
+(6, 'Xiaomi');
 
 -- --------------------------------------------------------
 
@@ -334,23 +335,24 @@ CREATE TABLE `detailtrans` (
 --
 
 INSERT INTO `detailtrans` (`id`, `item_id`, `quantity`, `transaction_id`, `status`) VALUES
-(6, 12, 1, 6, 'On Process'),
-(7, 15, 12, 8, 'On Process'),
+(6, 12, 1, 6, 'Sent : 45678542'),
+(7, 15, 12, 8, 'FULLFILED'),
 (8, 13, 20, 8, 'On Process'),
 (9, 14, 10, 14, 'On Process'),
-(10, 1, 100, 11, 'On Process'),
-(11, 8, 50, 11, 'On Process'),
-(13, 3, 50000, 16, 'On Process'),
-(14, 11, 500, 18, 'On Process'),
-(15, 9, 10, 19, 'On Process'),
-(16, 7, 20, 19, 'On Process'),
-(17, 9, 40, 20, 'On Process'),
-(19, 3, 1, 22, 'On Process'),
-(22, 15, 488, 15, 'On Process'),
-(23, 13, 1, 15, 'On Process'),
+(10, 1, 100, 11, 'FULLFILED'),
+(11, 8, 50, 11, 'REJECTED'),
+(13, 3, 50000, 16, 'REJECTED'),
+(14, 11, 500, 18, 'FULLFILED'),
+(15, 9, 10, 19, 'FULLFILED'),
+(16, 7, 20, 19, 'FULLFILED'),
+(17, 9, 40, 20, 'FULLFILED'),
+(19, 3, 1, 22, 'FULLFILED'),
 (26, 3, 2, 24, 'On Process'),
 (27, 2, 2, 24, 'On Process'),
-(28, 6, 2, 24, 'On Process');
+(28, 6, 2, 24, 'On Process'),
+(29, 13, 130, 25, 'On Process'),
+(30, 1, 20, 17, 'Sent : 12564578'),
+(31, 16, 10, 15, 'On Process');
 
 -- --------------------------------------------------------
 
@@ -377,19 +379,20 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `storage`, `ram`, `description`, `imageloc`, `store_name`) VALUES
-(1, 'Galaxy S9', 900, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
+(1, 'Galaxy S9', 880, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
 (2, 'iPhone 7', 80, 10000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'RunBook'),
-(3, 'Galaxy S8 Plus', 99599, 8500000, 1, 1, 64, 4, '', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=80773a56ed8c7c3f0cb94cf8cdf159f6', 'RunBook'),
+(3, 'Galaxy S8 Plus', 149599, 8500000, 1, 1, 64, 4, '', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=80773a56ed8c7c3f0cb94cf8cdf159f6', 'RunBook'),
 (6, 'G7+ Thin Q', 100, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'RunBook'),
 (7, 'Nokia 6.1 2018', 30, 3500000, 4, 1, 64, 4, '', 'https://bab-assets1.babapi.ooo/img/othe/8687242/ed/9c/blackcoppernokia63.png.41951aed9c.999x600x550.png', 'RunBook'),
-(8, 'iPhone X 2017', 50, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
-(9, 'Nokia 7 Plus', 20000, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'RunBook'),
+(8, 'iPhone X 2017', 100, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
+(9, 'Nokia 7 Plus', 20, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'RunBook'),
 (10, 'Oneplus 6', 100000, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'RunBook'),
 (11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'RunBook'),
-(12, 'Galaxy Note 3', 0, 2300000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
-(13, 'Oneplus 5', 130, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
+(12, 'Galaxy Note 3', 300, 700000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
+(13, 'Oneplus 5', 125, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
 (14, 'G5 SE', 190, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
-(15, 'Nokia 8810 Reloaded', 488, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua');
+(15, 'Nokia 8810 Reloaded', 488, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua'),
+(16, 'Mi Mix 2s', 10, 9500000, 6, 1, 128, 6, 'The first xiaomi phone to support beta android p program.', 'http://bestengine.humanoid.fr/uploads/products/xiaomi-mi-mix-2-final.png', 'Rumah Merdeka');
 
 -- --------------------------------------------------------
 
@@ -430,7 +433,7 @@ CREATE TABLE `store` (
 INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
 ('Kampung Melayu', 'david', 4),
 ('Masa Tua', 'sher', 10),
-('Rumah Merdeka', 'ezeutno', 5),
+('Rumah Merdeka', 'ezeutno', 1),
 ('RunBook', '', 8);
 
 -- --------------------------------------------------------
@@ -455,16 +458,20 @@ INSERT INTO `transaction` (`id`, `purchased`, `username`, `address_id`) VALUES
 (8, 1, '', 7),
 (11, 1, 'ezeutno', 5),
 (14, 1, '', 8),
-(15, 0, '', NULL),
+(15, 1, '', 7),
 (16, 1, 'ezeutno', 5),
-(17, 0, 'ezeutno', NULL),
+(17, 1, 'ezeutno', 5),
 (18, 1, 'david', 4),
 (19, 1, 'david', 4),
 (20, 1, 'david', 4),
 (21, 0, 'david', NULL),
 (22, 1, 'jbarlian', 11),
 (23, 0, 'jbarlian', NULL),
-(24, 0, 'lol', NULL);
+(24, 0, 'lol', NULL),
+(25, 1, 'sher', 10),
+(26, 0, 'sher', NULL),
+(27, 0, 'ezeutno', NULL),
+(28, 0, '', NULL);
 
 --
 -- Indexes for dumped tables
@@ -542,7 +549,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `country`
@@ -560,13 +567,13 @@ ALTER TABLE `custaddress`
 -- AUTO_INCREMENT for table `detailtrans`
 --
 ALTER TABLE `detailtrans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `os`
@@ -578,7 +585,7 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Constraints for dumped tables
