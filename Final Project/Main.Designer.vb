@@ -120,9 +120,10 @@ Partial Class Main
         'LoginBtn
         '
         Me.LoginBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!)
-        Me.LoginBtn.Location = New System.Drawing.Point(6, 36)
+        Me.LoginBtn.Location = New System.Drawing.Point(8, 44)
+        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LoginBtn.Name = "LoginBtn"
-        Me.LoginBtn.Size = New System.Drawing.Size(68, 24)
+        Me.LoginBtn.Size = New System.Drawing.Size(91, 30)
         Me.LoginBtn.TabIndex = 0
         Me.LoginBtn.Text = "Log-in/Register"
         Me.LoginBtn.UseVisualStyleBackColor = True
@@ -130,17 +131,20 @@ Partial Class Main
         'Search
         '
         Me.Search.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Search.Location = New System.Drawing.Point(12, 24)
+        Me.Search.Location = New System.Drawing.Point(16, 30)
+        Me.Search.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Search.Name = "Search"
-        Me.Search.Size = New System.Drawing.Size(531, 23)
+        Me.Search.Size = New System.Drawing.Size(707, 26)
         Me.Search.TabIndex = 1
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Search)
-        Me.GroupBox1.Location = New System.Drawing.Point(120, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(160, 5)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(548, 60)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(731, 74)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search"
@@ -156,9 +160,11 @@ Partial Class Main
         Me.Items.Controls.Add(Me.Item2)
         Me.Items.Controls.Add(Me.PictureBox1)
         Me.Items.Controls.Add(Me.Item1)
-        Me.Items.Location = New System.Drawing.Point(120, 66)
+        Me.Items.Location = New System.Drawing.Point(160, 81)
+        Me.Items.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Items.Name = "Items"
-        Me.Items.Size = New System.Drawing.Size(764, 402)
+        Me.Items.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Items.Size = New System.Drawing.Size(1019, 495)
         Me.Items.TabIndex = 4
         Me.Items.TabStop = False
         '
@@ -169,9 +175,11 @@ Partial Class Main
         Me.Item8.Controls.Add(Me.PriceItem8)
         Me.Item8.Controls.Add(Me.NameItem8)
         Me.Item8.Controls.Add(Me.ImageItem8)
-        Me.Item8.Location = New System.Drawing.Point(582, 219)
+        Me.Item8.Location = New System.Drawing.Point(776, 270)
+        Me.Item8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item8.Name = "Item8"
-        Me.Item8.Size = New System.Drawing.Size(161, 177)
+        Me.Item8.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item8.Size = New System.Drawing.Size(215, 218)
         Me.Item8.TabIndex = 10
         Me.Item8.TabStop = False
         '
@@ -179,9 +187,10 @@ Partial Class Main
         '
         Me.idItem8.AutoSize = True
         Me.idItem8.Enabled = False
-        Me.idItem8.Location = New System.Drawing.Point(6, 11)
+        Me.idItem8.Location = New System.Drawing.Point(8, 14)
+        Me.idItem8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem8.Name = "idItem8"
-        Me.idItem8.Size = New System.Drawing.Size(15, 13)
+        Me.idItem8.Size = New System.Drawing.Size(19, 17)
         Me.idItem8.TabIndex = 3
         Me.idItem8.Text = "id"
         Me.idItem8.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -191,9 +200,10 @@ Partial Class Main
         '
         Me.PriceItem8.AutoSize = True
         Me.PriceItem8.Enabled = False
-        Me.PriceItem8.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem8.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem8.Name = "PriceItem8"
-        Me.PriceItem8.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem8.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem8.TabIndex = 2
         Me.PriceItem8.Text = "Price"
         '
@@ -201,9 +211,10 @@ Partial Class Main
         '
         Me.NameItem8.AutoSize = True
         Me.NameItem8.Enabled = False
-        Me.NameItem8.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem8.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem8.Name = "NameItem8"
-        Me.NameItem8.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem8.Size = New System.Drawing.Size(45, 17)
         Me.NameItem8.TabIndex = 1
         Me.NameItem8.Text = "Name"
         '
@@ -211,9 +222,10 @@ Partial Class Main
         '
         Me.ImageItem8.Enabled = False
         Me.ImageItem8.ImageLocation = ""
-        Me.ImageItem8.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem8.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem8.Name = "ImageItem8"
-        Me.ImageItem8.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem8.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem8.TabIndex = 0
         Me.ImageItem8.TabStop = False
@@ -225,9 +237,11 @@ Partial Class Main
         Me.Item4.Controls.Add(Me.PriceItem4)
         Me.Item4.Controls.Add(Me.NameItem4)
         Me.Item4.Controls.Add(Me.ImageItem4)
-        Me.Item4.Location = New System.Drawing.Point(582, 19)
+        Me.Item4.Location = New System.Drawing.Point(776, 23)
+        Me.Item4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item4.Name = "Item4"
-        Me.Item4.Size = New System.Drawing.Size(161, 177)
+        Me.Item4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item4.Size = New System.Drawing.Size(215, 218)
         Me.Item4.TabIndex = 6
         Me.Item4.TabStop = False
         '
@@ -235,9 +249,10 @@ Partial Class Main
         '
         Me.idItem4.AutoSize = True
         Me.idItem4.Enabled = False
-        Me.idItem4.Location = New System.Drawing.Point(6, 11)
+        Me.idItem4.Location = New System.Drawing.Point(8, 14)
+        Me.idItem4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem4.Name = "idItem4"
-        Me.idItem4.Size = New System.Drawing.Size(15, 13)
+        Me.idItem4.Size = New System.Drawing.Size(19, 17)
         Me.idItem4.TabIndex = 3
         Me.idItem4.Text = "id"
         Me.idItem4.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -247,9 +262,10 @@ Partial Class Main
         '
         Me.PriceItem4.AutoSize = True
         Me.PriceItem4.Enabled = False
-        Me.PriceItem4.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem4.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem4.Name = "PriceItem4"
-        Me.PriceItem4.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem4.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem4.TabIndex = 2
         Me.PriceItem4.Text = "Price"
         '
@@ -257,9 +273,10 @@ Partial Class Main
         '
         Me.NameItem4.AutoSize = True
         Me.NameItem4.Enabled = False
-        Me.NameItem4.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem4.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem4.Name = "NameItem4"
-        Me.NameItem4.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem4.Size = New System.Drawing.Size(45, 17)
         Me.NameItem4.TabIndex = 1
         Me.NameItem4.Text = "Name"
         '
@@ -267,9 +284,10 @@ Partial Class Main
         '
         Me.ImageItem4.Enabled = False
         Me.ImageItem4.ImageLocation = ""
-        Me.ImageItem4.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem4.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem4.Name = "ImageItem4"
-        Me.ImageItem4.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem4.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem4.TabIndex = 0
         Me.ImageItem4.TabStop = False
@@ -281,9 +299,11 @@ Partial Class Main
         Me.item7.Controls.Add(Me.PriceItem7)
         Me.item7.Controls.Add(Me.NameItem7)
         Me.item7.Controls.Add(Me.ImageItem7)
-        Me.item7.Location = New System.Drawing.Point(400, 219)
+        Me.item7.Location = New System.Drawing.Point(533, 270)
+        Me.item7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.item7.Name = "item7"
-        Me.item7.Size = New System.Drawing.Size(161, 177)
+        Me.item7.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.item7.Size = New System.Drawing.Size(215, 218)
         Me.item7.TabIndex = 9
         Me.item7.TabStop = False
         '
@@ -291,9 +311,10 @@ Partial Class Main
         '
         Me.idItem7.AutoSize = True
         Me.idItem7.Enabled = False
-        Me.idItem7.Location = New System.Drawing.Point(6, 11)
+        Me.idItem7.Location = New System.Drawing.Point(8, 14)
+        Me.idItem7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem7.Name = "idItem7"
-        Me.idItem7.Size = New System.Drawing.Size(15, 13)
+        Me.idItem7.Size = New System.Drawing.Size(19, 17)
         Me.idItem7.TabIndex = 3
         Me.idItem7.Text = "id"
         Me.idItem7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -303,9 +324,10 @@ Partial Class Main
         '
         Me.PriceItem7.AutoSize = True
         Me.PriceItem7.Enabled = False
-        Me.PriceItem7.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem7.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem7.Name = "PriceItem7"
-        Me.PriceItem7.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem7.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem7.TabIndex = 2
         Me.PriceItem7.Text = "Price"
         '
@@ -313,9 +335,10 @@ Partial Class Main
         '
         Me.NameItem7.AutoSize = True
         Me.NameItem7.Enabled = False
-        Me.NameItem7.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem7.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem7.Name = "NameItem7"
-        Me.NameItem7.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem7.Size = New System.Drawing.Size(45, 17)
         Me.NameItem7.TabIndex = 1
         Me.NameItem7.Text = "Name"
         '
@@ -323,9 +346,10 @@ Partial Class Main
         '
         Me.ImageItem7.Enabled = False
         Me.ImageItem7.ImageLocation = ""
-        Me.ImageItem7.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem7.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem7.Name = "ImageItem7"
-        Me.ImageItem7.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem7.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem7.TabIndex = 0
         Me.ImageItem7.TabStop = False
@@ -337,9 +361,11 @@ Partial Class Main
         Me.Item6.Controls.Add(Me.PriceItem6)
         Me.Item6.Controls.Add(Me.NameItem6)
         Me.Item6.Controls.Add(Me.ImageItem6)
-        Me.Item6.Location = New System.Drawing.Point(212, 219)
+        Me.Item6.Location = New System.Drawing.Point(283, 270)
+        Me.Item6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item6.Name = "Item6"
-        Me.Item6.Size = New System.Drawing.Size(161, 177)
+        Me.Item6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item6.Size = New System.Drawing.Size(215, 218)
         Me.Item6.TabIndex = 8
         Me.Item6.TabStop = False
         '
@@ -347,9 +373,10 @@ Partial Class Main
         '
         Me.idItem6.AutoSize = True
         Me.idItem6.Enabled = False
-        Me.idItem6.Location = New System.Drawing.Point(6, 11)
+        Me.idItem6.Location = New System.Drawing.Point(8, 14)
+        Me.idItem6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem6.Name = "idItem6"
-        Me.idItem6.Size = New System.Drawing.Size(15, 13)
+        Me.idItem6.Size = New System.Drawing.Size(19, 17)
         Me.idItem6.TabIndex = 3
         Me.idItem6.Text = "id"
         Me.idItem6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -359,9 +386,10 @@ Partial Class Main
         '
         Me.PriceItem6.AutoSize = True
         Me.PriceItem6.Enabled = False
-        Me.PriceItem6.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem6.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem6.Name = "PriceItem6"
-        Me.PriceItem6.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem6.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem6.TabIndex = 2
         Me.PriceItem6.Text = "Price"
         '
@@ -369,9 +397,10 @@ Partial Class Main
         '
         Me.NameItem6.AutoSize = True
         Me.NameItem6.Enabled = False
-        Me.NameItem6.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem6.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem6.Name = "NameItem6"
-        Me.NameItem6.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem6.Size = New System.Drawing.Size(45, 17)
         Me.NameItem6.TabIndex = 1
         Me.NameItem6.Text = "Name"
         '
@@ -379,9 +408,10 @@ Partial Class Main
         '
         Me.ImageItem6.Enabled = False
         Me.ImageItem6.ImageLocation = ""
-        Me.ImageItem6.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem6.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem6.Name = "ImageItem6"
-        Me.ImageItem6.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem6.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem6.TabIndex = 0
         Me.ImageItem6.TabStop = False
@@ -393,9 +423,11 @@ Partial Class Main
         Me.Item3.Controls.Add(Me.PriceItem3)
         Me.Item3.Controls.Add(Me.NameItem3)
         Me.Item3.Controls.Add(Me.ImageItem3)
-        Me.Item3.Location = New System.Drawing.Point(400, 19)
+        Me.Item3.Location = New System.Drawing.Point(533, 23)
+        Me.Item3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item3.Name = "Item3"
-        Me.Item3.Size = New System.Drawing.Size(161, 177)
+        Me.Item3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item3.Size = New System.Drawing.Size(215, 218)
         Me.Item3.TabIndex = 5
         Me.Item3.TabStop = False
         '
@@ -403,9 +435,10 @@ Partial Class Main
         '
         Me.idItem3.AutoSize = True
         Me.idItem3.Enabled = False
-        Me.idItem3.Location = New System.Drawing.Point(6, 11)
+        Me.idItem3.Location = New System.Drawing.Point(8, 14)
+        Me.idItem3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem3.Name = "idItem3"
-        Me.idItem3.Size = New System.Drawing.Size(15, 13)
+        Me.idItem3.Size = New System.Drawing.Size(19, 17)
         Me.idItem3.TabIndex = 3
         Me.idItem3.Text = "id"
         Me.idItem3.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -415,9 +448,10 @@ Partial Class Main
         '
         Me.PriceItem3.AutoSize = True
         Me.PriceItem3.Enabled = False
-        Me.PriceItem3.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem3.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem3.Name = "PriceItem3"
-        Me.PriceItem3.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem3.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem3.TabIndex = 2
         Me.PriceItem3.Text = "Price"
         '
@@ -425,9 +459,10 @@ Partial Class Main
         '
         Me.NameItem3.AutoSize = True
         Me.NameItem3.Enabled = False
-        Me.NameItem3.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem3.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem3.Name = "NameItem3"
-        Me.NameItem3.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem3.Size = New System.Drawing.Size(45, 17)
         Me.NameItem3.TabIndex = 1
         Me.NameItem3.Text = "Name"
         '
@@ -435,9 +470,10 @@ Partial Class Main
         '
         Me.ImageItem3.Enabled = False
         Me.ImageItem3.ImageLocation = ""
-        Me.ImageItem3.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem3.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem3.Name = "ImageItem3"
-        Me.ImageItem3.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem3.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem3.TabIndex = 0
         Me.ImageItem3.TabStop = False
@@ -449,9 +485,11 @@ Partial Class Main
         Me.Item5.Controls.Add(Me.PriceItem5)
         Me.Item5.Controls.Add(Me.NameItem5)
         Me.Item5.Controls.Add(Me.ImageItem5)
-        Me.Item5.Location = New System.Drawing.Point(24, 219)
+        Me.Item5.Location = New System.Drawing.Point(32, 270)
+        Me.Item5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item5.Name = "Item5"
-        Me.Item5.Size = New System.Drawing.Size(161, 177)
+        Me.Item5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item5.Size = New System.Drawing.Size(215, 218)
         Me.Item5.TabIndex = 7
         Me.Item5.TabStop = False
         '
@@ -459,9 +497,10 @@ Partial Class Main
         '
         Me.idItem5.AutoSize = True
         Me.idItem5.Enabled = False
-        Me.idItem5.Location = New System.Drawing.Point(6, 11)
+        Me.idItem5.Location = New System.Drawing.Point(8, 14)
+        Me.idItem5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem5.Name = "idItem5"
-        Me.idItem5.Size = New System.Drawing.Size(15, 13)
+        Me.idItem5.Size = New System.Drawing.Size(19, 17)
         Me.idItem5.TabIndex = 3
         Me.idItem5.Text = "id"
         Me.idItem5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -471,9 +510,10 @@ Partial Class Main
         '
         Me.PriceItem5.AutoSize = True
         Me.PriceItem5.Enabled = False
-        Me.PriceItem5.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem5.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem5.Name = "PriceItem5"
-        Me.PriceItem5.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem5.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem5.TabIndex = 2
         Me.PriceItem5.Text = "Price"
         '
@@ -481,9 +521,10 @@ Partial Class Main
         '
         Me.NameItem5.AutoSize = True
         Me.NameItem5.Enabled = False
-        Me.NameItem5.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem5.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem5.Name = "NameItem5"
-        Me.NameItem5.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem5.Size = New System.Drawing.Size(45, 17)
         Me.NameItem5.TabIndex = 1
         Me.NameItem5.Text = "Name"
         '
@@ -491,9 +532,10 @@ Partial Class Main
         '
         Me.ImageItem5.Enabled = False
         Me.ImageItem5.ImageLocation = ""
-        Me.ImageItem5.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem5.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem5.Name = "ImageItem5"
-        Me.ImageItem5.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem5.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem5.TabIndex = 0
         Me.ImageItem5.TabStop = False
@@ -505,9 +547,11 @@ Partial Class Main
         Me.Item2.Controls.Add(Me.PriceItem2)
         Me.Item2.Controls.Add(Me.NameItem2)
         Me.Item2.Controls.Add(Me.ImageItem2)
-        Me.Item2.Location = New System.Drawing.Point(212, 19)
+        Me.Item2.Location = New System.Drawing.Point(283, 23)
+        Me.Item2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item2.Name = "Item2"
-        Me.Item2.Size = New System.Drawing.Size(161, 177)
+        Me.Item2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item2.Size = New System.Drawing.Size(215, 218)
         Me.Item2.TabIndex = 4
         Me.Item2.TabStop = False
         '
@@ -515,9 +559,10 @@ Partial Class Main
         '
         Me.idItem2.AutoSize = True
         Me.idItem2.Enabled = False
-        Me.idItem2.Location = New System.Drawing.Point(6, 11)
+        Me.idItem2.Location = New System.Drawing.Point(8, 14)
+        Me.idItem2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem2.Name = "idItem2"
-        Me.idItem2.Size = New System.Drawing.Size(15, 13)
+        Me.idItem2.Size = New System.Drawing.Size(19, 17)
         Me.idItem2.TabIndex = 3
         Me.idItem2.Text = "id"
         Me.idItem2.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -527,9 +572,10 @@ Partial Class Main
         '
         Me.PriceItem2.AutoSize = True
         Me.PriceItem2.Enabled = False
-        Me.PriceItem2.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem2.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem2.Name = "PriceItem2"
-        Me.PriceItem2.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem2.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem2.TabIndex = 2
         Me.PriceItem2.Text = "Price"
         '
@@ -537,9 +583,10 @@ Partial Class Main
         '
         Me.NameItem2.AutoSize = True
         Me.NameItem2.Enabled = False
-        Me.NameItem2.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem2.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem2.Name = "NameItem2"
-        Me.NameItem2.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem2.Size = New System.Drawing.Size(45, 17)
         Me.NameItem2.TabIndex = 1
         Me.NameItem2.Text = "Name"
         '
@@ -547,18 +594,20 @@ Partial Class Main
         '
         Me.ImageItem2.Enabled = False
         Me.ImageItem2.ImageLocation = ""
-        Me.ImageItem2.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem2.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem2.Name = "ImageItem2"
-        Me.ImageItem2.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem2.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem2.TabIndex = 0
         Me.ImageItem2.TabStop = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(554, -53)
+        Me.PictureBox1.Location = New System.Drawing.Point(739, -65)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 52)
+        Me.PictureBox1.Size = New System.Drawing.Size(73, 64)
         Me.PictureBox1.TabIndex = 10
         Me.PictureBox1.TabStop = False
         '
@@ -569,9 +618,11 @@ Partial Class Main
         Me.Item1.Controls.Add(Me.PriceItem1)
         Me.Item1.Controls.Add(Me.NameItem1)
         Me.Item1.Controls.Add(Me.ImageItem1)
-        Me.Item1.Location = New System.Drawing.Point(24, 19)
+        Me.Item1.Location = New System.Drawing.Point(32, 23)
+        Me.Item1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Item1.Name = "Item1"
-        Me.Item1.Size = New System.Drawing.Size(161, 177)
+        Me.Item1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Item1.Size = New System.Drawing.Size(215, 218)
         Me.Item1.TabIndex = 0
         Me.Item1.TabStop = False
         '
@@ -579,9 +630,10 @@ Partial Class Main
         '
         Me.idItem1.AutoSize = True
         Me.idItem1.Enabled = False
-        Me.idItem1.Location = New System.Drawing.Point(6, 11)
+        Me.idItem1.Location = New System.Drawing.Point(8, 14)
+        Me.idItem1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.idItem1.Name = "idItem1"
-        Me.idItem1.Size = New System.Drawing.Size(15, 13)
+        Me.idItem1.Size = New System.Drawing.Size(19, 17)
         Me.idItem1.TabIndex = 3
         Me.idItem1.Text = "id"
         Me.idItem1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -591,9 +643,10 @@ Partial Class Main
         '
         Me.PriceItem1.AutoSize = True
         Me.PriceItem1.Enabled = False
-        Me.PriceItem1.Location = New System.Drawing.Point(19, 147)
+        Me.PriceItem1.Location = New System.Drawing.Point(25, 181)
+        Me.PriceItem1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PriceItem1.Name = "PriceItem1"
-        Me.PriceItem1.Size = New System.Drawing.Size(31, 13)
+        Me.PriceItem1.Size = New System.Drawing.Size(40, 17)
         Me.PriceItem1.TabIndex = 2
         Me.PriceItem1.Text = "Price"
         '
@@ -601,9 +654,10 @@ Partial Class Main
         '
         Me.NameItem1.AutoSize = True
         Me.NameItem1.Enabled = False
-        Me.NameItem1.Location = New System.Drawing.Point(19, 134)
+        Me.NameItem1.Location = New System.Drawing.Point(25, 165)
+        Me.NameItem1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.NameItem1.Name = "NameItem1"
-        Me.NameItem1.Size = New System.Drawing.Size(35, 13)
+        Me.NameItem1.Size = New System.Drawing.Size(45, 17)
         Me.NameItem1.TabIndex = 1
         Me.NameItem1.Text = "Name"
         '
@@ -611,9 +665,10 @@ Partial Class Main
         '
         Me.ImageItem1.Enabled = False
         Me.ImageItem1.ImageLocation = ""
-        Me.ImageItem1.Location = New System.Drawing.Point(22, 20)
+        Me.ImageItem1.Location = New System.Drawing.Point(29, 25)
+        Me.ImageItem1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ImageItem1.Name = "ImageItem1"
-        Me.ImageItem1.Size = New System.Drawing.Size(114, 102)
+        Me.ImageItem1.Size = New System.Drawing.Size(152, 126)
         Me.ImageItem1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.ImageItem1.TabIndex = 0
         Me.ImageItem1.TabStop = False
@@ -621,9 +676,10 @@ Partial Class Main
         'NextBtn
         '
         Me.NextBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NextBtn.Location = New System.Drawing.Point(852, 474)
+        Me.NextBtn.Location = New System.Drawing.Point(1136, 583)
+        Me.NextBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.NextBtn.Name = "NextBtn"
-        Me.NextBtn.Size = New System.Drawing.Size(21, 31)
+        Me.NextBtn.Size = New System.Drawing.Size(28, 38)
         Me.NextBtn.TabIndex = 5
         Me.NextBtn.Text = ">"
         Me.NextBtn.UseVisualStyleBackColor = True
@@ -631,9 +687,10 @@ Partial Class Main
         'PrevBtn
         '
         Me.PrevBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.PrevBtn.Location = New System.Drawing.Point(831, 474)
+        Me.PrevBtn.Location = New System.Drawing.Point(1108, 583)
+        Me.PrevBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PrevBtn.Name = "PrevBtn"
-        Me.PrevBtn.Size = New System.Drawing.Size(21, 31)
+        Me.PrevBtn.Size = New System.Drawing.Size(28, 38)
         Me.PrevBtn.TabIndex = 6
         Me.PrevBtn.Text = "<"
         Me.PrevBtn.UseVisualStyleBackColor = True
@@ -643,10 +700,11 @@ Partial Class Main
         Me.Username.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Username.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Username.HideSelection = False
-        Me.Username.Location = New System.Drawing.Point(6, 15)
+        Me.Username.Location = New System.Drawing.Point(8, 18)
+        Me.Username.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Username.Name = "Username"
         Me.Username.ReadOnly = True
-        Me.Username.Size = New System.Drawing.Size(137, 13)
+        Me.Username.Size = New System.Drawing.Size(183, 15)
         Me.Username.TabIndex = 7
         Me.Username.Text = "Hello, Stranger!"
         Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -654,9 +712,10 @@ Partial Class Main
         'Store
         '
         Me.Store.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!)
-        Me.Store.Location = New System.Drawing.Point(77, 36)
+        Me.Store.Location = New System.Drawing.Point(103, 44)
+        Me.Store.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Store.Name = "Store"
-        Me.Store.Size = New System.Drawing.Size(66, 24)
+        Me.Store.Size = New System.Drawing.Size(88, 30)
         Me.Store.TabIndex = 8
         Me.Store.Text = "Store"
         Me.Store.UseVisualStyleBackColor = True
@@ -667,9 +726,11 @@ Partial Class Main
         Me.GroupBox2.Controls.Add(Me.Store)
         Me.GroupBox2.Controls.Add(Me.Username)
         Me.GroupBox2.Controls.Add(Me.LoginBtn)
-        Me.GroupBox2.Location = New System.Drawing.Point(735, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(980, 5)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(149, 66)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(199, 81)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
         '
@@ -678,9 +739,10 @@ Partial Class Main
         Me.Cart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Cart.Enabled = False
         Me.Cart.Image = Global.Final_Project.My.Resources.Resources.shopping_02_256
-        Me.Cart.Location = New System.Drawing.Point(674, 12)
+        Me.Cart.Location = New System.Drawing.Point(899, 15)
+        Me.Cart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cart.Name = "Cart"
-        Me.Cart.Size = New System.Drawing.Size(55, 52)
+        Me.Cart.Size = New System.Drawing.Size(73, 64)
         Me.Cart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Cart.TabIndex = 10
         Me.Cart.TabStop = False
@@ -689,9 +751,10 @@ Partial Class Main
         '
         Me.StoreLogo.Enabled = False
         Me.StoreLogo.Image = Global.Final_Project.My.Resources.Resources.TG0wQQ40_400x400_mart_ai_on_twitter
-        Me.StoreLogo.Location = New System.Drawing.Point(12, 12)
+        Me.StoreLogo.Location = New System.Drawing.Point(16, 15)
+        Me.StoreLogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.StoreLogo.Name = "StoreLogo"
-        Me.StoreLogo.Size = New System.Drawing.Size(102, 97)
+        Me.StoreLogo.Size = New System.Drawing.Size(136, 119)
         Me.StoreLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.StoreLogo.TabIndex = 3
         Me.StoreLogo.TabStop = False
@@ -700,9 +763,10 @@ Partial Class Main
         '
         Me.Time.AutoSize = True
         Me.Time.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Time.Location = New System.Drawing.Point(10, 135)
+        Me.Time.Location = New System.Drawing.Point(13, 166)
+        Me.Time.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Time.Name = "Time"
-        Me.Time.Size = New System.Drawing.Size(30, 13)
+        Me.Time.Size = New System.Drawing.Size(39, 17)
         Me.Time.TabIndex = 12
         Me.Time.Text = "Time"
         Me.Time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -712,9 +776,11 @@ Partial Class Main
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
         Me.GroupBox3.Controls.Add(Me.PriceOB)
         Me.GroupBox3.Controls.Add(Me.NameOB)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 157)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 193)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(102, 165)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(136, 203)
         Me.GroupBox3.TabIndex = 13
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Order By"
@@ -723,9 +789,11 @@ Partial Class Main
         '
         Me.GroupBox4.Controls.Add(Me.Dsc)
         Me.GroupBox4.Controls.Add(Me.Asc)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 75)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 92)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(90, 77)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(120, 95)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Sort By"
@@ -733,31 +801,34 @@ Partial Class Main
         'Dsc
         '
         Me.Dsc.AutoSize = True
-        Me.Dsc.Location = New System.Drawing.Point(7, 43)
+        Me.Dsc.Location = New System.Drawing.Point(9, 53)
+        Me.Dsc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Dsc.Name = "Dsc"
-        Me.Dsc.Size = New System.Drawing.Size(77, 17)
+        Me.Dsc.Size = New System.Drawing.Size(104, 21)
         Me.Dsc.TabIndex = 1
-        Me.Dsc.Text = "Decending"
+        Me.Dsc.Text = "Descending"
         Me.Dsc.UseVisualStyleBackColor = True
         '
         'Asc
         '
         Me.Asc.AutoSize = True
         Me.Asc.Checked = True
-        Me.Asc.Location = New System.Drawing.Point(7, 20)
+        Me.Asc.Location = New System.Drawing.Point(9, 25)
+        Me.Asc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Asc.Name = "Asc"
-        Me.Asc.Size = New System.Drawing.Size(69, 17)
+        Me.Asc.Size = New System.Drawing.Size(95, 21)
         Me.Asc.TabIndex = 0
         Me.Asc.TabStop = True
-        Me.Asc.Text = "Asending"
+        Me.Asc.Text = "Ascending"
         Me.Asc.UseVisualStyleBackColor = True
         '
         'PriceOB
         '
         Me.PriceOB.AutoSize = True
-        Me.PriceOB.Location = New System.Drawing.Point(6, 42)
+        Me.PriceOB.Location = New System.Drawing.Point(8, 52)
+        Me.PriceOB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PriceOB.Name = "PriceOB"
-        Me.PriceOB.Size = New System.Drawing.Size(49, 17)
+        Me.PriceOB.Size = New System.Drawing.Size(61, 21)
         Me.PriceOB.TabIndex = 1
         Me.PriceOB.TabStop = True
         Me.PriceOB.Text = "Price"
@@ -766,9 +837,10 @@ Partial Class Main
         'NameOB
         '
         Me.NameOB.AutoSize = True
-        Me.NameOB.Location = New System.Drawing.Point(6, 19)
+        Me.NameOB.Location = New System.Drawing.Point(8, 23)
+        Me.NameOB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.NameOB.Name = "NameOB"
-        Me.NameOB.Size = New System.Drawing.Size(53, 17)
+        Me.NameOB.Size = New System.Drawing.Size(66, 21)
         Me.NameOB.TabIndex = 0
         Me.NameOB.TabStop = True
         Me.NameOB.Text = "Name"
@@ -776,9 +848,10 @@ Partial Class Main
         '
         'Clear
         '
-        Me.Clear.Location = New System.Drawing.Point(25, 438)
+        Me.Clear.Location = New System.Drawing.Point(33, 539)
+        Me.Clear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Clear.Name = "Clear"
-        Me.Clear.Size = New System.Drawing.Size(75, 23)
+        Me.Clear.Size = New System.Drawing.Size(100, 28)
         Me.Clear.TabIndex = 3
         Me.Clear.Text = "Clear"
         Me.Clear.UseVisualStyleBackColor = True
@@ -790,9 +863,10 @@ Partial Class Main
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 122)
+        Me.Label1.Location = New System.Drawing.Point(41, 150)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 13)
+        Me.Label1.Size = New System.Drawing.Size(90, 17)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Current Time"
         '
@@ -802,9 +876,11 @@ Partial Class Main
         Me.GroupBox5.Controls.Add(Me.Os)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.brand)
-        Me.GroupBox5.Location = New System.Drawing.Point(12, 328)
+        Me.GroupBox5.Location = New System.Drawing.Point(16, 404)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(102, 104)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Size = New System.Drawing.Size(136, 128)
         Me.GroupBox5.TabIndex = 15
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Search By"
@@ -812,9 +888,10 @@ Partial Class Main
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 58)
+        Me.Label3.Location = New System.Drawing.Point(8, 71)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 13)
+        Me.Label3.Size = New System.Drawing.Size(121, 17)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Operating System"
         '
@@ -822,17 +899,19 @@ Partial Class Main
         '
         Me.Os.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.Os.FormattingEnabled = True
-        Me.Os.Location = New System.Drawing.Point(6, 74)
+        Me.Os.Location = New System.Drawing.Point(8, 91)
+        Me.Os.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Os.Name = "Os"
-        Me.Os.Size = New System.Drawing.Size(90, 21)
+        Me.Os.Size = New System.Drawing.Size(119, 24)
         Me.Os.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 15)
+        Me.Label2.Location = New System.Drawing.Point(8, 18)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.Size = New System.Drawing.Size(46, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Brand"
         '
@@ -840,17 +919,18 @@ Partial Class Main
         '
         Me.brand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.brand.FormattingEnabled = True
-        Me.brand.Location = New System.Drawing.Point(6, 31)
+        Me.brand.Location = New System.Drawing.Point(8, 38)
+        Me.brand.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.brand.Name = "brand"
-        Me.brand.Size = New System.Drawing.Size(90, 21)
+        Me.brand.Size = New System.Drawing.Size(119, 24)
         Me.brand.TabIndex = 0
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(896, 513)
+        Me.ClientSize = New System.Drawing.Size(1195, 631)
         Me.Controls.Add(Me.Clear)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Label1)
@@ -863,6 +943,7 @@ Partial Class Main
         Me.Controls.Add(Me.Items)
         Me.Controls.Add(Me.StoreLogo)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "Main"
         Me.Text = "mart."

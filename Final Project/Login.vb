@@ -14,6 +14,7 @@
             Main.setUsername(CStr(Username.Text))
             Main.loginEx()
             disposedMe()
+            Main.Focus()
         End If
     End Sub
 
