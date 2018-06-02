@@ -75,7 +75,7 @@ Partial Class StoreDetail
         '
         Me.Items.FormattingEnabled = True
         Me.Items.Location = New System.Drawing.Point(240, 126)
-        Me.Items.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Items.Margin = New System.Windows.Forms.Padding(2)
         Me.Items.Name = "Items"
         Me.Items.Size = New System.Drawing.Size(158, 316)
         Me.Items.TabIndex = 1
@@ -84,7 +84,7 @@ Partial Class StoreDetail
         '
         Me.ItemImage.Enabled = False
         Me.ItemImage.Location = New System.Drawing.Point(85, 15)
-        Me.ItemImage.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ItemImage.Margin = New System.Windows.Forms.Padding(2)
         Me.ItemImage.Name = "ItemImage"
         Me.ItemImage.Size = New System.Drawing.Size(112, 122)
         Me.ItemImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -105,7 +105,7 @@ Partial Class StoreDetail
         '
         Me.nameData.Enabled = False
         Me.nameData.Location = New System.Drawing.Point(75, 141)
-        Me.nameData.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.nameData.Margin = New System.Windows.Forms.Padding(2)
         Me.nameData.Name = "nameData"
         Me.nameData.Size = New System.Drawing.Size(132, 20)
         Me.nameData.TabIndex = 4
@@ -137,9 +137,9 @@ Partial Class StoreDetail
         Me.GroupBox1.Controls.Add(Me.ItemImage)
         Me.GroupBox1.Controls.Add(Me.nameData)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 68)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(220, 411)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
@@ -189,7 +189,7 @@ Partial Class StoreDetail
         '
         Me.qty.Enabled = False
         Me.qty.Location = New System.Drawing.Point(75, 163)
-        Me.qty.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.qty.Margin = New System.Windows.Forms.Padding(2)
         Me.qty.Name = "qty"
         Me.qty.Size = New System.Drawing.Size(132, 20)
         Me.qty.TabIndex = 25
@@ -198,7 +198,7 @@ Partial Class StoreDetail
         '
         Me.delete.Enabled = False
         Me.delete.Location = New System.Drawing.Point(102, 379)
-        Me.delete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.delete.Margin = New System.Windows.Forms.Padding(2)
         Me.delete.Name = "delete"
         Me.delete.Size = New System.Drawing.Size(71, 27)
         Me.delete.TabIndex = 24
@@ -209,7 +209,7 @@ Partial Class StoreDetail
         '
         Me.updateBtn.Enabled = False
         Me.updateBtn.Location = New System.Drawing.Point(27, 378)
-        Me.updateBtn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.updateBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.updateBtn.Name = "updateBtn"
         Me.updateBtn.Size = New System.Drawing.Size(71, 28)
         Me.updateBtn.TabIndex = 23
@@ -230,7 +230,7 @@ Partial Class StoreDetail
         '
         Me.ram.Enabled = False
         Me.ram.Location = New System.Drawing.Point(75, 281)
-        Me.ram.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ram.Margin = New System.Windows.Forms.Padding(2)
         Me.ram.Name = "ram"
         Me.ram.Size = New System.Drawing.Size(109, 20)
         Me.ram.TabIndex = 21
@@ -239,7 +239,7 @@ Partial Class StoreDetail
         '
         Me.storage.Enabled = False
         Me.storage.Location = New System.Drawing.Point(75, 258)
-        Me.storage.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.storage.Margin = New System.Windows.Forms.Padding(2)
         Me.storage.Name = "storage"
         Me.storage.Size = New System.Drawing.Size(109, 20)
         Me.storage.TabIndex = 20
@@ -307,7 +307,7 @@ Partial Class StoreDetail
         '
         Me.description.Enabled = False
         Me.description.Location = New System.Drawing.Point(75, 306)
-        Me.description.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.description.Margin = New System.Windows.Forms.Padding(2)
         Me.description.Multiline = True
         Me.description.Name = "description"
         Me.description.Size = New System.Drawing.Size(132, 68)
@@ -328,7 +328,7 @@ Partial Class StoreDetail
         Me.os.Enabled = False
         Me.os.FormattingEnabled = True
         Me.os.Location = New System.Drawing.Point(75, 235)
-        Me.os.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.os.Margin = New System.Windows.Forms.Padding(2)
         Me.os.Name = "os"
         Me.os.Size = New System.Drawing.Size(132, 21)
         Me.os.TabIndex = 8
@@ -338,7 +338,7 @@ Partial Class StoreDetail
         Me.brand.Enabled = False
         Me.brand.FormattingEnabled = True
         Me.brand.Location = New System.Drawing.Point(75, 210)
-        Me.brand.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.brand.Margin = New System.Windows.Forms.Padding(2)
         Me.brand.Name = "brand"
         Me.brand.Size = New System.Drawing.Size(132, 21)
         Me.brand.TabIndex = 7
@@ -347,7 +347,7 @@ Partial Class StoreDetail
         '
         Me.price.Enabled = False
         Me.price.Location = New System.Drawing.Point(75, 187)
-        Me.price.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.price.Margin = New System.Windows.Forms.Padding(2)
         Me.price.Name = "price"
         Me.price.Size = New System.Drawing.Size(132, 20)
         Me.price.TabIndex = 5
@@ -355,7 +355,7 @@ Partial Class StoreDetail
         'add
         '
         Me.add.Location = New System.Drawing.Point(240, 446)
-        Me.add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.add.Margin = New System.Windows.Forms.Padding(2)
         Me.add.Name = "add"
         Me.add.Size = New System.Drawing.Size(77, 28)
         Me.add.TabIndex = 25
@@ -365,7 +365,7 @@ Partial Class StoreDetail
         'cancel
         '
         Me.cancel.Location = New System.Drawing.Point(321, 446)
-        Me.cancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.cancel.Name = "cancel"
         Me.cancel.Size = New System.Drawing.Size(77, 27)
         Me.cancel.TabIndex = 24

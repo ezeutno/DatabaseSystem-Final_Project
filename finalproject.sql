@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2018 at 03:52 AM
+-- Generation Time: Jun 02, 2018 at 05:31 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -41,7 +41,8 @@ INSERT INTO `brand` (`id`, `name`) VALUES
 (1, 'Samsung'),
 (2, 'Apple'),
 (3, 'LG'),
-(4, 'Nokia');
+(4, 'Nokia'),
+(5, 'Oneplus');
 
 -- --------------------------------------------------------
 
@@ -280,8 +281,10 @@ INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province
 (1, 'FX SUDIRMAN LT 10', 'Sudirman', 'Jakarta Pusat', 'DKI Jakarta', 12839, 76, 'ezeutno'),
 (4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 'david'),
 (5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno'),
-(7, 'a', 'a', 'a', 'a', 1, 2, ''),
-(8, 'b', 'b', 'b', 'b', 1, 4, '');
+(7, 'Aribanda Luksamer', 'a', 'a', 'a', 1, 2, ''),
+(8, 'Barinusa 3, 672, 9898', 'b', 'b', 'b', 1, 4, ''),
+(10, 'Jalan Panjang', 'Kuntilanang', 'Jakarta Timur', 'DKI Jakarta', 87365, 76, 'sher'),
+(11, 'Jawa Kuliang 6', 'Haji Kumeng 7', 'Jakarta Barat', 'DKI Jakarta', 54637, 76, 'jbarlian');
 
 -- --------------------------------------------------------
 
@@ -304,13 +307,50 @@ CREATE TABLE `custdetail` (
 --
 
 INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `phone`, `birthday`) VALUES
-('', '', '', '', '', '', '2000-01-01'),
+('', '', 'Space Otter', 'Odd', '@.', '12345678', '2000-01-01'),
 ('david', 'david123', 'David', 'Honasan', 'david.honasan@binus.ac.id', '6281763267842', '1999-09-26'),
 ('ezeutno', '24091999', 'Ivan Ezechial', 'Suratno', 'ivan.suratno@gmail.com', '6281807825885', '1999-09-24'),
 ('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
 ('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
-('sher', '12345678', 'qwertyasdfgh', 'asdfghfds', 'lol@gmail.com', '893719827332', '1995-06-14'),
+('sher', '12345678', 'Donald', 'Trump', 'lol@gmail.com', '893719827332', '1950-07-26'),
 ('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detailtrans`
+--
+
+CREATE TABLE `detailtrans` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `transaction_id` int(11) NOT NULL,
+  `status` varchar(20) DEFAULT 'On Process'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detailtrans`
+--
+
+INSERT INTO `detailtrans` (`id`, `item_id`, `quantity`, `transaction_id`, `status`) VALUES
+(6, 12, 1, 6, 'On Process'),
+(7, 15, 12, 8, 'On Process'),
+(8, 13, 20, 8, 'On Process'),
+(9, 14, 10, 14, 'On Process'),
+(10, 1, 100, 11, 'On Process'),
+(11, 8, 50, 11, 'On Process'),
+(13, 3, 50000, 16, 'On Process'),
+(14, 11, 500, 18, 'On Process'),
+(15, 9, 10, 19, 'On Process'),
+(16, 7, 20, 19, 'On Process'),
+(17, 9, 40, 20, 'On Process'),
+(19, 3, 1, 22, 'On Process'),
+(22, 15, 488, 15, 'On Process'),
+(23, 13, 1, 15, 'On Process'),
+(26, 3, 2, 24, 'On Process'),
+(27, 2, 2, 24, 'On Process'),
+(28, 6, 2, 24, 'On Process');
 
 -- --------------------------------------------------------
 
@@ -337,12 +377,19 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `storage`, `ram`, `description`, `imageloc`, `store_name`) VALUES
-(1, 'Galaxy S9', 1000, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
-(2, 'iPhone 7 Plus', 10000, 11000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'RunBook'),
-(3, 'Galaxy S8 Plus', 50000, 8500000, 1, 1, 64, 4, '', 'https://transcomdigital.com/content/images/thumbs/0003946_samsung-galaxy-s8-midnight-black_3000.png', 'RunBook'),
+(1, 'Galaxy S9', 900, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
+(2, 'iPhone 7', 80, 10000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'RunBook'),
+(3, 'Galaxy S8 Plus', 99599, 8500000, 1, 1, 64, 4, '', 'https://transcomdigital.com/content/images/thumbs/0003946_samsung-galaxy-s8-midnight-black_3000.png', 'RunBook'),
 (6, 'G7+ Thin Q', 100, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'RunBook'),
-(7, 'Nokia 6.1 2018', 50, 6000000, 4, 1, 64, 4, '', 'https://www.androidpolice.com/wp-content/uploads/2018/05/New-Nokia-6-Black-Copper-2.png', 'RunBook'),
-(8, 'iPhone X 2018', 100, 16000000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook');
+(7, 'Nokia 6.1 2018', 30, 3500000, 4, 1, 64, 4, '', 'https://www.androidpolice.com/wp-content/uploads/2018/05/New-Nokia-6-Black-Copper-2.png', 'RunBook'),
+(8, 'iPhone X 2017', 50, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
+(9, 'Nokia 7 Plus', 20000, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'RunBook'),
+(10, 'Oneplus 6', 100000, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'RunBook'),
+(11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'RunBook'),
+(12, 'Galaxy Note 3', 0, 2300000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
+(13, 'Oneplus 5', 130, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
+(14, 'G5 SE', 190, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
+(15, 'Nokia 8810 Reloaded', 488, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua');
 
 -- --------------------------------------------------------
 
@@ -361,7 +408,8 @@ CREATE TABLE `os` (
 
 INSERT INTO `os` (`id`, `name`) VALUES
 (1, 'Android'),
-(2, 'iOS');
+(2, 'iOS'),
+(3, 'KaiOS');
 
 -- --------------------------------------------------------
 
@@ -381,8 +429,42 @@ CREATE TABLE `store` (
 
 INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
 ('Kampung Melayu', 'david', 4),
+('Masa Tua', 'sher', 10),
 ('Rumah Merdeka', 'ezeutno', 5),
 ('RunBook', '', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction`
+--
+
+CREATE TABLE `transaction` (
+  `id` int(11) NOT NULL,
+  `purchased` tinyint(1) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `address_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`id`, `purchased`, `username`, `address_id`) VALUES
+(6, 1, '', 7),
+(8, 1, '', 7),
+(11, 1, 'ezeutno', 5),
+(14, 1, '', 8),
+(15, 0, '', NULL),
+(16, 1, 'ezeutno', 5),
+(17, 0, 'ezeutno', NULL),
+(18, 1, 'david', 4),
+(19, 1, 'david', 4),
+(20, 1, 'david', 4),
+(21, 0, 'david', NULL),
+(22, 1, 'jbarlian', 11),
+(23, 0, 'jbarlian', NULL),
+(24, 0, 'lol', NULL);
 
 --
 -- Indexes for dumped tables
@@ -414,6 +496,14 @@ ALTER TABLE `custdetail`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Indexes for table `detailtrans`
+--
+ALTER TABLE `detailtrans`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `transaction_id` (`transaction_id`);
+
+--
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
@@ -437,6 +527,14 @@ ALTER TABLE `store`
   ADD KEY `address_id` (`address_id`);
 
 --
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`),
+  ADD KEY `address_id` (`address_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -444,7 +542,7 @@ ALTER TABLE `store`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `country`
@@ -456,19 +554,31 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `detailtrans`
+--
+ALTER TABLE `detailtrans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `os`
 --
 ALTER TABLE `os`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
@@ -479,6 +589,13 @@ ALTER TABLE `os`
 --
 ALTER TABLE `custaddress`
   ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+
+--
+-- Constraints for table `detailtrans`
+--
+ALTER TABLE `detailtrans`
+  ADD CONSTRAINT `detailtrans_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`),
+  ADD CONSTRAINT `detailtrans_ibfk_2` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`id`);
 
 --
 -- Constraints for table `item`
@@ -494,6 +611,13 @@ ALTER TABLE `item`
 ALTER TABLE `store`
   ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`username`) REFERENCES `custdetail` (`username`),
   ADD CONSTRAINT `store_ibfk_2` FOREIGN KEY (`address_id`) REFERENCES `custaddress` (`id`);
+
+--
+-- Constraints for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`username`) REFERENCES `custdetail` (`username`),
+  ADD CONSTRAINT `transaction_ibfk_2` FOREIGN KEY (`address_id`) REFERENCES `custaddress` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

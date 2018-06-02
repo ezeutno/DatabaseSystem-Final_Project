@@ -19,16 +19,18 @@ Public Class CartDetail
         transactionCart.Rows.Clear()
         If past Then
             transId.Visible = True
+            Status.Visible = True
             transactionCart.AllowUserToDeleteRows = False
             reader = Db.getDetailTransaction(Main.getUsername())
         Else
             transId.Visible = False
+            Status.Visible = False
             transactionCart.AllowUserToDeleteRows = True
             reader = Db.getDetailTransaction(Main.getTransId())
         End If
         If reader.HasRows Then
             Do While reader.Read()
-                transactionCart.Rows.Add(New String() {reader.Item(2), reader.Item(0), reader.Item(1), reader.Item(3), reader.Item(4), priceConverter(reader.Item(5)), reader.Item(6), priceConverter(reader.Item(7))})
+                transactionCart.Rows.Add(New String() {reader.Item(2), reader.Item(0), reader.Item(1), reader.Item(3), reader.Item(4), priceConverter(reader.Item(5)), reader.Item(6), priceConverter(reader.Item(7)), reader.Item(8)})
             Loop
         End If
         Db.closeCon()

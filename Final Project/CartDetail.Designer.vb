@@ -35,6 +35,7 @@ Partial Class CartDetail
         Me.price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.transactionCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,7 +43,7 @@ Partial Class CartDetail
         '
         Me.transactionCart.AllowUserToAddRows = False
         Me.transactionCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.transactionCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailTransactionId, Me.transId, Me.Store, Me.ItemId, Me.itemName, Me.price, Me.qty, Me.subtotal})
+        Me.transactionCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailTransactionId, Me.transId, Me.Store, Me.ItemId, Me.itemName, Me.price, Me.qty, Me.subtotal, Me.Status})
         Me.transactionCart.Location = New System.Drawing.Point(11, 11)
         Me.transactionCart.Margin = New System.Windows.Forms.Padding(2)
         Me.transactionCart.Name = "transactionCart"
@@ -140,6 +141,13 @@ Partial Class CartDetail
         Me.subtotal.Name = "subtotal"
         Me.subtotal.ReadOnly = True
         '
+        'Status
+        '
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        Me.Status.Visible = False
+        '
         'CartDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -174,4 +182,5 @@ Partial Class CartDetail
     Friend WithEvents price As DataGridViewTextBoxColumn
     Friend WithEvents qty As DataGridViewTextBoxColumn
     Friend WithEvents subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewTextBoxColumn
 End Class

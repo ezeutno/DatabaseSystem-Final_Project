@@ -257,4 +257,8 @@ Public Class StoreDetail
         updateBtn.Enabled = False
         refreshDetail()
     End Sub
+
+    Private Sub Sales_Click(sender As Object, e As EventArgs) Handles Sales.Click
+
+    End Sub
 End Class

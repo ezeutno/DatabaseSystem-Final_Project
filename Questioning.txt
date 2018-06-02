@@ -1,0 +1,12 @@
+SELECT id, (quantity-bought_qty) as currQuantity
+FROM item,
+
+(SELECT  detailtrans.item_id , sum(detailtrans.quantity) as bought_qty 
+FROM detailtrans, transaction 
+WHERE transaction.id = detailtrans.transaction_id 
+AND transaction.purchased = 0  
+GROUP BY detailtrans.item_id) as total 
+
+WHERE item.item_id = total.item_id;
+
+"ERROR JOIN"

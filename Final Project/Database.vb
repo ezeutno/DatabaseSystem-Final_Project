@@ -154,7 +154,7 @@ Public Class Database
     Public Function getDetailTransaction(username As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price "
+            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price, detailtrans.status "
             query += "FROM detailtrans,item,transaction "
             query += "WHERE detailtrans.item_id = item.id "
             query += "AND transaction.id = detailtrans.transaction_id "
@@ -174,7 +174,7 @@ Public Class Database
     Public Function getDetailTransaction(currTrans As Integer) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price "
+            query = "SELECT transaction.id, item.store_name, detailtrans.id,item.id, item.name,item.price, detailtrans.quantity, item.price * detailtrans.quantity as price, detailtrans.status "
             query += "FROM detailtrans,item,transaction "
             query += "WHERE detailtrans.item_id = item.id "
             query += "AND transaction.id = detailtrans.transaction_id "
