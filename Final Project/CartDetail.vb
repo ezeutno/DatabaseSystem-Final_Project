@@ -60,44 +60,52 @@ Public Class CartDetail
     End Sub
 
     Private Sub Buy_Click(sender As Object, e As EventArgs) Handles Buy.Click
-        Dim errorValue As String = "An Error Occured : "
-        Dim total As Integer = 0
-        For Each r As DataGridViewRow In transactionCart.Rows
-            If Db.checkAvQuantity(r.Cells(3).Value, r.Cells(6).Value) Then
-                Db.closeCon()
-                Db.updateItem(r.Cells(3).Value, r.Cells(6).Value, False)
-            Else
-                Db.closeCon()
-                errorValue += vbNewLine + Db.getItemDetails(r.Cells(3).Value).Item(1) + " no more stocks! (Auto Delete)"
-                Db.closeCon()
-                Db.deleteDetailTrans(r.Cells(0).Value)
-                Db.closeCon()
-                total -= 1
-            End If
-            total += 1
-        Next
-
-        If Db.checkAddress(Main.getUsername()) Then
-            Db.closeCon()
-            If total > 0 Then
-                ChooseAddress.Show()
-            Else
-                errorValue += vbNewLine + "You haven't bought anything!"
-            End If
+        If Purchase.Text = "Current Cart" Then
+            For Each SelectedRow As DataGridViewRow In transactionCart.SelectedRows
+                If Not SelectedRow.Cells(8).Value = "FULLFILED" Then
+                    Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILED")
+                End If
+            Next
+            refreshDetail()
         Else
-            errorValue += vbNewLine + "Please create your address first for shipping!"
-            Db.closeCon()
-        End If
-        If errorValue IsNot "An Error Occured : " Then MessageBox.Show(errorValue)
+            Dim errorValue As String = "An Error Occured : "
+            Dim total As Integer = 0
+            For Each r As DataGridViewRow In transactionCart.Rows
+                If Db.checkAvQuantity(r.Cells(3).Value, r.Cells(6).Value) Then
+                    Db.closeCon()
+                    Db.updateItem(r.Cells(3).Value, r.Cells(6).Value, False)
+                Else
+                    Db.closeCon()
+                    errorValue += vbNewLine + Db.getItemDetails(r.Cells(3).Value).Item(1) + " no more stocks! (Auto Delete)"
+                    Db.closeCon()
+                    Db.deleteDetailTrans(r.Cells(0).Value)
+                    Db.closeCon()
+                    total -= 1
+                End If
+                total += 1
+            Next
 
+            If Db.checkAddress(Main.getUsername()) Then
+                Db.closeCon()
+                If total > 0 Then
+                    ChooseAddress.Show()
+                Else
+                    errorValue += vbNewLine + "You haven't bought anything!"
+                End If
+            Else
+                errorValue += vbNewLine + "Please create your address first for shipping!"
+                Db.closeCon()
+            End If
+            If errorValue IsNot "An Error Occured : " Then MessageBox.Show(errorValue)
+        End If
     End Sub
 
     Private Sub Purchase_Click(sender As Object, e As EventArgs) Handles Purchase.Click
         If past Then
-            Buy.Enabled = True
+            Buy.Text = "Buy Now"
             Purchase.Text = "Purchased History"
         Else
-            Buy.Enabled = False
+            Buy.Text = "Fullfiled"
             Purchase.Text = "Current Cart"
         End If
         past = Not past
