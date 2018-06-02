@@ -65,7 +65,7 @@ Public Class CartDetail
         For Each r As DataGridViewRow In transactionCart.Rows
             If Db.checkAvQuantity(r.Cells(3).Value, r.Cells(6).Value) Then
                 Db.closeCon()
-                Db.updateItem(r.Cells(3).Value, r.Cells(6).Value)
+                Db.updateItem(r.Cells(3).Value, r.Cells(6).Value, False)
             Else
                 Db.closeCon()
                 errorValue += vbNewLine + Db.getItemDetails(r.Cells(3).Value).Item(1) + " no more stocks! (Auto Delete)"

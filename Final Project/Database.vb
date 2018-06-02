@@ -105,6 +105,7 @@ Public Class Database
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
+            Main.refreshSearchBy()
         Catch ex As Exception
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
@@ -118,6 +119,7 @@ Public Class Database
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()
+            Main.refreshSearchBy()
         Catch ex As Exception
             con.Close()
             MessageBox.Show("Connection error occured : " + ex.Message)
@@ -524,12 +526,19 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getAllItem(start_id As Integer, search As String) As MySqlDataReader
+    Public Function getAllItem(start_id As Integer, search As String, brand As String, os As String) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT * FROM item WHERE quantity > 0 "
+            query = "SELECT item.id,item.name,item.imageloc,item.price FROM item,brand,os WHERE item.quantity > 0 "
+            query += "AND item.brand_id = brand.id AND item.os_id = os.id "
             If search.Length > 0 Then
                 query += "AND name LIKE '%" + search + "%' "
+            End If
+            If brand.Length > 0 Then
+                query += "AND brand.name LIKE '%" + brand + "%' "
+            End If
+            If os.Length > 0 Then
+                query += "AND os.name LIKE '%" + os + "%' "
             End If
             query += "LIMIT " + CStr(start_id) + ",8 "
             comm = New MySqlCommand(query, con)
@@ -543,19 +552,25 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getAllItem(start_id As Integer, search As String, orderBy As String, cond As Boolean) As MySqlDataReader
+    Public Function getAllItem(start_id As Integer, search As String, brand As String, os As String, orderBy As String, cond As Boolean) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT * FROM item WHERE quantity > 0 "
+            query = "SELECT item.id,item.name,item.imageloc,item.price FROM item,brand,os WHERE item.quantity > 0 "
+            query += "AND item.brand_id = brand.id AND item.os_id = os.id "
             If search.Length > 0 Then
                 query += "AND name LIKE '%" + search + "%' "
             End If
-            If cond Then
-                query += "ORDER BY " + orderBy + " ASC"
-            Else
-                query += "ORDER BY " + orderBy + " DESC"
+            If brand.Length > 0 Then
+                query += "AND brand.name LIKE '%" + brand + "%' "
             End If
-
+            If os.Length > 0 Then
+                query += "AND os.name LIKE '%" + os + "%' "
+            End If
+            If cond Then
+                query += "ORDER BY " + orderBy + " ASC "
+            Else
+                query += "ORDER BY " + orderBy + " DESC "
+            End If
             query += "LIMIT " + CStr(start_id) + ",8 "
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
@@ -655,6 +670,7 @@ Public Class Database
             query += "WHERE detailtrans.item_id = item.id "
             query += "AND transaction.id = detailtrans.transaction_id "
             query += "AND transaction.username = '" + username + "' "
+            query += "AND detailtrans.status <> 'REJECTED' "
             query += "AND transaction.purchased = 1"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
@@ -690,10 +706,10 @@ Public Class Database
     End Function
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
-    Public Function getStoreFullfilmet(storeName As String, status As String, condition As Boolean) As MySqlDataReader
+    Public Function getStoreFullfilmet(storeName As String, status() As String, condition As Boolean) As MySqlDataReader
         Try
             con.Open()
-            query = "SELECT detailtrans.id,detailtrans.status,transaction.username, item.name, detailtrans.quantity, item.price, item.price*detailtrans.quantity, "
+            query = "SELECT detailtrans.id, item.id, detailtrans.status, transaction.username, item.name, detailtrans.quantity, item.price, item.price*detailtrans.quantity, "
             query += "custaddress.detail,custaddress.sub_district, custaddress.district, custaddress.province,custaddress.postal_code, country.country_name "
             query += "FROM detailtrans,transaction,custaddress,country,item  "
             query += "WHERE detailtrans.transaction_id = transaction.id "
@@ -702,11 +718,29 @@ Public Class Database
             query += "And transaction.purchased = 1 "
             query += "And custaddress.country_id = country.country_id "
             query += "And item.store_name = '" + storeName + "' "
+            query += "AND ("
             If condition Then
-                query += "AND detailtrans.status = '" + status + "'"
+                Dim i As Integer = 0
+                For Each state In status
+                    If i = 0 Then
+                        query += "detailtrans.status = '" + state + "'"
+                    Else
+                        query += "OR detailtrans.status = '" + state + "'"
+                    End If
+                    i += 1
+                Next
             Else
-                query += "AND detailtrans.status <> '" + status + "'"
+                Dim i As Integer = 0
+                For Each state In status
+                    If i = 0 Then
+                        query += "detailtrans.status <> '" + state + "'"
+                    Else
+                        query += "AND detailtrans.status <> '" + state + "'"
+                    End If
+                    i += 1
+                Next
             End If
+            query += ")"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             Return reader
@@ -719,7 +753,7 @@ Public Class Database
 #Enable Warning BC42105 ' Function doesn't return a value on all code paths
 
 
-    Public Function getTotalCurrent(storeName As String, status As String, ByVal cond As Boolean) As MySqlDataReader
+    Public Function getTotalCurrent(storeName As String, status() As String, ByVal cond As Boolean) As MySqlDataReader
         Try
             con.Open()
             query = "SELECT sum( item.price * detailtrans.quantity ) FROM item,detailtrans,transaction "
@@ -727,11 +761,21 @@ Public Class Database
             query += "And transaction.id = detailtrans.transaction_id "
             query += "And transaction.purchased = 1 "
             query += "AND item.store_name = '" + storeName + "' "
+            query += "AND ("
             If cond Then
-                query += "AND detailtrans.status = '" + status + "'"
+                query += "detailtrans.status = '" + status(0) + "' "
             Else
-                query += "AND detailtrans.status <> '" + status + "'"
+                Dim i As Integer = 0
+                For Each state In status
+                    If i = 0 Then
+                        query += "detailtrans.status <> '" + state + "' "
+                    Else
+                        query += "AND detailtrans.status <> '" + state + "' "
+                    End If
+                    i += 1
+                Next
             End If
+            query += ")"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             If reader.HasRows Then
@@ -932,10 +976,14 @@ Public Class Database
         End Try
     End Sub
 
-    Public Sub updateItem(id As Integer, quantity As Integer)
+    Public Sub updateItem(id As Integer, quantity As Integer, plus As Boolean)
         Try
             con.Open()
-            query = "UPDATE item SET  quantity = quantity - " + CStr(quantity) + " "
+            If plus Then
+                query = "UPDATE item SET  quantity = quantity + " + CStr(quantity) + " "
+            Else
+                query = "UPDATE item SET  quantity = quantity - " + CStr(quantity) + " "
+            End If
             query += "WHERE id = " + CStr(id)
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader

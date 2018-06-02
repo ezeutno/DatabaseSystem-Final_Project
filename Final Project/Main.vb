@@ -78,7 +78,8 @@ Public Class Main
         LoginBtn.Width *= 2
         Username.Enabled = False
         Db.ConnectDB()
-        refreshRun()
+        refreshAllData()
+        refreshSearchBy()
     End Sub
 
     Private Sub Login_Click(sender As Object, e As EventArgs) Handles LoginBtn.Click
@@ -105,6 +106,22 @@ Public Class Main
         refreshAllData()
     End Sub
 
+    Private Sub brand_TextChanged(sender As Object, e As EventArgs) Handles brand.TextChanged
+        refreshAllData()
+    End Sub
+
+    Private Sub os_TextChanged(sender As Object, e As EventArgs) Handles brand.TextChanged
+        refreshAllData()
+    End Sub
+
+    Private Sub brand_SelectedIndexChanged(sender As Object, e As EventArgs) Handles brand.SelectedIndexChanged
+        refreshAllData()
+    End Sub
+
+    Private Sub Os_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Os.SelectedIndexChanged
+        refreshAllData()
+    End Sub
+
     Private Sub Cart_Click(sender As Object, e As EventArgs) Handles Cart.Click
         CartDetail.Show()
     End Sub
@@ -119,11 +136,20 @@ Public Class Main
         End If
     End Sub
 
+    Private Sub CurrentTime_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CurrentTime.Tick
+        Time.Text = Now
+    End Sub
+
+    Public Sub refreshAllData()
+        currentPoint = 0
+        refreshRun()
+    End Sub
+
     Private Sub subRun(gp As GroupBox, image As PictureBox, id As Label, name As Label, price As Label)
         Try
             If reader.HasRows Then
                 If reader.Read() Then
-                    Display_Project(gp, image, id, name, price, {reader.Item(1), reader.Item(9), reader.Item(0), reader.Item(3)})
+                    Display_Project(gp, image, id, name, price, {reader.Item(0), reader.Item(1), reader.Item(2), reader.Item(3)})
                 Else
                     Display_Project(gp)
                 End If
@@ -132,17 +158,14 @@ Public Class Main
         End Try
     End Sub
 
-    Public Sub refreshAllData()
-        currentPoint = 0
-        refreshRun()
-    End Sub
-
-    Private Sub CurrentTime_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CurrentTime.Tick
-        Time.Text = Now
-    End Sub
-
     Private Sub refreshRun()
-        reader = Db.getAllItem(currentPoint, Search.Text)
+        If NameOB.Checked Then
+            reader = Db.getAllItem(currentPoint, Search.Text, brand.Text, Os.Text, "name", Asc.Checked)
+        ElseIf PriceOB.Checked Then
+            reader = Db.getAllItem(currentPoint, Search.Text, brand.Text, Os.Text, "price", Asc.Checked)
+        Else
+            reader = Db.getAllItem(currentPoint, Search.Text, brand.Text, Os.Text)
+        End If
         subRun(Item1, ImageItem1, idItem1, NameItem1, PriceItem1)
         subRun(Item2, ImageItem2, idItem2, NameItem2, PriceItem2)
         subRun(Item3, ImageItem3, idItem3, NameItem3, PriceItem3)
@@ -165,6 +188,26 @@ Public Class Main
         End If
     End Sub
 
+    Public Sub refreshSearchBy()
+        Os.Items.Clear()
+        reader = Db.getAllOS()
+        If reader.HasRows Then
+            Do While reader.Read()
+                Os.Items.Add(reader.Item(0))
+            Loop
+
+        End If
+        Db.closeCon()
+        brand.Items.Clear()
+        reader = Db.getAllBrand()
+        If reader.HasRows Then
+            Do While reader.Read()
+                brand.Items.Add(reader.Item(0))
+            Loop
+        End If
+        Db.closeCon()
+    End Sub
+
     Private Sub Display_Project(gp As GroupBox)
         gp.Visible = False
     End Sub
@@ -172,9 +215,9 @@ Public Class Main
     Private Sub Display_Project(gp As GroupBox, image As PictureBox, id As Label, name As Label, price As Label, data() As String)
         gp.Visible = True
         image.ImageLocation = ""
-        image.ImageLocation = data(1)
-        id.Text = data(2)
-        name.Text = data(0)
+        image.ImageLocation = data(2)
+        id.Text = data(0)
+        name.Text = data(1)
         Dim revalue As Double = Val(data(3))
         Dim slprice() As String = data(3).Split(New Char() {","c})
         Try
@@ -224,5 +267,37 @@ Public Class Main
         currentPoint -= 8
         refreshRun()
     End Sub
+
+    Private Sub NameOB_CheckedChanged(sender As Object, e As EventArgs) Handles NameOB.CheckedChanged
+        refreshAllData()
+    End Sub
+
+    Private Sub PriceOB_CheckedChanged(sender As Object, e As EventArgs) Handles PriceOB.CheckedChanged
+        refreshAllData()
+    End Sub
+
+    Private Sub Asc_CheckedChanged(sender As Object, e As EventArgs) Handles Asc.CheckedChanged
+        If NameOB.Checked Or PriceOB.Checked Then
+            refreshAllData()
+        End If
+    End Sub
+
+    Private Sub Dsc_CheckedChanged(sender As Object, e As EventArgs) Handles Dsc.CheckedChanged
+        If NameOB.Checked Or PriceOB.Checked Then
+            refreshAllData()
+        End If
+    End Sub
+
+    Private Sub Clear_Click(sender As Object, e As EventArgs) Handles Clear.Click
+        NameOB.Checked = False
+        PriceOB.Checked = False
+        Dsc.Checked = False
+        Asc.Checked = True
+        brand.Text = ""
+        Os.Text = ""
+        Search.Text = ""
+        refreshAllData()
+    End Sub
+
 
 End Class

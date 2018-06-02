@@ -34,24 +34,29 @@ Public Class SellerSales
         If pasted Then
             setVisible(False)
             allsales.ReadOnly = Not allsales.ReadOnly
-            reader = Db.getStoreFullfilmet(storeName, "FULLFILED", True)
+            reader = Db.getStoreFullfilmet(storeName, {"FULLFILED", "REJECTED"}, True)
         Else
             setVisible(True)
             allsales.ReadOnly = False
-            reader = Db.getStoreFullfilmet(storeName, "FULLFILED", False)
+            reader = Db.getStoreFullfilmet(storeName, {"FULLFILED", "REJECTED"}, False)
         End If
         If reader.HasRows Then
             Do While reader.Read()
-                allsales.Rows.Add(New String() {reader.Item(0), reader.Item(1), reader.Item(2), reader.Item(3), reader.Item(4), priceConverter(reader.Item(5)), priceConverter(reader.Item(6)), reader.Item(7), reader.Item(8), reader.Item(9), reader.Item(10), reader.Item(11), reader.Item(12)})
+                allsales.Rows.Add(New String() {reader.Item(0), reader.Item(1), reader.Item(2), reader.Item(3), reader.Item(4), reader.Item(5), priceConverter(reader.Item(6)), priceConverter(reader.Item(7)), reader.Item(8), reader.Item(9), reader.Item(10), reader.Item(11), reader.Item(12), reader.Item(13)})
             Loop
         End If
         Db.closeCon()
         If pasted Then
-            reader = Db.getTotalCurrent(storeName, "FULLFILED", True)
+            reader = Db.getTotalCurrent(storeName, {"FULLFILED", "REJECTED"}, True)
         Else
-            reader = Db.getTotalCurrent(storeName, "FULLFILED", False)
+            reader = Db.getTotalCurrent(storeName, {"FULLFILED", "REJECTED"}, False)
         End If
-        TotalRev.Text = priceConverter(reader.Item(0))
+        Try
+            TotalRev.Text = priceConverter(reader.Item(0))
+        Catch ex As Exception
+            TotalRev.Text = "Rp -,--"
+        End Try
+
         Db.closeCon()
 
     End Sub
@@ -66,19 +71,21 @@ Public Class SellerSales
         StoreDetail.Focus()
     End Sub
 
-    'Private Sub UserDeletingRow(ByVal sender As Object, ByVal e As DataGridViewRowEventArgs) Handles allsales.EditModeChanged
-    ' Db.updateDetailTrans(e.Row.Cells(0).Value, e.Row.Cells(1).Value)
-    'End Sub
+    Private Sub dataGridView1_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles allsales.CellEndEdit
+        Db.updateDetailTrans(allsales(0, e.RowIndex).Value, allsales(e.ColumnIndex, e.RowIndex).Value)
+    End Sub
 
     Private Sub sales_Click(sender As Object, e As EventArgs) Handles sales.Click
         If pasted Then
             pasted = Not pasted
             sales.Text = "Past Sales"
             Fulfilment.Enabled = True
+            reject.Enabled = True
         Else
             pasted = Not pasted
             sales.Text = "Current Sales"
             Fulfilment.Enabled = False
+            reject.Enabled = False
         End If
         refreshDetail()
     End Sub
@@ -90,4 +97,12 @@ Public Class SellerSales
         refreshDetail()
     End Sub
 
+    Private Sub reject_Click(sender As Object, e As EventArgs) Handles reject.Click
+        For Each SelectedRow As DataGridViewRow In allsales.SelectedRows
+            Db.updateDetailTrans(SelectedRow.Cells(0).Value, "REJECTED")
+            Db.updateItem(SelectedRow.Cells(1).Value, SelectedRow.Cells(5).Value, True)
+            StoreDetail.refreshDetail()
+        Next
+        refreshDetail()
+    End Sub
 End Class

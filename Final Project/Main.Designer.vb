@@ -77,8 +77,19 @@ Partial Class Main
         Me.StoreLogo = New System.Windows.Forms.PictureBox()
         Me.Time = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Clear = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Dsc = New System.Windows.Forms.RadioButton()
+        Me.Asc = New System.Windows.Forms.RadioButton()
+        Me.PriceOB = New System.Windows.Forms.RadioButton()
+        Me.NameOB = New System.Windows.Forms.RadioButton()
         Me.CurrentTime = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Os = New System.Windows.Forms.ComboBox()
+        Me.brand = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.Items.SuspendLayout()
         Me.Item8.SuspendLayout()
@@ -101,6 +112,9 @@ Partial Class Main
         Me.GroupBox2.SuspendLayout()
         CType(Me.Cart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StoreLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'LoginBtn
@@ -695,12 +709,79 @@ Partial Class Main
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.GroupBox4)
+        Me.GroupBox3.Controls.Add(Me.PriceOB)
+        Me.GroupBox3.Controls.Add(Me.NameOB)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 157)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(102, 305)
+        Me.GroupBox3.Size = New System.Drawing.Size(102, 165)
         Me.GroupBox3.TabIndex = 13
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Order By"
+        '
+        'Clear
+        '
+        Me.Clear.Location = New System.Drawing.Point(25, 438)
+        Me.Clear.Name = "Clear"
+        Me.Clear.Size = New System.Drawing.Size(75, 23)
+        Me.Clear.TabIndex = 3
+        Me.Clear.Text = "Clear"
+        Me.Clear.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Dsc)
+        Me.GroupBox4.Controls.Add(Me.Asc)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 75)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(90, 77)
+        Me.GroupBox4.TabIndex = 2
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Sort By"
+        '
+        'Dsc
+        '
+        Me.Dsc.AutoSize = True
+        Me.Dsc.Location = New System.Drawing.Point(7, 43)
+        Me.Dsc.Name = "Dsc"
+        Me.Dsc.Size = New System.Drawing.Size(77, 17)
+        Me.Dsc.TabIndex = 1
+        Me.Dsc.Text = "Decending"
+        Me.Dsc.UseVisualStyleBackColor = True
+        '
+        'Asc
+        '
+        Me.Asc.AutoSize = True
+        Me.Asc.Checked = True
+        Me.Asc.Location = New System.Drawing.Point(7, 20)
+        Me.Asc.Name = "Asc"
+        Me.Asc.Size = New System.Drawing.Size(69, 17)
+        Me.Asc.TabIndex = 0
+        Me.Asc.TabStop = True
+        Me.Asc.Text = "Asending"
+        Me.Asc.UseVisualStyleBackColor = True
+        '
+        'PriceOB
+        '
+        Me.PriceOB.AutoSize = True
+        Me.PriceOB.Location = New System.Drawing.Point(6, 42)
+        Me.PriceOB.Name = "PriceOB"
+        Me.PriceOB.Size = New System.Drawing.Size(49, 17)
+        Me.PriceOB.TabIndex = 1
+        Me.PriceOB.TabStop = True
+        Me.PriceOB.Text = "Price"
+        Me.PriceOB.UseVisualStyleBackColor = True
+        '
+        'NameOB
+        '
+        Me.NameOB.AutoSize = True
+        Me.NameOB.Location = New System.Drawing.Point(6, 19)
+        Me.NameOB.Name = "NameOB"
+        Me.NameOB.Size = New System.Drawing.Size(53, 17)
+        Me.NameOB.TabIndex = 0
+        Me.NameOB.TabStop = True
+        Me.NameOB.Text = "Name"
+        Me.NameOB.UseVisualStyleBackColor = True
         '
         'CurrentTime
         '
@@ -715,11 +796,62 @@ Partial Class Main
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Current Time"
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label3)
+        Me.GroupBox5.Controls.Add(Me.Os)
+        Me.GroupBox5.Controls.Add(Me.Label2)
+        Me.GroupBox5.Controls.Add(Me.brand)
+        Me.GroupBox5.Location = New System.Drawing.Point(12, 328)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(102, 104)
+        Me.GroupBox5.TabIndex = 15
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Search By"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Brand"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 58)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(90, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Operating System"
+        '
+        'Os
+        '
+        Me.Os.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.Os.FormattingEnabled = True
+        Me.Os.Location = New System.Drawing.Point(6, 74)
+        Me.Os.Name = "Os"
+        Me.Os.Size = New System.Drawing.Size(90, 21)
+        Me.Os.TabIndex = 2
+        '
+        'brand
+        '
+        Me.brand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.brand.FormattingEnabled = True
+        Me.brand.Location = New System.Drawing.Point(6, 31)
+        Me.brand.Name = "brand"
+        Me.brand.Size = New System.Drawing.Size(90, 21)
+        Me.brand.TabIndex = 0
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(896, 513)
+        Me.Controls.Add(Me.Clear)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Time)
@@ -765,6 +897,12 @@ Partial Class Main
         Me.GroupBox2.PerformLayout()
         CType(Me.Cart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StoreLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -826,4 +964,15 @@ Partial Class Main
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents CurrentTime As Timer
     Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents PriceOB As RadioButton
+    Friend WithEvents NameOB As RadioButton
+    Friend WithEvents Dsc As RadioButton
+    Friend WithEvents Asc As RadioButton
+    Friend WithEvents Clear As Button
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Os As ComboBox
+    Friend WithEvents brand As ComboBox
 End Class

@@ -27,7 +27,9 @@ Partial Class SellerSales
         Me.Fulfilment = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TotalRev = New System.Windows.Forms.TextBox()
+        Me.reject = New System.Windows.Forms.Button()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.username = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.item = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,7 +50,7 @@ Partial Class SellerSales
         Me.allsales.AllowUserToAddRows = False
         Me.allsales.AllowUserToDeleteRows = False
         Me.allsales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.allsales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.status, Me.username, Me.item, Me.Quantity, Me.Price, Me.SubTotal, Me.address, Me.subDistrict, Me.district, Me.province, Me.postal, Me.country})
+        Me.allsales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.itemid, Me.status, Me.username, Me.item, Me.Quantity, Me.Price, Me.SubTotal, Me.address, Me.subDistrict, Me.district, Me.province, Me.postal, Me.country})
         Me.allsales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.allsales.Location = New System.Drawing.Point(9, 10)
         Me.allsales.Margin = New System.Windows.Forms.Padding(2)
@@ -62,7 +64,7 @@ Partial Class SellerSales
         Me.sales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.sales.Location = New System.Drawing.Point(12, 361)
         Me.sales.Name = "sales"
-        Me.sales.Size = New System.Drawing.Size(165, 29)
+        Me.sales.Size = New System.Drawing.Size(102, 29)
         Me.sales.TabIndex = 1
         Me.sales.Text = "Past Sales"
         Me.sales.UseVisualStyleBackColor = True
@@ -70,9 +72,9 @@ Partial Class SellerSales
         'Fulfilment
         '
         Me.Fulfilment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Fulfilment.Location = New System.Drawing.Point(183, 361)
+        Me.Fulfilment.Location = New System.Drawing.Point(120, 361)
         Me.Fulfilment.Name = "Fulfilment"
-        Me.Fulfilment.Size = New System.Drawing.Size(165, 29)
+        Me.Fulfilment.Size = New System.Drawing.Size(113, 29)
         Me.Fulfilment.TabIndex = 2
         Me.Fulfilment.Text = "Fullfilment"
         Me.Fulfilment.UseVisualStyleBackColor = True
@@ -80,7 +82,7 @@ Partial Class SellerSales
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(364, 369)
+        Me.Label1.Location = New System.Drawing.Point(358, 369)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 3
@@ -90,10 +92,20 @@ Partial Class SellerSales
         '
         Me.TotalRev.BackColor = System.Drawing.SystemColors.Control
         Me.TotalRev.Enabled = False
-        Me.TotalRev.Location = New System.Drawing.Point(455, 365)
+        Me.TotalRev.Location = New System.Drawing.Point(439, 365)
         Me.TotalRev.Name = "TotalRev"
-        Me.TotalRev.Size = New System.Drawing.Size(285, 20)
+        Me.TotalRev.Size = New System.Drawing.Size(301, 20)
         Me.TotalRev.TabIndex = 4
+        '
+        'reject
+        '
+        Me.reject.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.reject.Location = New System.Drawing.Point(239, 361)
+        Me.reject.Name = "reject"
+        Me.reject.Size = New System.Drawing.Size(113, 29)
+        Me.reject.TabIndex = 5
+        Me.reject.Text = "Rejected/Refund"
+        Me.reject.UseVisualStyleBackColor = True
         '
         'Column1
         '
@@ -101,6 +113,12 @@ Partial Class SellerSales
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Visible = False
+        '
+        'itemid
+        '
+        Me.itemid.HeaderText = "itemid"
+        Me.itemid.Name = "itemid"
+        Me.itemid.Visible = False
         '
         'status
         '
@@ -178,6 +196,7 @@ Partial Class SellerSales
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(751, 398)
+        Me.Controls.Add(Me.reject)
         Me.Controls.Add(Me.TotalRev)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Fulfilment)
@@ -199,7 +218,9 @@ Partial Class SellerSales
     Friend WithEvents Fulfilment As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TotalRev As TextBox
+    Friend WithEvents reject As Button
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents itemid As DataGridViewTextBoxColumn
     Friend WithEvents status As DataGridViewTextBoxColumn
     Friend WithEvents username As DataGridViewTextBoxColumn
     Friend WithEvents item As DataGridViewTextBoxColumn
