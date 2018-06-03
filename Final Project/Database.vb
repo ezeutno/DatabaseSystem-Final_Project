@@ -161,7 +161,8 @@ Public Class Database
             query += "WHERE detailtrans.item_id = item.id "
             query += "AND transaction.id = detailtrans.transaction_id "
             query += "AND transaction.username = '" + username + "' "
-            query += "AND transaction.purchased = 1"
+            query += "AND transaction.purchased = 1 "
+            query += "ORDER By detailtrans.status"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             Return reader
@@ -181,6 +182,7 @@ Public Class Database
             query += "WHERE detailtrans.item_id = item.id "
             query += "AND transaction.id = detailtrans.transaction_id "
             query += "AND transaction.id = " + CStr(currTrans)
+            query += " ORDER By detailtrans.status"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             Return reader
@@ -747,7 +749,8 @@ Public Class Database
                     i += 1
                 Next
             End If
-            query += ")"
+            query += ") "
+            query += "ORDER By detailtrans.status"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             Return reader
@@ -958,7 +961,20 @@ Public Class Database
     Public Sub updateStore(prevstoreName As String, storeName As String)
         Try
             con.Open()
-            query = "UPDATE item SET store_name = '" + storeName + "' WHERE store_name = '" + prevstoreName + "'"
+            query = "UPDATE item SET store_name = '" + storeName + "'  WHERE store_name = '" + prevstoreName + "'"
+            comm = New MySqlCommand(query, con)
+            reader = comm.ExecuteReader
+            con.Close()
+        Catch ex As Exception
+            con.Close()
+            MessageBox.Show("Connection error occured : " + ex.Message)
+        End Try
+    End Sub
+
+    Public Sub updateStore(storeName As String, address_id As Integer)
+        Try
+            con.Open()
+            query = "UPDATE store SET address_id = " + CStr(address_id) + " WHERE name = '" + storeName + "'"
             comm = New MySqlCommand(query, con)
             reader = comm.ExecuteReader
             con.Close()

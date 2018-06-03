@@ -92,7 +92,15 @@ Public Class SellerSales
 
     Private Sub Fulfilment_Click(sender As Object, e As EventArgs) Handles Fulfillment.Click
         For Each SelectedRow As DataGridViewRow In allsales.SelectedRows
-            Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
+            Dim errorValue As String = "An Error Occured : "
+            If SelectedRow.Cells("status").Value <> "On Process" Then
+                Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
+            Else
+                errorValue += vbNewLine + "Transaction: " + SelectedRow.Cells("username").Value + "-" + SelectedRow.Cells("item").Value + " hasn't been sent!"
+            End If
+            If errorValue <> "An Error Occured : " Then
+                MessageBox.Show(errorValue)
+            End If
         Next
         refreshDetail()
     End Sub

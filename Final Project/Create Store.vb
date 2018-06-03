@@ -33,8 +33,9 @@ Public Class CreateStore
                     Db.insertnewStore(name, Main.getUsername(), address_id)
                     Db.updateStore(setstoreName, name)
                     Db.deleteStore(setstoreName)
-                    StoreDetail.refreshDetail()
                 End If
+                Db.updateStore(name, address_id)
+                StoreDetail.refreshDetail()
                 StoreDetail.Enabled = True
                 StoreDetail.Focus()
             Else

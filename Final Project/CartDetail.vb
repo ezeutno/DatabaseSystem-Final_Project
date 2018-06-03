@@ -15,6 +15,20 @@ Public Class CartDetail
         End Try
     End Function
 
+    Public Sub refreshTotal()
+        Try
+            If past Then
+                Total.Text = priceConverter(Db.getTotalTrans(Main.getUsername()).Item(0))
+            Else
+                Total.Text = priceConverter(Db.getTotalTrans(Main.getTransId()).Item(0))
+            End If
+        Catch ex As Exception
+            Total.Text = "Rp. ,--"
+        End Try
+        Db.closeCon()
+    End Sub
+
+
     Public Sub refreshDetail()
         transactionCart.Rows.Clear()
         If past Then
@@ -34,20 +48,12 @@ Public Class CartDetail
             Loop
         End If
         Db.closeCon()
-        Try
-            If past Then
-                Total.Text = priceConverter(Db.getTotalTrans(Main.getUsername()).Item(0))
-            Else
-                Total.Text = priceConverter(Db.getTotalTrans(Main.getTransId()).Item(0))
-            End If
-        Catch ex As Exception
-            Total.Text = "Rp. ,--"
-        End Try
-        Db.closeCon()
+        refreshTotal()
     End Sub
 
     Private Sub UserDeletingRow(ByVal sender As Object, ByVal e As DataGridViewRowCancelEventArgs) Handles transactionCart.UserDeletingRow
         Db.deleteDetailTrans(e.Row.Cells(0).Value)
+        refreshTotal()
     End Sub
 
     Private Sub Cart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
