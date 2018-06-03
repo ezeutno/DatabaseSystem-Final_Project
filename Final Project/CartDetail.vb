@@ -9,9 +9,9 @@ Public Class CartDetail
         Dim newdata As Double = Val(CStr(Data))
         Dim slprice() As String = CStr(Data).Split(New Char() {","c})
         Try
-            Return "Rp " + newdata.ToString("###,###") + "," + slprice(1)
+            Return "Rp. " + newdata.ToString("###,###") + "," + slprice(1)
         Catch ex As Exception
-            Return "Rp " + newdata.ToString("###,###") + ",--"
+            Return "Rp. " + newdata.ToString("###,###") + ",--"
         End Try
     End Function
 
