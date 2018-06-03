@@ -8,7 +8,7 @@ Public Class Database
     Dim condition, condition2 As Boolean
 
     Public Sub ConnectDB()
-        str = "Server = localhost; user id = root; password = ;database=finalproject; SslMode = none"
+        str = "Server = localhost; user id = root; password = ;database=dbfinalproject; SslMode = none"
         con = New MySqlConnection(str)
     End Sub
 

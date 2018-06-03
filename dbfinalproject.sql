@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2018 at 06:22 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Jun 03, 2018 at 07:03 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `finalproject`
+-- Database: `dbfinalproject`
 --
 
 -- --------------------------------------------------------
@@ -43,7 +43,9 @@ INSERT INTO `brand` (`id`, `name`) VALUES
 (3, 'LG'),
 (4, 'Nokia'),
 (5, 'Oneplus'),
-(6, 'Xiaomi');
+(6, 'Xiaomi'),
+(7, 'Oppo'),
+(8, 'Vivo');
 
 -- --------------------------------------------------------
 
@@ -283,10 +285,10 @@ INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province
 (4, 'Rumah Kelapa Sawit', 'Kampung Pulo', 'Jakarta Utara', 'DKI Jakarta', 184657, 76, 'david'),
 (5, 'Gryia Permata 2 Blok G7 No 89', 'Ciledug', 'Kota Tangerang', 'Banten', 15258, 76, 'ezeutno'),
 (7, 'Aribanda Luksamer', 'a', 'a', 'a', 1, 2, ''),
-(8, 'Barinusa 3, 672, 9898', 'b', 'b', 'b', 1, 4, ''),
+(8, 'Barinusa 3, 672, 9898', 'b', 'b', 'b', 1, 37, ''),
 (10, 'Jalan Panjang', 'Kuntilanang', 'Jakarta Timur', 'DKI Jakarta', 87365, 76, 'sher'),
 (11, 'Jawa Kuliang 6', 'Haji Kumeng 7', 'Jakarta Barat', 'DKI Jakarta', 54637, 76, 'jbarlian'),
-(13, 'FX Sudirman, F6 Floor, Jl Jend. Sudirman', 'Gelora', 'Tanah Abang', 'Central Jakarta', 10270, 76, 'test_account');
+(12, 'Jalan Kamboja 9', 'Rusunawa', 'Kaligede', 'Irian Jaya', 99854, 76, 'lol');
 
 -- --------------------------------------------------------
 
@@ -315,8 +317,7 @@ INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `ph
 ('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
 ('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
 ('sher', '12345678', 'Donald', 'Trump', 'lol@gmail.com', '893719827332', '1950-07-26'),
-('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11'),
-('test_account', 'test1234', 'Test', 'Account', 'test@example.com', '081234567890', '1991-02-28');
+('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
 
 -- --------------------------------------------------------
 
@@ -337,32 +338,39 @@ CREATE TABLE `detailtrans` (
 --
 
 INSERT INTO `detailtrans` (`id`, `item_id`, `quantity`, `transaction_id`, `status`) VALUES
-(6, 12, 1, 6, 'FULLFILED'),
-(7, 15, 12, 8, 'FULLFILED'),
-(8, 13, 20, 8, 'FULLFILED'),
-(9, 14, 10, 14, 'On Process'),
-(10, 1, 100, 11, 'FULLFILED'),
-(11, 8, 50, 11, 'REJECTED'),
-(13, 3, 50000, 16, 'REJECTED'),
-(14, 11, 500, 18, 'FULLFILED'),
-(15, 9, 10, 19, 'FULLFILED'),
-(16, 7, 20, 19, 'FULLFILED'),
-(17, 9, 40, 20, 'FULLFILED'),
-(19, 3, 1, 22, 'FULLFILED'),
-(26, 3, 2, 24, 'On Process'),
-(27, 2, 2, 24, 'On Process'),
-(28, 6, 2, 24, 'On Process'),
-(29, 13, 130, 25, 'On Process'),
-(30, 1, 20, 17, 'Sent : 12564578'),
-(31, 16, 10, 15, 'On Process'),
-(32, 7, 10, 23, 'Sent: 45648454'),
-(33, 8, 10, 26, 'FULLFILED'),
-(34, 12, 7, 26, 'On Process'),
-(35, 1, 880, 26, 'REJECTED'),
-(37, 1, 880, 30, 'REJECTED'),
-(38, 17, 456, 28, 'Sent : 454654'),
-(40, 17, 2, 33, 'On Process'),
-(42, 8, 2, 33, 'On Process');
+(6, 12, 1, 6, 'FULLFILLED'),
+(7, 15, 1, 8, 'FULLFILLED'),
+(8, 13, 1, 8, 'FULLFILLED'),
+(9, 14, 1, 14, 'FULLFILLED'),
+(10, 1, 5, 11, 'FULLFILLED'),
+(11, 8, 5, 11, 'REJECTED'),
+(13, 3, 1, 16, 'REJECTED'),
+(14, 11, 1, 18, 'FULLFILLED'),
+(15, 9, 1, 19, 'FULLFILLED'),
+(16, 7, 1, 19, 'FULLFILLED'),
+(17, 9, 5, 20, 'FULLFILLED'),
+(19, 3, 1, 22, 'FULLFILLED'),
+(26, 3, 2, 24, 'FULLFILLED'),
+(27, 2, 2, 24, 'FULLFILLED'),
+(28, 6, 2, 24, 'REJECTED'),
+(29, 13, 5, 25, 'REJECTED'),
+(30, 1, 1, 17, 'FULLFILLED'),
+(31, 16, 1, 15, 'REJECTED'),
+(32, 7, 1, 23, 'FULLFILLED'),
+(33, 8, 1, 26, 'FULLFILLED'),
+(34, 12, 1, 26, 'On Process'),
+(35, 1, 1, 26, 'REJECTED'),
+(37, 1, 1, 30, 'REJECTED'),
+(38, 17, 1, 28, 'FULLFILLED'),
+(39, 12, 1, 32, 'On Process'),
+(40, 14, 1, 24, 'On Process'),
+(41, 6, 1, 27, 'On Process'),
+(42, 22, 20, 29, 'On Process'),
+(43, 6, 20, 35, 'REJECTED'),
+(44, 1, 10, 35, 'On Process'),
+(45, 10, 15, 35, 'Status : 3256451'),
+(46, 7, 20, 35, 'FULLFILLED'),
+(59, 15, 13, 34, 'On Process');
 
 -- --------------------------------------------------------
 
@@ -389,24 +397,27 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `storage`, `ram`, `description`, `imageloc`, `store_name`) VALUES
-(1, 'Galaxy S9', 880, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'RunBook'),
-(2, 'iPhone 7', 80, 10000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'RunBook'),
-(3, 'Galaxy S8 Plus', 149599, 8500000, 1, 1, 64, 4, '', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=80773a56ed8c7c3f0cb94cf8cdf159f6', 'RunBook'),
-(6, 'G7+ Thin Q', 100, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'RunBook'),
-(7, 'Nokia 6.1 2018', 20, 3500000, 4, 1, 64, 4, '', 'https://bab-assets1.babapi.ooo/img/othe/8687242/ed/9c/blackcoppernokia63.png.41951aed9c.999x600x550.png', 'RunBook'),
-(8, 'iPhone X 2017', 86, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
-(9, 'Nokia 7 Plus', 20, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'RunBook'),
-(10, 'Oneplus 6', 100000, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'RunBook'),
-(11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'RunBook'),
-(12, 'Galaxy Note 3', 293, 700000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
-(13, 'Oneplus 5', 125, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
-(14, 'G5 SE', 190, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
-(15, 'Nokia 8810 Reloaded', 488, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua'),
-(16, 'Mi Mix 2s', 10, 9500000, 6, 1, 128, 6, 'The first xiaomi phone to support beta android p program.', 'http://bestengine.humanoid.fr/uploads/products/xiaomi-mi-mix-2-final.png', 'Rumah Merdeka'),
-(17, 'Galaxy S8 Plus', 56839, 5800000.89, 1, 1, 128, 6, 'Korea Version', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_plus_64gb_midnight_black_front_sku_header.png?cb=e239faa68d7306d68d478bb01bc647c9', 'Jobs'),
+(1, 'Galaxy S9', 870, 13500000, 1, 1, 128, 4, '', 'http://gearopen.com/wp-content/uploads/2018/02/45-Q118-fg-StarStar2-PreReg-Samsung-S9-Lilac-White-Logo.mobile-695x695.png', 'Rooky'),
+(2, 'iPhone 7', 78, 10000000, 2, 2, 128, 2, '', 'https://www.totalmobilemalta.com/wp-content/uploads/2016/10/apple-iphone7-plus.png', 'Rooky'),
+(3, 'Galaxy S8 Plus', 100, 8500000, 1, 1, 64, 4, '', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=80773a56ed8c7c3f0cb94cf8cdf159f6', 'Rooky'),
+(6, 'G7+ Thin Q', 98, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'Rooky'),
+(7, 'Nokia 6.1 2018', 0, 3500000, 4, 1, 64, 4, '', 'https://bab-assets1.babapi.ooo/img/othe/8687242/ed/9c/blackcoppernokia63.png.41951aed9c.999x600x550.png', 'Rooky'),
+(8, 'iPhone X 2017', 90, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'Rooky'),
+(9, 'Nokia 7 Plus', 20, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'Rooky'),
+(10, 'Oneplus 6', 99985, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'Rooky'),
+(11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'Rooky'),
+(12, 'Galaxy Note 3', 283, 700000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
+(13, 'Oneplus 5', 255, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
+(14, 'G5 SE', 180, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
+(15, 'Nokia 8810 Reloaded', 475, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua'),
+(16, 'Mi Mix 2s', 20, 9500000, 6, 1, 128, 6, 'The first xiaomi phone to support beta android p program.', 'http://bestengine.humanoid.fr/uploads/products/xiaomi-mi-mix-2-final.png', 'Rumah Merdeka'),
+(17, 'Galaxy S8', 56845, 5800000.89, 1, 1, 128, 6, 'Korea Version', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_plus_64gb_midnight_black_front_sku_header.png?cb=e239faa68d7306d68d478bb01bc647c9', 'Jobs'),
 (18, 'Galaxy A5 2016', 45, 5600000, 1, 1, 64, 3, 'Budget Waterproof', 'http://images.samsung.com/is/image/samsung/id-galaxy-a5-2017-a520-sm-a520fzkdxid-depan-hitam-thumb-61214901?$PG_PRD_CARD_PNG$', 'Jobs'),
 (19, 'Galaxy A8 2018', 50, 7599999.99, 1, 1, 64, 4, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/SamsungA8/Samsung_Galaxy_A8_black_lrg1.png', 'Jobs'),
-(20, 'Nokia 3310', 56, 500000, 4, 4, 0.016, 0.016, 'Reborn 3310, The people phone.', 'https://staticshop.o2.co.uk/product/images/nokia_3310_charcoal_sku_header.png?cb=1f48fe1fc55edc30a6b7df5449b6dab8', 'Jobs');
+(20, 'Nokia 3310', 56, 500000, 4, 4, 0.016, 0.016, 'Reborn 3310, The people phone.', 'https://staticshop.o2.co.uk/product/images/nokia_3310_charcoal_sku_header.png?cb=1f48fe1fc55edc30a6b7df5449b6dab8', 'Jobs'),
+(21, 'Oppo F5', 500, 4500000, 7, 1, 64, 6, '', 'https://i0.wp.com/www.mybigfone.com/wp-content/uploads/2017/11/Oppo-f5_image_1.png?fit=400%2C425', 'China store'),
+(22, 'Oppo F7', 480, 3500000, 7, 1, 64, 6, '', 'https://cdn.tgdd.vn/Products/Images/42/155261/oppo-f7-bac-400x460.png', 'China store'),
+(23, 'Vivo v7', 560, 4500000, 8, 1, 64, 4, '', 'https://cdn2.gsmarena.com/vv/bigpic/vivo-v7.jpg', 'China store');
 
 -- --------------------------------------------------------
 
@@ -446,11 +457,12 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`name`, `username`, `address_id`) VALUES
+('China store', 'lol', 12),
 ('Jobs', 'jbarlian', 11),
 ('Kampung Melayu', 'david', 4),
 ('Masa Tua', 'sher', 10),
-('Rumah Merdeka', 'ezeutno', 1),
-('RunBook', '', 8);
+('Rooky', '', 8),
+('Rumah Merdeka', 'ezeutno', 1);
 
 -- --------------------------------------------------------
 
@@ -483,16 +495,20 @@ INSERT INTO `transaction` (`id`, `purchased`, `username`, `address_id`) VALUES
 (21, 0, 'david', NULL),
 (22, 1, 'jbarlian', 11),
 (23, 1, 'jbarlian', 11),
-(24, 0, 'lol', NULL),
+(24, 1, 'lol', 12),
 (25, 1, 'sher', 10),
 (26, 1, 'sher', 10),
 (27, 0, 'ezeutno', NULL),
 (28, 1, '', 8),
-(29, 0, 'jbarlian', NULL),
+(29, 1, 'jbarlian', 11),
 (30, 1, 'sher', 10),
 (31, 0, 'sher', NULL),
-(32, 0, '', NULL),
-(33, 0, 'test_account', NULL);
+(32, 1, '', 7),
+(33, 0, 'lol', NULL),
+(34, 1, '', 7),
+(35, 1, 'jbarlian', 11),
+(36, 0, 'jbarlian', NULL),
+(37, 0, '', NULL);
 
 --
 -- Indexes for dumped tables
@@ -570,7 +586,7 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `country`
@@ -582,19 +598,19 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `detailtrans`
 --
 ALTER TABLE `detailtrans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `os`
@@ -606,7 +622,7 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Constraints for dumped tables
