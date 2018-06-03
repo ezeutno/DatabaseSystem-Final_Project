@@ -18,6 +18,7 @@ Public Class BuyItem
         End If
         Db.closeCon()
         reader = Db.getItemDetails(item_id)
+        Me.Text = "Buy " + reader.Item(1)
         itemName.Text = reader.Item(1)
         qty.Maximum = reader.Item(2)
         Dim revalue As Double = Val(CStr(reader.Item(3)))

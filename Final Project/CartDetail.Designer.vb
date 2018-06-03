@@ -23,6 +23,10 @@ Partial Class CartDetail
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.transactionCart = New System.Windows.Forms.DataGridView()
+        Me.Purchase = New System.Windows.Forms.Button()
+        Me.Buy = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Total = New System.Windows.Forms.TextBox()
         Me.DetailTransactionId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.transId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Store = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -32,10 +36,6 @@ Partial Class CartDetail
         Me.qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Purchase = New System.Windows.Forms.Button()
-        Me.Buy = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Total = New System.Windows.Forms.TextBox()
         CType(Me.transactionCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,13 +45,53 @@ Partial Class CartDetail
         Me.transactionCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.transactionCart.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailTransactionId, Me.transId, Me.Store, Me.ItemId, Me.itemName, Me.price, Me.qty, Me.subtotal, Me.Status})
         Me.transactionCart.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.transactionCart.Location = New System.Drawing.Point(11, 11)
-        Me.transactionCart.Margin = New System.Windows.Forms.Padding(2)
+        Me.transactionCart.Location = New System.Drawing.Point(15, 14)
+        Me.transactionCart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.transactionCart.Name = "transactionCart"
         Me.transactionCart.ReadOnly = True
         Me.transactionCart.RowTemplate.Height = 24
-        Me.transactionCart.Size = New System.Drawing.Size(443, 225)
+        Me.transactionCart.Size = New System.Drawing.Size(658, 277)
         Me.transactionCart.TabIndex = 1
+        '
+        'Purchase
+        '
+        Me.Purchase.Location = New System.Drawing.Point(15, 300)
+        Me.Purchase.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Purchase.Name = "Purchase"
+        Me.Purchase.Size = New System.Drawing.Size(141, 43)
+        Me.Purchase.TabIndex = 2
+        Me.Purchase.Text = "Purchases History"
+        Me.Purchase.UseVisualStyleBackColor = True
+        '
+        'Buy
+        '
+        Me.Buy.Location = New System.Drawing.Point(193, 300)
+        Me.Buy.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Buy.Name = "Buy"
+        Me.Buy.Size = New System.Drawing.Size(141, 43)
+        Me.Buy.TabIndex = 3
+        Me.Buy.Text = "Buy Now"
+        Me.Buy.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(412, 313)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 17)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Total"
+        '
+        'Total
+        '
+        Me.Total.BackColor = System.Drawing.SystemColors.Control
+        Me.Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Total.Location = New System.Drawing.Point(463, 310)
+        Me.Total.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Total.Name = "Total"
+        Me.Total.Size = New System.Drawing.Size(210, 27)
+        Me.Total.TabIndex = 5
         '
         'DetailTransactionId
         '
@@ -95,9 +135,10 @@ Partial Class CartDetail
         '
         'qty
         '
-        Me.qty.HeaderText = "Quantity"
+        Me.qty.HeaderText = "Qty"
         Me.qty.Name = "qty"
         Me.qty.ReadOnly = True
+        Me.qty.Width = 50
         '
         'subtotal
         '
@@ -112,55 +153,18 @@ Partial Class CartDetail
         Me.Status.ReadOnly = True
         Me.Status.Visible = False
         '
-        'Purchase
-        '
-        Me.Purchase.Location = New System.Drawing.Point(11, 244)
-        Me.Purchase.Margin = New System.Windows.Forms.Padding(2)
-        Me.Purchase.Name = "Purchase"
-        Me.Purchase.Size = New System.Drawing.Size(106, 35)
-        Me.Purchase.TabIndex = 2
-        Me.Purchase.Text = "Purchases History"
-        Me.Purchase.UseVisualStyleBackColor = True
-        '
-        'Buy
-        '
-        Me.Buy.Location = New System.Drawing.Point(124, 244)
-        Me.Buy.Margin = New System.Windows.Forms.Padding(2)
-        Me.Buy.Name = "Buy"
-        Me.Buy.Size = New System.Drawing.Size(106, 35)
-        Me.Buy.TabIndex = 3
-        Me.Buy.Text = "Buy Now"
-        Me.Buy.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(235, 255)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Total"
-        '
-        'Total
-        '
-        Me.Total.BackColor = System.Drawing.SystemColors.Control
-        Me.Total.Location = New System.Drawing.Point(272, 252)
-        Me.Total.Name = "Total"
-        Me.Total.Size = New System.Drawing.Size(182, 20)
-        Me.Total.TabIndex = 5
-        '
         'CartDetail
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(461, 286)
+        Me.ClientSize = New System.Drawing.Size(689, 352)
         Me.Controls.Add(Me.Total)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Buy)
         Me.Controls.Add(Me.Purchase)
         Me.Controls.Add(Me.transactionCart)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CartDetail"
