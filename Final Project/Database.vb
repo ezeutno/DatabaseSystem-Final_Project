@@ -5,10 +5,11 @@ Public Class Database
     Dim str, query As String
     Dim comm As MySqlCommand
     Dim reader As MySqlDataReader
+    Dim server As String = "localhost"
     Dim condition, condition2 As Boolean
 
     Public Sub ConnectDB()
-        str = "Server = localhost; user id = root; password = ;database=dbfinalproject; SslMode = none"
+        str = "Server = " + server + "; user id = root; password = ;database=dbfinalproject; SslMode = none"
         con = New MySqlConnection(str)
     End Sub
 
