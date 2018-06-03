@@ -34,11 +34,11 @@ Public Class SellerSales
         If pasted Then
             setVisible(False)
             allsales.ReadOnly = Not allsales.ReadOnly
-            reader = Db.getStoreFullfilmet(storeName, {"FULLFILLED", "REJECTED"}, True)
+            reader = Db.getStoreFullfilmet(storeName, {"FULFILLED", "REJECTED"}, True)
         Else
             setVisible(True)
             allsales.ReadOnly = False
-            reader = Db.getStoreFullfilmet(storeName, {"FULLFILLED", "REJECTED"}, False)
+            reader = Db.getStoreFullfilmet(storeName, {"FULFILLED", "REJECTED"}, False)
         End If
         If reader.HasRows Then
             Do While reader.Read()
@@ -47,9 +47,9 @@ Public Class SellerSales
         End If
         Db.closeCon()
         If pasted Then
-            reader = Db.getTotalCurrent(storeName, {"FULLFILLED", "REJECTED"}, True)
+            reader = Db.getTotalCurrent(storeName, {"FULFILLED", "REJECTED"}, True)
         Else
-            reader = Db.getTotalCurrent(storeName, {"FULLFILLED", "REJECTED"}, False)
+            reader = Db.getTotalCurrent(storeName, {"FULFILLED", "REJECTED"}, False)
         End If
         Try
             TotalRev.Text = priceConverter(reader.Item(0))
@@ -94,7 +94,7 @@ Public Class SellerSales
         Dim errorValue As String = "An Error Occured : "
         For Each SelectedRow As DataGridViewRow In allsales.SelectedRows
             If SelectedRow.Cells("status").Value <> "On Process" Then
-                Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
+                Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULFILLED")
             Else
                 errorValue += vbNewLine + "Transaction: " + SelectedRow.Cells("username").Value + "-" + SelectedRow.Cells("item").Value + " hasn't been sent!"
             End If

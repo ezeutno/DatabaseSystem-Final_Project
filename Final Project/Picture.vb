@@ -5,12 +5,14 @@
 
     Private Sub Picture_Closing(sender As Object, e As FormClosingEventArgs) Handles Me.Closing
         StoreDetail.setPictureLocation(LocationDetail.Text)
+        StoreDetail.Focus()
     End Sub
 
     Private Sub Picture_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles LocationDetail.KeyDown
         If e.KeyCode = Keys.Enter Then
             StoreDetail.setPictureLocation(LocationDetail.Text)
             Me.Dispose()
+            StoreDetail.Focus()
         End If
     End Sub
 
