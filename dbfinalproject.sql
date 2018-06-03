@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2018 at 07:03 AM
+-- Generation Time: Jun 03, 2018 at 07:25 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -288,7 +288,8 @@ INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province
 (8, 'Barinusa 3, 672, 9898', 'b', 'b', 'b', 1, 37, ''),
 (10, 'Jalan Panjang', 'Kuntilanang', 'Jakarta Timur', 'DKI Jakarta', 87365, 76, 'sher'),
 (11, 'Jawa Kuliang 6', 'Haji Kumeng 7', 'Jakarta Barat', 'DKI Jakarta', 54637, 76, 'jbarlian'),
-(12, 'Jalan Kamboja 9', 'Rusunawa', 'Kaligede', 'Irian Jaya', 99854, 76, 'lol');
+(12, 'Jalan Kamboja 9', 'Rusunawa', 'Kaligede', 'Irian Jaya', 99854, 76, 'lol'),
+(13, 'FX Sudirman, F6 Floor, Jl Jend. Sudirman', 'Gelora', 'Tanah Abang', 'Central Jakarta', 10270, 76, 'test_account');
 
 -- --------------------------------------------------------
 
@@ -317,7 +318,8 @@ INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `ph
 ('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
 ('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
 ('sher', '12345678', 'Donald', 'Trump', 'lol@gmail.com', '893719827332', '1950-07-26'),
-('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
+('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11'),
+('test_account', 'test1234', 'Test', 'Account', 'test@example.com', '081234567890', '1991-02-28');
 
 -- --------------------------------------------------------
 
@@ -368,9 +370,10 @@ INSERT INTO `detailtrans` (`id`, `item_id`, `quantity`, `transaction_id`, `statu
 (42, 22, 20, 29, 'On Process'),
 (43, 6, 20, 35, 'REJECTED'),
 (44, 1, 10, 35, 'On Process'),
-(45, 10, 15, 35, 'Status : 3256451'),
+(45, 10, 15, 35, 'On Process'),
 (46, 7, 20, 35, 'FULLFILLED'),
-(59, 15, 13, 34, 'On Process');
+(59, 15, 13, 34, 'On Process'),
+(60, 13, 10, 38, 'On Process');
 
 -- --------------------------------------------------------
 
@@ -407,7 +410,7 @@ INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `sto
 (10, 'Oneplus 6', 99985, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'Rooky'),
 (11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'Rooky'),
 (12, 'Galaxy Note 3', 283, 700000, 1, 1, 32, 3, '', 'http://www.techdepotinc.ca/wp-content/uploads/2014/08/note3.png', 'Rumah Merdeka'),
-(13, 'Oneplus 5', 255, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
+(13, 'Oneplus 5', 245, 6789999.99, 5, 1, 128, 8, '', 'https://staticshop.o2.co.uk/product/images/bau-33174-oneplus-5sku-header-master-midnight-black-090617.png?cb=d80fdf71fc912162777108eec9ba4c86', 'Kampung Melayu'),
 (14, 'G5 SE', 180, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
 (15, 'Nokia 8810 Reloaded', 475, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua'),
 (16, 'Mi Mix 2s', 20, 9500000, 6, 1, 128, 6, 'The first xiaomi phone to support beta android p program.', 'http://bestengine.humanoid.fr/uploads/products/xiaomi-mi-mix-2-final.png', 'Rumah Merdeka'),
@@ -508,7 +511,9 @@ INSERT INTO `transaction` (`id`, `purchased`, `username`, `address_id`) VALUES
 (34, 1, '', 7),
 (35, 1, 'jbarlian', 11),
 (36, 0, 'jbarlian', NULL),
-(37, 0, '', NULL);
+(37, 0, '', NULL),
+(38, 1, 'test_account', 13),
+(39, 0, 'test_account', NULL);
 
 --
 -- Indexes for dumped tables
@@ -531,7 +536,8 @@ ALTER TABLE `country`
 --
 ALTER TABLE `custaddress`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `country_id` (`country_id`);
+  ADD KEY `country_id` (`country_id`),
+  ADD KEY `username` (`username`);
 
 --
 -- Indexes for table `custdetail`
@@ -598,13 +604,13 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `detailtrans`
 --
 ALTER TABLE `detailtrans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -622,7 +628,7 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables
@@ -632,7 +638,8 @@ ALTER TABLE `transaction`
 -- Constraints for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+  ADD CONSTRAINT `custaddress_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`),
+  ADD CONSTRAINT `custaddress_ibfk_2` FOREIGN KEY (`username`) REFERENCES `custdetail` (`username`);
 
 --
 -- Constraints for table `detailtrans`
