@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2018 at 04:48 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Jun 03, 2018 at 06:22 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -285,7 +285,8 @@ INSERT INTO `custaddress` (`id`, `detail`, `sub_district`, `district`, `province
 (7, 'Aribanda Luksamer', 'a', 'a', 'a', 1, 2, ''),
 (8, 'Barinusa 3, 672, 9898', 'b', 'b', 'b', 1, 4, ''),
 (10, 'Jalan Panjang', 'Kuntilanang', 'Jakarta Timur', 'DKI Jakarta', 87365, 76, 'sher'),
-(11, 'Jawa Kuliang 6', 'Haji Kumeng 7', 'Jakarta Barat', 'DKI Jakarta', 54637, 76, 'jbarlian');
+(11, 'Jawa Kuliang 6', 'Haji Kumeng 7', 'Jakarta Barat', 'DKI Jakarta', 54637, 76, 'jbarlian'),
+(13, 'FX Sudirman, F6 Floor, Jl Jend. Sudirman', 'Gelora', 'Tanah Abang', 'Central Jakarta', 10270, 76, 'test_account');
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,8 @@ INSERT INTO `custdetail` (`username`, `password`, `fname`, `lName`, `email`, `ph
 ('jbarlian', '12345678', 'James', 'Barlian', 'jbarlian@aol.com', '7462318731289', '1995-06-14'),
 ('lol', '12345678', 'Frendy', 'B', 'frendy222@gmail.com', '63489327948', '1999-06-16'),
 ('sher', '12345678', 'Donald', 'Trump', 'lol@gmail.com', '893719827332', '1950-07-26'),
-('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11');
+('sm', '12345678', 'susan', 'margarita', 'msuratno@djhsh.com', '62387189237', '1992-03-11'),
+('test_account', 'test1234', 'Test', 'Account', 'test@example.com', '081234567890', '1991-02-28');
 
 -- --------------------------------------------------------
 
@@ -358,7 +360,9 @@ INSERT INTO `detailtrans` (`id`, `item_id`, `quantity`, `transaction_id`, `statu
 (34, 12, 7, 26, 'On Process'),
 (35, 1, 880, 26, 'REJECTED'),
 (37, 1, 880, 30, 'REJECTED'),
-(38, 17, 456, 28, 'Sent : 454654');
+(38, 17, 456, 28, 'Sent : 454654'),
+(40, 17, 2, 33, 'On Process'),
+(42, 8, 2, 33, 'On Process');
 
 -- --------------------------------------------------------
 
@@ -390,7 +394,7 @@ INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `sto
 (3, 'Galaxy S8 Plus', 149599, 8500000, 1, 1, 64, 4, '', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_64gb_midnight_black_front_sku_header.png?cb=80773a56ed8c7c3f0cb94cf8cdf159f6', 'RunBook'),
 (6, 'G7+ Thin Q', 100, 11500000, 3, 1, 128, 6, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/LG-G7-ThinQ/LG_G7_ThinQ_Silver_lrg1.png', 'RunBook'),
 (7, 'Nokia 6.1 2018', 20, 3500000, 4, 1, 64, 4, '', 'https://bab-assets1.babapi.ooo/img/othe/8687242/ed/9c/blackcoppernokia63.png.41951aed9c.999x600x550.png', 'RunBook'),
-(8, 'iPhone X 2017', 90, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
+(8, 'iPhone X 2017', 86, 16500000, 2, 2, 128, 3, '', 'http://www.handybg.com/web/files/products/201710/4567/13978.png', 'RunBook'),
 (9, 'Nokia 7 Plus', 20, 6500000, 4, 1, 64, 4, 'Android One', 'https://s1.poorvikamobile.com/image/cache/data/Mobiles/Nokia/Nokia%207%20Plus/1-600x800.png', 'RunBook'),
 (10, 'Oneplus 6', 100000, 9500000, 5, 1, 128, 8, '', 'https://www.oppomart.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/o/p/op6-official.png', 'RunBook'),
 (11, 'G6', 7, 6500000, 3, 1, 128, 4, '', 'https://www.t-mobile.com/images/png/products/phones/LG-G6-Ice-Platinum/250x270_1.png', 'RunBook'),
@@ -399,7 +403,7 @@ INSERT INTO `item` (`id`, `name`, `quantity`, `price`, `brand_id`, `os_id`, `sto
 (14, 'G5 SE', 190, 3500000, 3, 1, 128, 4, 'The best in class from 2 years back. Modular Design.', 'https://d243u7pon29hni.cloudfront.net/imagesOnDemand/get?imagePath=/images/movil-lg-g5-se-5-3-qhd-octa-core-32-gb-red-4g-gris-titan-1347966-1_l.png&width=480&height=480&quality=65&imgType=product', 'Kampung Melayu'),
 (15, 'Nokia 8810 Reloaded', 488, 999999.89, 4, 3, 4, 0.512, 'The reborn of the matrix phone.', 'http://toancaumobile.vn/Data/upload/images/Product/Mobile/nokia-8810-4g.png', 'Masa Tua'),
 (16, 'Mi Mix 2s', 10, 9500000, 6, 1, 128, 6, 'The first xiaomi phone to support beta android p program.', 'http://bestengine.humanoid.fr/uploads/products/xiaomi-mi-mix-2-final.png', 'Rumah Merdeka'),
-(17, 'Galaxy S8 Plus', 56845, 5800000.89, 1, 1, 128, 6, 'Korea Version', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_plus_64gb_midnight_black_front_sku_header.png?cb=e239faa68d7306d68d478bb01bc647c9', 'Jobs'),
+(17, 'Galaxy S8 Plus', 56839, 5800000.89, 1, 1, 128, 6, 'Korea Version', 'https://staticshop.o2.co.uk/product/images/samsung_galaxy_s8_plus_64gb_midnight_black_front_sku_header.png?cb=e239faa68d7306d68d478bb01bc647c9', 'Jobs'),
 (18, 'Galaxy A5 2016', 45, 5600000, 1, 1, 64, 3, 'Budget Waterproof', 'http://images.samsung.com/is/image/samsung/id-galaxy-a5-2017-a520-sm-a520fzkdxid-depan-hitam-thumb-61214901?$PG_PRD_CARD_PNG$', 'Jobs'),
 (19, 'Galaxy A8 2018', 50, 7599999.99, 1, 1, 64, 4, '', 'https://www.bell.ca/Styles/wireless/all_languages/all_regions/catalog_images/SamsungA8/Samsung_Galaxy_A8_black_lrg1.png', 'Jobs'),
 (20, 'Nokia 3310', 56, 500000, 4, 4, 0.016, 0.016, 'Reborn 3310, The people phone.', 'https://staticshop.o2.co.uk/product/images/nokia_3310_charcoal_sku_header.png?cb=1f48fe1fc55edc30a6b7df5449b6dab8', 'Jobs');
@@ -487,7 +491,8 @@ INSERT INTO `transaction` (`id`, `purchased`, `username`, `address_id`) VALUES
 (29, 0, 'jbarlian', NULL),
 (30, 1, 'sher', 10),
 (31, 0, 'sher', NULL),
-(32, 0, '', NULL);
+(32, 0, '', NULL),
+(33, 0, 'test_account', NULL);
 
 --
 -- Indexes for dumped tables
@@ -577,13 +582,13 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT for table `custaddress`
 --
 ALTER TABLE `custaddress`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `detailtrans`
 --
 ALTER TABLE `detailtrans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -601,7 +606,7 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables
