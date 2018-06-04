@@ -285,9 +285,6 @@
     <None Include="Resources\TG0wQQ40_400x400_mart_ai_on_twitter.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TG0wQQ40_400x400_mart_ai_on_twitter.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>

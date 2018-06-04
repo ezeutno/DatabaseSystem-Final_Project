@@ -69,7 +69,7 @@ Public Class CartDetail
         If Purchase.Text = "Current Cart" Then
             For Each SelectedRow As DataGridViewRow In transactionCart.SelectedRows
                 If Not SelectedRow.Cells(8).Value = "REJECTED" Then
-                    Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULLFILLED")
+                    Db.updateDetailTrans(SelectedRow.Cells(0).Value, "FULFILLED")
                 End If
             Next
             refreshDetail()
@@ -111,7 +111,7 @@ Public Class CartDetail
             Buy.Text = "Buy Now"
             Purchase.Text = "Purchased History"
         Else
-            Buy.Text = "Fullfilled"
+            Buy.Text = "Fulfilled"
             Purchase.Text = "Current Cart"
         End If
         past = Not past
