@@ -32,12 +32,11 @@ Public Class SellerSales
     Public Sub refreshDetail()
         allsales.Rows.Clear()
         If pasted Then
-            setVisible(False)
-            allsales.ReadOnly = Not allsales.ReadOnly
+            status.ReadOnly = Not status.ReadOnly
             reader = Db.getStoreFullfilmet(storeName, {"FULFILLED", "REJECTED"}, True)
         Else
             setVisible(True)
-            allsales.ReadOnly = False
+            status.ReadOnly = False
             reader = Db.getStoreFullfilmet(storeName, {"FULFILLED", "REJECTED"}, False)
         End If
         If reader.HasRows Then

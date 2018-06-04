@@ -52,20 +52,19 @@ Partial Class SellerSales
         Me.allsales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.allsales.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.itemid, Me.status, Me.username, Me.item, Me.Quantity, Me.Price, Me.SubTotal, Me.address, Me.subDistrict, Me.district, Me.province, Me.postal, Me.country})
         Me.allsales.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.allsales.Location = New System.Drawing.Point(12, 12)
-        Me.allsales.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.allsales.Location = New System.Drawing.Point(9, 10)
+        Me.allsales.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.allsales.Name = "allsales"
         Me.allsales.RowTemplate.Height = 24
-        Me.allsales.Size = New System.Drawing.Size(975, 426)
+        Me.allsales.Size = New System.Drawing.Size(731, 346)
         Me.allsales.TabIndex = 0
         '
         'sales
         '
         Me.sales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.sales.Location = New System.Drawing.Point(16, 444)
-        Me.sales.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.sales.Location = New System.Drawing.Point(12, 361)
         Me.sales.Name = "sales"
-        Me.sales.Size = New System.Drawing.Size(136, 36)
+        Me.sales.Size = New System.Drawing.Size(102, 29)
         Me.sales.TabIndex = 1
         Me.sales.Text = "Past Sales"
         Me.sales.UseVisualStyleBackColor = True
@@ -73,10 +72,9 @@ Partial Class SellerSales
         'Fulfillment
         '
         Me.Fulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Fulfillment.Location = New System.Drawing.Point(160, 444)
-        Me.Fulfillment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Fulfillment.Location = New System.Drawing.Point(120, 361)
         Me.Fulfillment.Name = "Fulfillment"
-        Me.Fulfillment.Size = New System.Drawing.Size(151, 36)
+        Me.Fulfillment.Size = New System.Drawing.Size(113, 29)
         Me.Fulfillment.TabIndex = 2
         Me.Fulfillment.Text = "Fulfillment"
         Me.Fulfillment.UseVisualStyleBackColor = True
@@ -84,10 +82,9 @@ Partial Class SellerSales
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(477, 454)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(358, 369)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(109, 17)
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Total Revenue :"
         '
@@ -95,19 +92,17 @@ Partial Class SellerSales
         '
         Me.TotalRev.BackColor = System.Drawing.SystemColors.Control
         Me.TotalRev.Enabled = False
-        Me.TotalRev.Location = New System.Drawing.Point(585, 449)
-        Me.TotalRev.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TotalRev.Location = New System.Drawing.Point(439, 365)
         Me.TotalRev.Name = "TotalRev"
-        Me.TotalRev.Size = New System.Drawing.Size(400, 22)
+        Me.TotalRev.Size = New System.Drawing.Size(301, 20)
         Me.TotalRev.TabIndex = 4
         '
         'reject
         '
         Me.reject.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.reject.Location = New System.Drawing.Point(319, 444)
-        Me.reject.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.reject.Location = New System.Drawing.Point(239, 361)
         Me.reject.Name = "reject"
-        Me.reject.Size = New System.Drawing.Size(151, 36)
+        Me.reject.Size = New System.Drawing.Size(113, 29)
         Me.reject.TabIndex = 5
         Me.reject.Text = "Rejected/Refund"
         Me.reject.UseVisualStyleBackColor = True
@@ -130,7 +125,6 @@ Partial Class SellerSales
         '
         Me.status.HeaderText = "Status"
         Me.status.Name = "status"
-        Me.status.ReadOnly = True
         '
         'username
         '
@@ -200,17 +194,17 @@ Partial Class SellerSales
         '
         'SellerSales
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1001, 490)
+        Me.ClientSize = New System.Drawing.Size(751, 398)
         Me.Controls.Add(Me.reject)
         Me.Controls.Add(Me.TotalRev)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Fulfillment)
         Me.Controls.Add(Me.sales)
         Me.Controls.Add(Me.allsales)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SellerSales"
