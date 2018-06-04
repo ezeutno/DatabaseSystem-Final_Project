@@ -733,7 +733,7 @@ Public Class Database
                 Dim i As Integer = 0
                 For Each state In status
                     If i = 0 Then
-                        query += "detailtrans.status = '" + state + "'"
+                        query += "detailtrans.status = '" + state + "' "
                     Else
                         query += "OR detailtrans.status = '" + state + "'"
                     End If
@@ -743,7 +743,7 @@ Public Class Database
                 Dim i As Integer = 0
                 For Each state In status
                     If i = 0 Then
-                        query += "detailtrans.status <> '" + state + "'"
+                        query += "detailtrans.status <> '" + state + "' "
                     Else
                         query += "AND detailtrans.status <> '" + state + "'"
                     End If
