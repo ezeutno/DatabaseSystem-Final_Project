@@ -222,11 +222,11 @@ Public Class Main
         name.Text = data(1)
         Dim revalue As Double = Val(data(3))
         Dim slprice() As String = data(3).Split(New Char() {","c})
-        Try
+        If slprice.Length > 1 Then
             price.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
-        Catch ex As Exception
+        Else
             price.Text = "Rp " + revalue.ToString("###,###") + ",--"
-        End Try
+        End If
     End Sub
 
     Private Sub Clicked_Project(id As Label)

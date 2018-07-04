@@ -8,11 +8,11 @@ Public Class CartDetail
     Private Function priceConverter(Data As Double) As String
         Dim newdata As Double = Val(CStr(Data))
         Dim slprice() As String = CStr(Data).Split(New Char() {","c})
-        Try
+        If slprice.Length > 1 Then
             Return "Rp. " + newdata.ToString("###,###") + "," + slprice(1)
-        Catch ex As Exception
+        Else
             Return "Rp. " + newdata.ToString("###,###") + ",--"
-        End Try
+        End If
     End Function
 
     Public Sub refreshTotal()

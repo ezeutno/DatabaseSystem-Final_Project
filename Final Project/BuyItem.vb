@@ -23,11 +23,11 @@ Public Class BuyItem
         qty.Maximum = reader.Item(2)
         Dim revalue As Double = Val(CStr(reader.Item(3)))
         Dim slprice() As String = CStr(reader.Item(3)).Split(New Char() {","c})
-        Try
+        If slprice.Length > 1 Then
             price.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
-        Catch ex As Exception
+        Else
             price.Text = "Rp " + revalue.ToString("###,###") + ",--"
-        End Try
+        End If
         Dim brand_id As Integer = reader.Item(4)
         Dim os_id As Integer = reader.Item(5)
         storage.Text = CStr(reader.Item(6)) + " GB"
@@ -53,11 +53,11 @@ Public Class BuyItem
         reader = Db.getTotalPrice(item_id, qty.Value)
         Dim revalue As Double = Val(CStr(reader.Item(0)))
         Dim slprice() As String = CStr(reader.Item(0)).Split(New Char() {","c})
-        Try
-            totalPrice.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
-        Catch ex As Exception
-            totalPrice.Text = "Rp " + revalue.ToString("###,###") + ",--"
-        End Try
+        If slprice.Length > 1 Then
+            price.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
+        Else
+            price.Text = "Rp " + revalue.ToString("###,###") + ",--"
+        End If
         Db.closeCon()
     End Sub
 
