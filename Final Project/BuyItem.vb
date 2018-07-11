@@ -54,9 +54,9 @@ Public Class BuyItem
         Dim revalue As Double = Val(CStr(reader.Item(0)))
         Dim slprice() As String = CStr(reader.Item(0)).Split(New Char() {","c})
         If slprice.Length > 1 Then
-            price.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
+            totalPrice.Text = "Rp " + revalue.ToString("###,###") + "," + slprice(1)
         Else
-            price.Text = "Rp " + revalue.ToString("###,###") + ",--"
+            totalPrice.Text = "Rp " + revalue.ToString("###,###") + ",--"
         End If
         Db.closeCon()
     End Sub
